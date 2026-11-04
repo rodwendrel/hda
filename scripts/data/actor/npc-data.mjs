@@ -13,6 +13,8 @@ function defineNpcSchema() {
     armor: new f.NumberField({ required: true, nullable: false, integer: true, initial: 0 }),
     slots: valueField(f, 0),
     features: new f.ArrayField(featureField(f)),
+    willAttack: new f.StringField({ required: true, blank: true, initial: '' }), // HDA: dano de VON
+    stabilityAura: new f.StringField({ required: true, blank: true, initial: '' }), // HDA: perda ao ser visto
   };
 }
 

@@ -1,4 +1,6 @@
 import { findCompendiumItem } from './compendium.mjs'
+import { postCard, postNotice, postRoll } from './hda/chat.mjs' // HDA
+import { settings, SYSTEM_ID } from './settings.mjs'
 import { evaluateFormula } from './utils.mjs'
 
 export class Damage {
@@ -7,24 +9,39 @@ export class Damage {
      * @description Apply damage to several tokens
      * @param {String[]} targets Array of Id of the targeted tokens
      * @param {Number} damage Positive number
+     * @param {Object} [options] HDA: see applyToTarget
      */
-    static async applyToTargets(targets, damage) {
+    static async applyToTargets(targets, damage, options = {}) {
         for (const target of targets) {
-            const data = await this.applyToTarget(target, damage);
-            this._showDetails(data);
+            const data = await this.applyToTarget(target, damage, options);
+            await this._showDetails(data);
         };
     }
 
     /**
      * @description Apply damage to one token
-     * @param {*} target Id of one token
+     * @param {*} tokenId Id of one token
      * @param {*} damage Amount of damaage
+     * @param {Object} [options]
+     * @param {'STR'|'WIL'} [options.target] HDA: `WIL` sai direto da VON, sem passar pelos PG
+     * @param {boolean} [options.ignoreArmor] HDA: não subtrai a Armadura
      * @returns actor + old and new values
      */
-    static async applyToTarget(target, damage) {
-        const token = canvas.scene.tokens.get(target);
+    static async applyToTarget(tokenId, damage, { target = 'STR', ignoreArmor = false } = {}) {
+        const token = canvas.scene.tokens.get(tokenId);
 
-        const armor = token.actor.system.armor;
+        // HDA: Armadura não reduz dano de VON, salvo pela configuração.
+        const armorApplies = !ignoreArmor && (target !== 'WIL' || settings.get('hda-will-damage-armor'));
+        const armor = armorApplies ? token.actor.system.armor : 0;
+
+        if (target === 'WIL') {
+            const wil = token.actor.system.abilities.WIL.value;
+            const dmg = Math.max(0, damage - armor);
+            const newWil = Math.max(0, wil - dmg);
+            await token.actor.update({ 'system.abilities.WIL.value': newWil });
+            return { token, target, dmg, damage, armor, wil, newWil };
+        }
+
         const hp = token.actor.system.hp.value;
         const str = token.actor.system.abilities.STR.value;
 
@@ -33,17 +50,45 @@ export class Damage {
 
         await token.actor.update({ 'system.hp.value': newHp, 'system.abilities.STR.value': newStr });
 
-        return { token, dmg, damage, armor, hp, str, newHp, newStr };
+        return { token, target, dmg, damage, armor, hp, str, newHp, newStr };
+    }
+
+    /**
+     * HDA: posta o cartão de dano. Substitui o `dmg-roll-card.hbs`.
+     * @param {Actor} actor quem causa o dano
+     * @param {Roll} roll
+     * @param {Object} options
+     * @param {String} options.label
+     * @param {String[]} [options.targets] ids de token; por padrão, os alvos do usuário
+     * @param {'STR'|'WIL'} [options.ability] o que o dano atinge
+     * @param {boolean} [options.ignoreArmor]
+     */
+    static async postRoll(actor, roll, { label, targets, ability = 'STR', ignoreArmor = false }) {
+        const tokens = targets
+            ? targets.map((id) => canvas.scene?.tokens.get(id)).filter(Boolean)
+            : Array.from(game.user.targets).map((token) => token.document);
+        return postRoll(roll, 'damage', {
+            label,
+            formula: roll.formula,
+            total: roll.total,
+            targets: tokens.map((token) => token.id).join(';'),
+            targetsLabel: tokens.map((token) => token.name).join(', '),
+            ability,
+            willDamage: ability === 'WIL',
+            ignoreArmor,
+            willAttack: actor.type === 'npc' && ability === 'STR' ? actor.system.willAttack : '',
+        }, { actor });
     }
 
     /**
      * @description Apply damage to a target token based on the token's id
-     * @param {*} event 
-     * @param {*} html 
-     * @param {*} data 
+     * @param {*} event
+     * @param {*} html
+     * @param {*} data
      */
     static onClickChatMessageApplyButton(event, html, data) {
-        const targets = event.currentTarget.dataset.targets;
+        const button = event.currentTarget;
+        const targets = button.dataset.targets;
 
         let targetsList = targets.split(';');
 
@@ -60,18 +105,22 @@ export class Damage {
         // Apply damage to targets
         else {
             if (targets !== undefined) {
-                const dmg = parseInt(html.querySelector(".dice-total").textContent);
-                this.applyToTargets(targetsList, dmg);
+                // HDA: o valor vem do cartão; o tema não tem `.dice-total`.
+                const dmg = parseInt(button.dataset.amount);
+                this.applyToTargets(targetsList, dmg, {
+                    target: button.dataset.ability,
+                    ignoreArmor: button.dataset.ignoreArmor === 'true',
+                });
             }
         }
     }
 
     /**
      * @description Damage are reduced by armor, then apply to HP, and then to STR if not enough HP
-     * @param {*} damage 
-     * @param {*} armor 
-     * @param {*} hp 
-     * @param {*} str 
+     * @param {*} damage
+     * @param {*} armor
+     * @param {*} hp
+     * @param {*} str
      * @returns damage done, new HP value and STR value
      */
     static _calculateHpAndStr(damage, armor, hp, str) {
@@ -97,68 +146,49 @@ export class Damage {
      * @param data
      * @private
      */
-    static _showDetails(data) {
+    static async _showDetails(data) {
+        const { token, target, dmg, damage, armor } = data;
+        const localize = (key) => game.i18n.localize(key);
+        const changes = [{ label: `${localize('CAIRN.Damage')} (${damage} − ${armor})`, from: damage, to: dmg }];
 
-        const { token, dmg, damage, armor, hp, str, newHp, newStr } = data
-
-        
-
-        if (str == 0) {
-            ChatMessage.create({
-                user: game.user._id,
-                speaker: ChatMessage.getSpeaker({ token: token }),
-                content: '<strong>' + game.i18n.localize('CAIRN.Dead') + '</strong>',
-            }, {});
-            return;
+        // HDA: dano de VON. Ao chegar a 0, Delirante.
+        if (target === 'WIL') {
+            const { wil, newWil } = data;
+            changes.push({ label: localize('WIL'), from: wil, to: newWil });
+            return postCard('damage-applied', { changes, delirious: newWil === 0 }, { token });
         }
 
-        let content = '<p><strong>' + game.i18n.localize('CAIRN.Damage') + '</strong>: ' + dmg + ' (' + damage + '-' + armor + ')</p>'
-        if (newHp !== hp) {
-            content += '<p><strong>' + game.i18n.localize('CAIRN.HitProtection') + '</strong>: <s>' + hp + '</s> => ' + newHp + '</p>'
-        } else {
-            content += '<p><strong>' + game.i18n.localize('CAIRN.HitProtection') + '</strong>: ' + hp + '</p>'
-        }
-        if (newStr !== str) {
-            content += '<p><strong>' + game.i18n.localize('STR') + '</strong>: <s>' + str + '</s> => ' + newStr + '</p>'
-        }
+        const { hp, str, newHp, newStr } = data;
+        if (str == 0) return postCard('damage-applied', { dead: true }, { token });
 
-        if (newStr < str) {
-            if (newStr === 0) {
-                content += '<strong>' + game.i18n.localize('CAIRN.Dead') + '</strong>'
-            } else {
-                content += '<p><strong>' + game.i18n.localize('CAIRN.StrSave') + '</strong></p>'
-                content += '<button type="button" class="roll-str-save">' + game.i18n.localize('CAIRN.RollStrSave') + '</button>'
-            }
-        } else if (newHp === 0 && hp !== 0) {
-            content += '<p><strong>' + game.i18n.localize('CAIRN.Scars') + '</strong></p>'
-            this._rollScarsTable(dmg);
-        }
+        if (newHp !== hp) changes.push({ label: localize('CAIRN.HitProtection'), from: hp, to: newHp });
+        if (newStr !== str) changes.push({ label: localize('STR'), from: str, to: newStr });
 
-        ChatMessage.create({
-            user: game.user._id,
-            speaker: ChatMessage.getSpeaker({ token: token }),
-            content: content,
-        }, {})
-
+        const dead = newStr < str && newStr === 0;
+        const strSave = newStr < str && newStr !== 0;
+        const scars = newStr >= str && newHp === 0 && hp !== 0;
+        await postCard('damage-applied', { changes, dead, strSave, scars }, { token });
+        if (scars) await this._rollScarsTable(dmg, token);
     }
 
-    static async _rollScarsTable(damage) {
-        const table = await findCompendiumItem("cairn.utils", "Scars");
-        const roll = new Roll(damage.toString());
-        await table.draw({ roll });
+    static async _rollScarsTable(damage, token) {
+        const table = await findCompendiumItem(`${SYSTEM_ID}.utils`, "Scars");
+        const roll = await new Roll(damage.toString()).evaluate();
+        const { results } = await table.draw({ roll, displayChat: false }); // HDA: cartão do tema
+        if (!results.length) return;
+        await postNotice({ title: game.i18n.localize('CAIRN.Scars'), html: await results[0].getHTML() }, { token });
     }
 
     static async _rollStrSave(token, html) {
         const roll = await evaluateFormula("d20cs<=@STR", token.actor.getRollData());
         const label = game.i18n.format("CAIRN.Save", { key: game.i18n.localize("STR") });
         const rolled = roll.terms[0].results[0].result;
-        const result = roll.total === 0 ? game.i18n.localize("CAIRN.Fail") : game.i18n.localize("CAIRN.Success");
-        const resultCls = roll.total === 0 ? "failure" : "success";
-        roll.toMessage({
-            speaker: ChatMessage.getSpeaker({ token: token }),
-            flavor: label,
-            content: `<div class="dice-roll"><div class="dice-result"><div class="dice-formula">${roll.formula}</div><div class="dice-tooltip" style="display: none;"><section class="tooltip-part"><div class="dice"><header class="part-header flexrow"><span class="part-formula">${roll.formula}</span></header><ol class="dice-rolls"><li class="roll die d20">${rolled}</li></ol></div></section></div><h4 class="dice-total ${resultCls}">${result} (${rolled})</h4</div></div>`,
-        });
+        await postRoll(roll, 'test', { // HDA
+            label,
+            target: token.actor.getRollData().STR,
+            natural: rolled,
+            success: roll.total !== 0,
+        }, { token });
         html.querySelector(".roll-str-save").setAttribute('disabled', 'disabled')
     }
 }

@@ -54,10 +54,10 @@
         </nav>
         <section class="content">
             <div class="tab {{tabs.description.cssClass}}" data-group="primary" data-tab="description">
-                {{> "systems/cairn/templates/parts/editor.hbs" name="system.description" value=system.description enriched=enrichedDescription editable=isEditable}}
+                {{> "systems/herdeiros/templates/parts/editor.hbs" name="system.description" value=system.description enriched=enrichedDescription editable=isEditable}}
             </div>
             <div class="tab {{lookup (lookup tabs 'crit-dmg') 'cssClass'}}" data-group="primary" data-tab="crit-dmg">
-                {{> "systems/cairn/templates/parts/editor.hbs" name="system.criticalDamage" value=system.criticalDamage enriched=enrichedCriticalDamage editable=isEditable}}
+                {{> "systems/herdeiros/templates/parts/editor.hbs" name="system.criticalDamage" value=system.criticalDamage enriched=enrichedCriticalDamage editable=isEditable}}
             </div>
         </section>
     </div>

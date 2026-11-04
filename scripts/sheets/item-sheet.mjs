@@ -13,7 +13,7 @@ export class CairnItemSheet extends BaseItemSheet() {
   static DEFAULT_OPTIONS = foundry.utils.mergeObject(
     super.DEFAULT_OPTIONS,
     {
-      classes: ['cairn', 'sheet', 'item'],
+      classes: ['cairn', 'sheet', 'item', 'themed', 'theme-light'], // HDA: o cairn.css força fundo branco
       position: { width: 480, height: 480 },
       window: { resizable: true },
       form: { submitOnChange: true },

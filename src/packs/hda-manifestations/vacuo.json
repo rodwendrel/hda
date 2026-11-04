@@ -1,0 +1,43 @@
+{
+  "_id": "COz6xLGyjtrKZx23",
+  "name": "Vácuo",
+  "type": "manifestation",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>Você impõe sua vontade sobre o ar ao redor do alvo, que fica incapaz de emitir qualquer som por 1d6 minutos. Para ele, é como se o mundo tivesse sido desligado.</p>",
+    "weightless": true,
+    "equipped": false,
+    "bulky": false,
+    "cost": {
+      "value": 0
+    },
+    "quantity": 1,
+    "category": "subtle",
+    "costBonus": 0,
+    "domain": "common",
+    "hpCost": "",
+    "effectFormula": "",
+    "effectType": "none",
+    "healStabilityLoss": "",
+    "ignoresArmor": false,
+    "requiresTrueName": false,
+    "calmNoTest": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

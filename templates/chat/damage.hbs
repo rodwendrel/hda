@@ -1,0 +1,19 @@
+{{!-- Rolagem de dano (substitui dmg-roll-card.hbs). { label, formula, total, targetsLabel, targets, ability, willDamage, ignoreArmor, willAttack } --}}
+<div class="hda-card hda-card--damage">
+  <div class="hda-tag">{{label}}</div>
+  <div class="hda-result bad">
+    <span class="hda-fo">{{formula}}{{#if targetsLabel}} → {{targetsLabel}}{{/if}}</span>
+    <span class="hda-tot">{{total}}</span>
+    <span class="hda-res">{{#if willDamage}}{{localize 'HDA.WillDamage'}}{{else}}{{localize 'CAIRN.Damage'}}{{/if}}{{#if ignoreArmor}} · {{localize 'HDA.IgnoresArmor'}}{{/if}}</span>
+  </div>
+  {{#if targets}}
+  <div class="hda-btns">
+    <button type="button" class="hda-pri apply-dmg" data-targets="{{targets}}" data-amount="{{total}}" data-ability="{{ability}}" data-ignore-armor="{{ignoreArmor}}">{{localize 'CAIRN.ApplyDamage'}}</button>
+  </div>
+  {{else}}
+  <div class="hda-txt">{{localize 'HDA.NoTargets'}}</div>
+  {{/if}}
+  {{#if willAttack}}
+  <div class="hda-btns"><button type="button" data-hda-action="willDamage">{{localize 'HDA.WillDamage'}} ({{willAttack}})</button></div>
+  {{/if}}
+</div>

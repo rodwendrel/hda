@@ -1,0 +1,14 @@
+{{!-- Estabilidade chegou a 0. { insanity, maxFrom, maxTo, overflow, wilFrom, wilTo, delirious, lost, surtosLink } --}}
+<div class="hda-card hda-card--insanity">
+  <div class="hda-ttl">{{localize 'HDA.Insanity'}} {{insanity}}/3</div>
+  <div class="hda-chg"><span>{{localize 'HDA.StabilityMax'}}</span><span><s>{{maxFrom}}</s> → <b>{{maxTo}}</b></span></div>
+  <div class="hda-chg"><span>{{localize 'HDA.Attunement'}}</span><b>+1</b></div>
+  {{#if overflow}}<div class="hda-chg"><span>{{localize 'WIL'}} ({{localize 'HDA.Overflow'}} {{overflow}})</span><span><s>{{wilFrom}}</s> → <b>{{wilTo}}</b></span></div>{{/if}}
+  <div class="hda-txt">{{localize 'HDA.MarkInFiction'}}</div>
+  {{#if delirious}}<div class="hda-tag v">{{localize 'HDA.Delirious'}}</div>{{/if}}
+  {{#if lost}}
+  <div class="hda-tag v">{{localize 'HDA.LostFinalBreak'}}</div>
+  <div class="hda-txt">{{{surtosLink}}}</div>
+  {{/if}}
+  <div class="hda-btns"><button type="button" data-hda-action="recordMark">{{localize 'HDA.RecordInMarks'}}</button></div>
+</div>

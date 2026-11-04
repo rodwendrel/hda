@@ -1,3 +1,4 @@
+import { migrateMvpFlags } from '../hda/rules.mjs';
 import { settings } from '../settings.mjs';
 
 const { DialogV2 } = foundry.applications.api;
@@ -16,6 +17,16 @@ export class CairnActor extends Actor {
     return super.create(data, options);
   }
 
+  /**
+   * HDA: as flags do módulo MVP viram `system.mind`. Fica aqui, e não no
+   * `migrateData` do DataModel, porque aquele só recebe `system`, sem `flags`.
+   * @override
+   */
+  static migrateData(source, options) {
+    migrateMvpFlags(source);
+    return super.migrateData(source, options);
+  }
+
   /** @override */
   getRollData() {
     const data = super.getRollData();
@@ -23,6 +34,11 @@ export class CairnActor extends Actor {
     // `@STR` reads better in a formula than `@abilities.STR.value`.
     for (const [key, ability] of Object.entries(data.abilities)) {
       if (!(key in data)) data[key] = ability.value;
+    }
+    // HDA: Estabilidade e Sintonia nas fórmulas.
+    if (this.system.mind) {
+      data.STAB = this.system.mind.stability.value;
+      data.ATT = this.system.mind.attunement;
     }
     return data;
   }

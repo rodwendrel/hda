@@ -1,32 +1,82 @@
 {
-  "id": "cairn",
+  "id": "herdeiros",
   "type": "system",
-  "title": "Cairn",
-  "description": "Cairn for FoundryVTT",
-  "version": "0.23",
+  "title": "Herdeiros do Abismo (Cairn)",
+  "description": "Fantasia sombria sobre o Cairn 1e: Estabilidade, Sintonia, Insanidade e Ressonância. Fork do sistema Cairn de Yochai Gal (código MIT; regras do Cairn e de Herdeiros do Abismo sob CC-BY-SA 4.0; versão brasileira do Cairn por Rafa Arruda).",
+  "version": "0.1.0",
   "compatibility": {
     "minimum": "14",
     "verified": "14"
   },
   "documentTypes": {
     "Actor": {
-      "character": { "htmlFields": ["biography", "notes"] },
-      "npc": { "htmlFields": ["description", "notes"] },
-      "container": { "htmlFields": ["biography", "description"] }
+      "character": {
+        "htmlFields": [
+          "biography",
+          "notes",
+          "mind.marks"
+        ]
+      },
+      "npc": {
+        "htmlFields": [
+          "description",
+          "notes"
+        ]
+      },
+      "container": {
+        "htmlFields": [
+          "biography",
+          "description"
+        ]
+      }
     },
     "Item": {
-      "item": { "htmlFields": ["description", "criticalDamage"] },
-      "weapon": { "htmlFields": ["description", "criticalDamage"] },
-      "armor": { "htmlFields": ["description", "criticalDamage"] },
-      "spellbook": { "htmlFields": ["description", "criticalDamage"] },
-      "object": { "htmlFields": ["description", "criticalDamage"] }
+      "item": {
+        "htmlFields": [
+          "description",
+          "criticalDamage"
+        ]
+      },
+      "weapon": {
+        "htmlFields": [
+          "description",
+          "criticalDamage"
+        ]
+      },
+      "armor": {
+        "htmlFields": [
+          "description",
+          "criticalDamage"
+        ]
+      },
+      "spellbook": {
+        "htmlFields": [
+          "description",
+          "criticalDamage"
+        ]
+      },
+      "object": {
+        "htmlFields": [
+          "description",
+          "criticalDamage"
+        ]
+      },
+      "manifestation": {
+        "htmlFields": [
+          "description"
+        ]
+      }
     }
   },
   "license": "LICENSE.txt",
-  "url": "https://github.com/yochaigal/Cairn-FoundryVTT/",
-  "manifest": "https://github.com/yochaigal/Cairn-FoundryVTT/releases/latest/download/system.json",
-  "download": "https://github.com/yochaigal/Cairn-FoundryVTT/releases/latest/download/system.zip",
+  "url": "https://github.com/rodwendrel/hda",
+  "manifest": "https://github.com/rodwendrel/hda/releases/latest/download/system.json",
+  "download": "https://github.com/rodwendrel/hda/releases/latest/download/system.zip",
   "authors": [
+    {
+      "name": "Rodrigo Ferreira",
+      "url": "https://github.com/rodwendrel"
+    },
     {
       "name": "yochaigal",
       "url": "https://yochaigal.itch.io/"
@@ -34,13 +84,21 @@
     {
       "name": "Oskar Świda",
       "url": "https://github.com/oswida"
+    },
+    {
+      "name": "Rafa Arruda (versão brasileira do Cairn)"
     }
   ],
   "esmodules": [
     "scripts/main.mjs"
   ],
   "styles": [
-    { "src": "css/cairn.css" }
+    {
+      "src": "css/cairn.css"
+    },
+    {
+      "src": "css/hda-theme.css"
+    }
   ],
   "packs": [
     {
@@ -48,94 +106,160 @@
       "label": "Armor",
       "path": "packs/armor.db",
       "type": "Item",
-      "system": "cairn"
+      "system": "herdeiros"
     },
     {
       "name": "character-traits",
       "label": "Character Traits",
       "path": "packs/character-traits.db",
       "type": "RollTable",
-      "system": "cairn"
+      "system": "herdeiros"
     },
     {
       "name": "expeditionary-gear",
       "label": "Expeditionary Gear",
       "path": "packs/expeditionary-gear.db",
       "type": "Item",
-      "system": "cairn"
+      "system": "herdeiros"
     },
     {
       "name": "extra",
       "label": "Extra",
       "path": "packs/extra.db",
       "type": "Item",
-      "system": "cairn"
+      "system": "herdeiros"
     },
     {
       "name": "gear-tables",
       "label": "Gear Tables",
       "path": "packs/gear-tables.db",
       "type": "RollTable",
-      "system": "cairn"
+      "system": "herdeiros"
     },
     {
       "name": "character-creation-tables-srd",
       "label": "Character Creation Tables - SRD",
       "path": "packs/character-creation-tables-srd.db",
       "type": "RollTable",
-      "system": "cairn"
+      "system": "herdeiros"
     },
     {
       "name": "utils",
       "label": "Utils",
       "path": "packs/utils.db",
       "type": "RollTable",
-      "system": "cairn"
+      "system": "herdeiros"
     },
     {
       "name": "monsters",
       "label": "Monsters",
       "path": "packs/monsters.db",
       "type": "Actor",
-      "system": "cairn"
+      "system": "herdeiros"
     },
     {
       "name": "spellbooks",
       "label": "Spellbooks",
       "path": "packs/spellbooks.db",
       "type": "Item",
-      "system": "cairn"
+      "system": "herdeiros"
     },
     {
       "name": "more-spellbooks",
       "label": "More Spellbooks",
       "path": "packs/more-spellbooks.db",
       "type": "Item",
-      "system": "cairn"
+      "system": "herdeiros"
     },
     {
       "name": "tools",
       "label": "Tools",
       "path": "packs/tools.db",
       "type": "Item",
-      "system": "cairn"
+      "system": "herdeiros"
     },
     {
       "name": "trinkets",
       "label": "Trinkets",
       "path": "packs/trinkets.db",
       "type": "Item",
-      "system": "cairn"
+      "system": "herdeiros"
     },
     {
       "name": "weapons",
       "label": "Weapons",
       "path": "packs/weapons.db",
       "type": "Item",
-      "system": "cairn"
+      "system": "herdeiros"
+    },
+    {
+      "name": "hda-manifestations",
+      "label": "Manifestações",
+      "path": "packs/hda-manifestations",
+      "type": "Item",
+      "system": "herdeiros",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "hda-tables",
+      "label": "Tabelas de Herdeiros",
+      "path": "packs/hda-tables",
+      "type": "RollTable",
+      "system": "herdeiros",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "hda-backgrounds",
+      "label": "Antecedentes",
+      "path": "packs/hda-backgrounds",
+      "type": "RollTable",
+      "system": "herdeiros",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "hda-creatures",
+      "label": "Criaturas",
+      "path": "packs/hda-creatures",
+      "type": "Actor",
+      "system": "herdeiros",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "hda-pregens",
+      "label": "Personagens Prontos",
+      "path": "packs/hda-pregens",
+      "type": "Actor",
+      "system": "herdeiros",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "packFolders": [
+    {
+      "name": "Herdeiros do Abismo",
+      "sorting": "m",
+      "packs": [
+        "hda-manifestations",
+        "hda-tables",
+        "hda-backgrounds",
+        "hda-creatures",
+        "hda-pregens"
+      ]
+    },
     {
       "name": "Cairn - Items",
       "sorting": "a",
@@ -211,5 +335,6 @@
     "units": "ft"
   },
   "primaryTokenAttribute": "abilities.STR",
-  "secondaryTokenAttribute": "hp"
+  "secondaryTokenAttribute": "hp",
+  "socket": true
 }

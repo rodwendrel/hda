@@ -1,0 +1,43 @@
+{
+  "_id": "mXtI853MqOTjrBpw",
+  "name": "Distorção Sensorial",
+  "type": "manifestation",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>Você reescreve um dos sentidos do alvo: aliados viram monstros, o chão vira areia movediça, insetos rastejam sob a pele, ou a visão some numa estática colorida.</p>",
+    "weightless": true,
+    "equipped": false,
+    "bulky": false,
+    "cost": {
+      "value": 0
+    },
+    "quantity": 1,
+    "category": "manifest",
+    "costBonus": 1,
+    "domain": "common",
+    "hpCost": "",
+    "effectFormula": "",
+    "effectType": "none",
+    "healStabilityLoss": "",
+    "ignoresArmor": false,
+    "requiresTrueName": false,
+    "calmNoTest": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

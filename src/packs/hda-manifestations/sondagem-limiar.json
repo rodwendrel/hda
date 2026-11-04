@@ -1,0 +1,43 @@
+{
+  "_id": "sqa4ABDkv4V3QfPx",
+  "name": "Sondagem Limiar",
+  "type": "manifestation",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>Você projeta a consciência através da Estase, chamando o nome ou o conceito de uma entidade. Você não a vê, mas sente a presença como uma pressão esmagadora. Ela pode responder com imagens, enigmas ou exigências. <strong>Sempre</strong> atrai atenção indesejada.</p>",
+    "weightless": true,
+    "equipped": false,
+    "bulky": false,
+    "cost": {
+      "value": 0
+    },
+    "quantity": 1,
+    "category": "violent",
+    "costBonus": 1,
+    "domain": "common",
+    "hpCost": "",
+    "effectFormula": "",
+    "effectType": "none",
+    "healStabilityLoss": "",
+    "ignoresArmor": false,
+    "requiresTrueName": false,
+    "calmNoTest": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

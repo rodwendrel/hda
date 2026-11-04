@@ -1,0 +1,310 @@
+{
+  "_id": "33pDyHXi7QEDnyHT",
+  "name": "Origens",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "",
+  "results": [
+    {
+      "_id": "wjgFfWIjdxlNYRFj",
+      "type": "text",
+      "name": "Império de Alberus",
+      "description": "Sabe ler; um lugar numa Casa de Calor (enquanto ninguém desconfiar).",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "ctLxujsK6IMUqu62",
+      "type": "text",
+      "name": "O Espinhaço",
+      "description": "Não passa frio em túneis nem minas; pederneira e isca.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "items": [
+            {
+              "name": "Pederneira e isca",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/tinder-box.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "72Ej3PxxfnSxU6Sd"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "LzpSKt3CcWxmsQ3x",
+      "type": "text",
+      "name": "Baluarte da Rocha Fria",
+      "description": "Língua de sinais do Baluarte; anda sem fazer barulho.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "9XfWHmZ4iWdikrRY",
+      "type": "text",
+      "name": "Liga Mercantil",
+      "description": "Um contato num porto; +2d6 moedas de prata.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "silver": "2d6"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "gzozd3L1qBtgbRx9",
+      "type": "text",
+      "name": "Caelia",
+      "description": "Sabe onde há abrigo e quem está em guerra com quem; uma arma tirada de um morto.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "items": [
+            {
+              "name": "Arma tirada de um morto",
+              "type": "weapon",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d6",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "yZH7gJUgaU9SxWOn"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "D2rk7B81WsaIngT3",
+      "type": "text",
+      "name": "Bosques Pálidos",
+      "description": "Não precisa de fogo para dormir (sem Fadiga pelo frio); bálsamo de cura (x2).",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "items": [
+            {
+              "name": "Bálsamo de cura",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/bottle.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 2,
+                  "max": 2
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "oQnjF6uHdlxCdeI0"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    }
+  ],
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_id": "PJM6SEgi0M1xBRT0",
+  "name": "Sangria",
+  "type": "manifestation",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>Você abre a própria pele e arremessa o sangue em projéteis duros como vidro, à distância: <strong>2d6 de dano</strong>. O sangue é seu, e por isso o custo também sai dos PG: <strong>mais 1d3 PG</strong>.</p>",
+    "weightless": true,
+    "equipped": false,
+    "bulky": false,
+    "cost": {
+      "value": 0
+    },
+    "quantity": 1,
+    "category": "manifest",
+    "costBonus": 2,
+    "domain": "visceral",
+    "hpCost": "1d3",
+    "effectFormula": "2d6",
+    "effectType": "damage",
+    "healStabilityLoss": "",
+    "ignoresArmor": false,
+    "requiresTrueName": false,
+    "calmNoTest": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

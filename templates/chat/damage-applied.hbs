@@ -1,0 +1,11 @@
+{{!-- Resultado de Damage.applyToTarget. { changes:[{label, from, to}], strSave, dead, scars, delirious } --}}
+<div class="hda-card hda-card--applied">
+  {{#each changes}}<div class="hda-chg"><span>{{label}}</span><span>{{#unless (eq from to)}}<s>{{from}}</s> → {{/unless}}<b>{{to}}</b></span></div>{{/each}}
+  {{#if dead}}<div class="hda-tag v">{{localize 'CAIRN.Dead'}}</div>{{/if}}
+  {{#if delirious}}<div class="hda-tag v">{{localize 'HDA.Delirious'}}</div>{{/if}}
+  {{#if scars}}<div class="hda-tag v">{{localize 'CAIRN.Scars'}}</div>{{/if}}
+  {{#if strSave}}
+  <div class="hda-tag v">{{localize 'CAIRN.StrSave'}}</div>
+  <div class="hda-btns"><button type="button" class="roll-str-save">{{localize 'CAIRN.RollStrSave'}}</button></div>
+  {{/if}}
+</div>

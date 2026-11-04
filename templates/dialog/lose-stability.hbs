@@ -1,0 +1,11 @@
+{{!-- Perder Estabilidade: tabela de Exposição (A.3), fórmula livre, resistência. --}}
+<div class="hda-cast">
+  <div class="hda-tag">{{names}}</div>
+  <select name="exposure">
+    <option value="">{{localize 'HDA.OtherFormula'}}</option>
+    {{#each exposures}}<option value="{{formula}}" data-label="{{label}}">{{label}} ({{formula}})</option>{{/each}}
+  </select>
+  <label>{{localize 'HDA.Formula'}} <input type="text" name="formula" value="{{formula}}" placeholder="1d6" /></label>
+  <label>{{localize 'HDA.Source'}} <input type="text" name="source" value="{{source}}" /></label>
+  <label><input type="checkbox" name="resist" /> {{localize 'HDA.CanResist'}}</label>
+</div>

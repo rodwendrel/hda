@@ -1,0 +1,358 @@
+{
+  "_id": "5kT6uVGxx6mxQfdx",
+  "name": "Lopo Jusarte",
+  "type": "character",
+  "img": "systems/herdeiros/assets/portraits/lopo-jusarte.jpg",
+  "system": {
+    "hp": {
+      "value": 2,
+      "max": 2
+    },
+    "abilities": {
+      "STR": {
+        "value": 9,
+        "max": 9
+      },
+      "DEX": {
+        "value": 10,
+        "max": 10
+      },
+      "WIL": {
+        "value": 13,
+        "max": 13
+      }
+    },
+    "background": "Escrivão",
+    "origin": "Império de Alberus",
+    "biography": "<p><em>Do Império de Alberus. Passou a vida copiando os papéis de outras pessoas. Sabe ler o que está escrito, e também o que foi apagado.</em></p><p><strong>Sabe:</strong> ler e escrever, contratos, leis; um lugar numa Casa de Calor.</p><p><strong>Gancho:</strong> copiou à mão a lista de nomes do próximo censo, e o nome da irmã dele está lá.</p>",
+    "notes": "",
+    "deprived": false,
+    "panicked": false,
+    "gold": 10,
+    "slots": null,
+    "containers": [],
+    "features": [],
+    "mind": {
+      "stability": {
+        "value": 23,
+        "max": 23
+      },
+      "attunement": 0,
+      "insanity": 0,
+      "awakened": false,
+      "resonating": false,
+      "marks": "",
+      "lost": false
+    }
+  },
+  "items": [
+    {
+      "name": "Rações",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "QvBfJGqjeweLx6O4"
+    },
+    {
+      "name": "Tocha",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "er2LCMtoFjslLDrt"
+    },
+    {
+      "name": "Adaga",
+      "type": "weapon",
+      "img": "systems/herdeiros/tokens/weapons/dagger.webp",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": true,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "d6",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "U4xLfjrFT2P5Nsix"
+    },
+    {
+      "name": "Tinta e pena",
+      "type": "item",
+      "img": "systems/herdeiros/tokens/gear/writing-supply.webp",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "fzvY9njn39R5jHT2"
+    },
+    {
+      "name": "Selo de cera",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "0NIrXWir42YcOI86"
+    },
+    {
+      "name": "Documentos em branco",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "pdlXI34EjkyvaQJL"
+    },
+    {
+      "name": "Carta de Integridade",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "d68GxkOOncXo9xle"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "prototypeToken": {
+    "name": "Lopo Jusarte",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "texture": {
+      "src": "systems/herdeiros/assets/portraits/lopo-jusarte.jpg"
+    }
+  }
+}

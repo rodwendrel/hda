@@ -16,6 +16,22 @@ export function actorBaseFields(f) {
   };
 }
 
+/** HDA: a mente (seção 4.1). Os derivados ficam em `CharacterData.prepareDerivedData`. */
+export function mindFields(f) {
+  const count = (options = {}) =>
+    new f.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0, ...options });
+  const flag = () => new f.BooleanField({ required: true, nullable: false, initial: false });
+  return new f.SchemaField({
+    stability: new f.SchemaField({ value: count(), max: count() }),
+    attunement: count(),
+    insanity: count({ max: 3 }),
+    awakened: flag(),
+    resonating: flag(),
+    marks: new f.HTMLField({ required: true, blank: true, initial: '' }),
+    lost: flag(),
+  });
+}
+
 /** A feature: a named trait and the things it says it modifies. */
 export function featureField(f) {
   const flag = () => new f.BooleanField({ required: true, nullable: false, initial: false });

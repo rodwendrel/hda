@@ -2,7 +2,7 @@ import { BaseTypeDataModel } from '@vttforge/core';
 import { settings } from '../../settings.mjs';
 import { liftCost } from './templates.mjs';
 
-const ICONS = { spellbook: 'book', weapon: 'sword', armor: 'shield' };
+const ICONS = { spellbook: 'book', weapon: 'sword', armor: 'shield', manifestation: 'brain' }; // HDA: brain
 
 /** What every Cairn item derives, whatever its type. */
 export function itemDataModel(defineSchema) {

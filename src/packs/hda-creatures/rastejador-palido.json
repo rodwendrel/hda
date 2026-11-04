@@ -1,0 +1,145 @@
+{
+  "_id": "AHGT8xwGec5B5I3U",
+  "name": "Rastejador Pálido",
+  "type": "npc",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "hp": {
+      "value": 8,
+      "max": 8
+    },
+    "abilities": {
+      "STR": {
+        "value": 15,
+        "max": 15
+      },
+      "DEX": {
+        "value": 13,
+        "max": 13
+      },
+      "WIL": {
+        "value": 6,
+        "max": 6
+      }
+    },
+    "background": "",
+    "description": "<p>Se não foi notado, 1º ataque Aprimorado; caça pelo som.</p>",
+    "notes": "",
+    "gold": 0,
+    "armor": 1,
+    "slots": {
+      "value": 0
+    },
+    "features": [],
+    "willAttack": "",
+    "stabilityAura": ""
+  },
+  "items": [
+    {
+      "name": "2 garras",
+      "type": "weapon",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": true,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "d6+d6",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "SbP21GDiKYV6NJbv"
+    },
+    {
+      "name": "Couraça natural",
+      "type": "armor",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": true,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "armor": 1,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "D8IM5RH0Rada2zIw"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "prototypeToken": {
+    "name": "Rastejador Pálido",
+    "actorLink": false,
+    "disposition": -1,
+    "sight": {
+      "enabled": false
+    },
+    "texture": {
+      "src": "icons/svg/mystery-man.svg"
+    }
+  }
+}

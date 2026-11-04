@@ -1,0 +1,10 @@
+{{!-- Teste de atributo. Substitui o HTML montado à mão em #onRollAbility e _rollStrSave.
+     { label, target, natural, success } — o roll vai em rolls[] da mensagem. --}}
+<div class="hda-card hda-card--test">
+  <div class="hda-tag">{{label}} · {{target}}</div>
+  <div class="hda-result {{#if success}}ok{{else}}bad{{/if}}">
+    <span class="hda-fo">1d20</span>
+    <span class="hda-tot">{{natural}}</span>
+    <span class="hda-res">{{#if success}}{{localize 'CAIRN.Success'}}{{else}}{{localize 'CAIRN.Fail'}}{{/if}}</span>
+  </div>
+</div>

@@ -1,0 +1,361 @@
+{
+  "_id": "E6wxTaASZLI2XH2X",
+  "name": "Eyria",
+  "type": "character",
+  "img": "systems/herdeiros/assets/portraits/eyria.jpg",
+  "system": {
+    "hp": {
+      "value": 3,
+      "max": 3
+    },
+    "abilities": {
+      "STR": {
+        "value": 8,
+        "max": 8
+      },
+      "DEX": {
+        "value": 11,
+        "max": 11
+      },
+      "WIL": {
+        "value": 16,
+        "max": 16
+      }
+    },
+    "background": "Vidente",
+    "origin": "Bosques Pálidos",
+    "biography": "<p><em>Dos Bosques Pálidos. Cresceu sem fogo, entre árvores que caçam calor. Sonha coisas que depois acontecem, e nem sempre na ordem certa.</em></p><p><strong>Sabe:</strong> sonhos, presságios, folclore; não sofre Fadiga pelo frio.</p><p><strong>Gancho:</strong> sonhou com esta cidade antes de pisar nela.</p>",
+    "notes": "",
+    "deprived": false,
+    "panicked": false,
+    "gold": 11,
+    "slots": null,
+    "containers": [],
+    "features": [],
+    "mind": {
+      "stability": {
+        "value": 26,
+        "max": 26
+      },
+      "attunement": 0,
+      "insanity": 0,
+      "awakened": true,
+      "resonating": false,
+      "marks": "",
+      "lost": false
+    }
+  },
+  "items": [
+    {
+      "name": "Rações",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "twt0xUEbYzJgi8vZ"
+    },
+    {
+      "name": "Tocha",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "2ZZWYAiSX2gAhP6C"
+    },
+    {
+      "name": "Adaga",
+      "type": "weapon",
+      "img": "systems/herdeiros/tokens/weapons/dagger.webp",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": true,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "d6",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "wZfyDUQKb1xc2pQv"
+    },
+    {
+      "name": "Ossos de adivinhação",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "jpBjskAQMnzizII6"
+    },
+    {
+      "name": "Láudano",
+      "type": "item",
+      "img": "systems/herdeiros/tokens/gear/bottle.webp",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "uxXH1m0aJMP6kDEH"
+    },
+    {
+      "name": "Bálsamo",
+      "type": "item",
+      "img": "systems/herdeiros/tokens/gear/bottle.webp",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 2,
+          "max": 2
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "P8VlZdwxxHIYufEC"
+    },
+    {
+      "name": "Percepção Ressonante",
+      "type": "manifestation",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p>Você fecha os olhos e \"escuta\" o mundo com a mente. Não é uma visão, é uma sensação sinestésica: o que tem forte carga de Ressonância \"cheira\" a ozônio, \"soa\" como um zumbido baixo ou \"tem gosto\" de metal. Você sente outros Ressonantes, lugares de grande sofrimento e objetos impregnados de poder. <em>Usada com calma, dispensa o teste.</em></p>",
+        "weightless": true,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "category": "subtle",
+        "costBonus": 0,
+        "domain": "common",
+        "hpCost": "",
+        "effectFormula": "",
+        "effectType": "none",
+        "healStabilityLoss": "",
+        "ignoresArmor": false,
+        "requiresTrueName": false,
+        "calmNoTest": true
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "mBCQ3HGuJgxfxxpb"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "prototypeToken": {
+    "name": "Eyria",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "texture": {
+      "src": "systems/herdeiros/assets/portraits/eyria.jpg"
+    }
+  }
+}

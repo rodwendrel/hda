@@ -1,0 +1,2899 @@
+{
+  "_id": "TNfBLnxv4XSQbgFP",
+  "name": "Antecedentes",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "",
+  "results": [
+    {
+      "_id": "GebXiNvyFwhoJCVA",
+      "type": "text",
+      "name": "Ladrão de Becos",
+      "description": "Sabe: furtar, abrir fechaduras, sumir na multidão.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Gazuas",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/key.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "UtX6xqt8VqntbsUt"
+            },
+            {
+              "name": "Adaga",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/dagger.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d6",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "WSSBZ2kgaQGfDcs8"
+            },
+            {
+              "name": "Capuz escuro",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/cloak.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "DH1Bu3ITU5Zc7DXk"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "4fysGbYEMf8ClV7y",
+      "type": "text",
+      "name": "Vigia",
+      "description": "Sabe: vigiar, perceber movimento, atirar do alto.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Arco longo",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/long-bow.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": true,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d8",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "A7i3GIvdYSprEFWE"
+            },
+            {
+              "name": "Aljava",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "UoM127vx0RXdtnfU"
+            },
+            {
+              "name": "Apito",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/whistle.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "O1gox2wQnJGfUjfB"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "aX6ab4g6MU0L9dTq",
+      "type": "text",
+      "name": "Salteador",
+      "description": "Sabe: emboscar, se esconder, fugir.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Besta",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/crossbow.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": true,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d10",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "2sxQuxqAzvjIZACL"
+            },
+            {
+              "name": "Corda",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/rope.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "eHTicIdCfBwlp0bt"
+            },
+            {
+              "name": "Máscara de pano",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "s1L7zQVxG6hCFGRe"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "WVLnd6ODaQIgHNxw",
+      "type": "text",
+      "name": "Soldado Desertor",
+      "description": "Sabe: lutar em formação, marchar, se esconder de patrulhas.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Espada",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/sword.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d8",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "r1wDY1xAO4IvVG4I"
+            },
+            {
+              "name": "Jaquetão",
+              "type": "armor",
+              "img": "systems/herdeiros/tokens/armor/leather.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "armor": 1,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "2xxeNcFmxoa1Izxg"
+            },
+            {
+              "name": "Insígnia arrancada",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "T5y37xRZWVHkjnfh"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "V8xukKzPUOSyy1lR",
+      "type": "text",
+      "name": "Miliciano de Vilarejo",
+      "description": "Sabe: defender, intimidar, conhecer todos da vila.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Lança",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/spear.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d8",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "zxkKFvgTLtXYGTn8"
+            },
+            {
+              "name": "Escudo",
+              "type": "armor",
+              "img": "systems/herdeiros/tokens/armor/shield.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "armor": 1,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "0k5ZRaz1UogcTwSC"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "BwZLVpSJALtJGqpQ",
+      "type": "text",
+      "name": "Cirurgião de Campo",
+      "description": "Sabe: tratar ferimentos, amputar, ervas.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Serra e bisturis",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "js0lDbAxZHw2Ppxn"
+            },
+            {
+              "name": "Bandagens",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 3,
+                  "max": 3
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "YGw2YscL5ZtLRRa7"
+            },
+            {
+              "name": "Láudano",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/bottle.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 1,
+                  "max": 1
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "gZkbHAw9e6mni1cg"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "xbjisHhzmjxaF0Lt",
+      "type": "text",
+      "name": "Saqueador de Ruínas",
+      "description": "Sabe: ruínas, armadilhas, avaliar relíquias.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Pá",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "qOUIhlF4iMvstX9w"
+            },
+            {
+              "name": "Lanterna",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/lantern.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "GUv08CtYn8mApKaQ"
+            },
+            {
+              "name": "Pé de cabra",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "QypZDIIJKqrykYY2"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "6bCrO9gdkMtghrwW",
+      "type": "text",
+      "name": "Caçador da Penumbra",
+      "description": "Sabe: rastrear, caçar em silêncio, ler a fauna cega.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Arco",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/short-bow.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d6",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "RUk6h1aHvFeCuBEV"
+            },
+            {
+              "name": "Armadilha",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/large-trap.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "xX2Blxex4UnrmHiu"
+            },
+            {
+              "name": "Peles de frio",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/armor/leather.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "ND88ZeuBtplAsf7m"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "6RXVGsPK6HlZ3MQx",
+      "type": "text",
+      "name": "Escrivão",
+      "description": "Sabe: ler e escrever, contratos, leis e papéis oficiais.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Tinta e pena",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/writing-supply.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "iZN8SnCxvVoI7LiT"
+            },
+            {
+              "name": "Selo de cera",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "mIgs2MLMX94XrT2S"
+            },
+            {
+              "name": "Documentos em branco",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "q8N0C4u0OPnjkjR0"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "BjfN0Nxv7SPiHm2w",
+      "type": "text",
+      "name": "Mercenário",
+      "description": "Sabe: lutar por dinheiro, negociar contratos.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Espada",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/sword.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d8",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "GTPu37uxvjKBBqrS"
+            },
+            {
+              "name": "Adaga",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/dagger.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d6",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "QmCSUds2xtb0Jogu"
+            },
+            {
+              "name": "Cota de malha",
+              "type": "armor",
+              "img": "systems/herdeiros/tokens/armor/leather.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": true,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "armor": 2,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "xX7NfAomOU9ut1en"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "B5n9wHN2UEN2QsLL",
+      "type": "text",
+      "name": "Quebra-Raiz",
+      "description": "Sabe: colher Raízes Umbrais sem morrer.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Machado",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/battle-axe.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d8",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "Jt4KXX3OzmvDU9XM"
+            },
+            {
+              "name": "Luvas grossas",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "9qBxDYxIPCGxQ1TT"
+            },
+            {
+              "name": "Raízes Umbrais (noites de fogo)",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 3,
+                  "max": 3
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "zv9e7MlzUfCMuhxT"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "QYflq6bqMYbcXyj4",
+      "type": "text",
+      "name": "Andarilho",
+      "description": "Sabe: sobreviver, rastrear, achar abrigo.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Cajado",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/staff.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d6",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "jJduwrEaUJkVqVVD"
+            },
+            {
+              "name": "Saco de dormir",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/sleeping-bag.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "d0ruJftMOqHn22Gg"
+            },
+            {
+              "name": "Mapa rasgado",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "PCIui5xtEjDxSGdg"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "hgUZFiHxxaRPncmA",
+      "type": "text",
+      "name": "Coveiro",
+      "description": "Sabe: cuidar dos mortos, saber quando não estão mortos.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Pá",
+              "type": "weapon",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d6",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "EFPm8BDJ8r5RKQVa"
+            },
+            {
+              "name": "Lamparina",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/lantern.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "gv3WWd6Z6t0kAsxp"
+            },
+            {
+              "name": "Sal grosso",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/salt-pack.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "SxdGbM5z3UNn7Vol"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "U3YuulYJUPiexH04",
+      "type": "text",
+      "name": "Ferreiro",
+      "description": "Sabe: forjar, consertar armas e armaduras.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": false,
+          "items": [
+            {
+              "name": "Martelo",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/war-hammer.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d6",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "aCowAx42X4Ydl7Ja"
+            },
+            {
+              "name": "Avental de couro",
+              "type": "armor",
+              "img": "systems/herdeiros/tokens/armor/leather.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "armor": 1,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "gzz2E3AzRxOZRL8c"
+            },
+            {
+              "name": "Ferramentas",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "Q7nmjPUyY0ytpC8u"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "CLg2Kia7uVXXWPkb",
+      "type": "text",
+      "name": "Contrabandista",
+      "description": "Sabe: portos, mercado negro, rotas escondidas.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": true,
+          "items": [
+            {
+              "name": "Faca",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/dagger.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d6",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "ruYtF41LucIufxm7"
+            },
+            {
+              "name": "Carta de Integridade falsa",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "ADgURt5rUkm2jFx1"
+            },
+            {
+              "name": "Baú com fundo falso",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "seGHxamJvJKxZTu0"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "EriD5eAfwp0BA2xJ",
+      "type": "text",
+      "name": "Vidente",
+      "description": "Sabe: sonhos, presságios, folclore.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": true,
+          "items": [
+            {
+              "name": "Cartas ou ossos de adivinhação",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "8b3WCWH1FZgsDKms"
+            },
+            {
+              "name": "Láudano",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/bottle.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 1,
+                  "max": 1
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "aFkiKDHK2jG4GqjU"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "1XOHJa1RZ6zpPtAx",
+      "type": "text",
+      "name": "Curandeira de Vila",
+      "description": "Sabe: ervas, partos, superstições, acalmar os aflitos.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        17,
+        17
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": true,
+          "items": [
+            {
+              "name": "Bálsamo",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/bottle.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 2,
+                  "max": 2
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "soiZjHqjSktlThGu"
+            },
+            {
+              "name": "Ervas",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "aWKlmeW804UdlSTu"
+            },
+            {
+              "name": "Amuleto de fio",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "2S8TExhg4cY4nKX5"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "xEuWp8p1SeHab4lQ",
+      "type": "text",
+      "name": "Duelista",
+      "description": "Sabe: lutar um contra um, ler o oponente.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        18,
+        18
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": true,
+          "items": [
+            {
+              "name": "Espada fina",
+              "type": "weapon",
+              "img": "systems/herdeiros/tokens/weapons/sword.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": true,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "d8",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "ySqxDqRRhJkI9X5y"
+            },
+            {
+              "name": "Luvas",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "yxoymwwNttcov8wn"
+            },
+            {
+              "name": "Dívida de honra",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": true,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "wmzRHXTpFAE0QO0x"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "xz57Hynt7cmGbGHr",
+      "type": "text",
+      "name": "Sonâmbulo",
+      "description": "Sabe: fala e anda dormindo; às vezes vê o que não está lá.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        19,
+        19
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": true,
+          "items": [
+            {
+              "name": "Cobertor",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/blanket.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "mHNbf7Gf9bkkO9Ea"
+            },
+            {
+              "name": "Corda para se amarrar à noite",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/rope.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "F1k0jhkS6xqTmooa"
+            },
+            {
+              "name": "Diário que não lembra de ter escrito",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "EVkRqMPizkCPVCoP"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "WwajiCGK2NPl0xPa",
+      "type": "text",
+      "name": "Erudito",
+      "description": "Sabe: ler e escrever, línguas antigas, teoria do Abismo.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        20,
+        20
+      ],
+      "drawn": false,
+      "flags": {
+        "herdeiros": {
+          "awakened": true,
+          "items": [
+            {
+              "name": "Tomo de anotações",
+              "type": "item",
+              "img": "icons/svg/item-bag.svg",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "Y3k4AM9WlrXxVjGP"
+            },
+            {
+              "name": "Tinta e pena",
+              "type": "item",
+              "img": "systems/herdeiros/tokens/gear/writing-supply.webp",
+              "system": {
+                "description": "",
+                "weightless": false,
+                "equipped": false,
+                "bulky": false,
+                "cost": {
+                  "value": 0
+                },
+                "quantity": 1,
+                "damageFormula": "",
+                "criticalDamage": "",
+                "blast": false,
+                "uses": {
+                  "value": 0,
+                  "max": 0
+                }
+              },
+              "effects": [],
+              "folder": null,
+              "sort": 0,
+              "ownership": {
+                "default": 0
+              },
+              "flags": {},
+              "_stats": {
+                "coreVersion": "14.369",
+                "systemId": "herdeiros",
+                "systemVersion": "0.1.0",
+                "createdTime": null,
+                "modifiedTime": null,
+                "lastModifiedBy": null,
+                "compendiumSource": null,
+                "duplicateSource": null
+              },
+              "_id": "vRxk2QfmOuxRF2Lj"
+            }
+          ]
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    }
+  ],
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

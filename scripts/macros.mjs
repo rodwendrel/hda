@@ -1,4 +1,5 @@
-import { settings } from './settings.mjs';
+import { settings, SYSTEM_ID } from './settings.mjs';
+import { Damage } from './damage.mjs';
 import { evaluateFormula, getInfoFromDropData } from './utils.mjs';
 
 /**
@@ -16,7 +17,7 @@ export const createCairnMacro = async (data, slot) => {
         type: "script",
         img: item.img,
         command: 'await foundry.applications.ui.Hotbar.toggleDocumentSheet("' + item.uuid + '")',
-        flags: { "cairn.itemMacro": true },
+        flags: { [`${SYSTEM_ID}.itemMacro`]: true },
       });
       await game.user.assignHotbarMacro(macro, slot);
     }
@@ -40,7 +41,7 @@ export const createCairnMacro = async (data, slot) => {
       type: "script",
       img: item.img,
       command,
-      flags: { "cairn.itemMacro": true },
+      flags: { [`${SYSTEM_ID}.itemMacro`]: true },
     });
   }
   await game.user.assignHotbarMacro(macro, slot);
@@ -76,24 +77,6 @@ export const rollItemMacro = async (actorId, itemId) => {
     panicLabel
     : "";
 
-  const targetedTokens = Array.from(game.user.targets).map((t) => t.id);
-
-  let targetIds;
-  if (targetedTokens.length == 0) targetIds = null;
-  else if (targetedTokens.length == 1) targetIds = targetedTokens[0];
-  else {
-    targetIds = targetedTokens[0];
-    for (let index = 1; index < targetedTokens.length; index++) {
-      const element = targetedTokens[index];
-      targetIds = targetIds.concat(";", element);
-    }
-  }
-  
-  const rollMessageTpl = "systems/cairn/templates/chat/dmg-roll-card.hbs";
-  const tplData = { label: label, targets: targetIds };
-  const msg = await foundry.applications.handlebars.renderTemplate(rollMessageTpl, tplData);
-  roll.toMessage({    
-    speaker: ChatMessage.getSpeaker({ actor: actor }),
-    flavor: msg,
-  });
+  // HDA: o cartão de dano é o mesmo da ficha.
+  await Damage.postRoll(actor, roll, { label });
 };

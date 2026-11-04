@@ -1,0 +1,10 @@
+{{!-- Aviso genérico do sistema. { title, tag, lines, html, changes:[{label, from, to}], total, undone } --}}
+<div class="hda-card hda-card--notice {{#if undone}}hda-annulled{{/if}}">
+  {{#if title}}<div class="hda-ttl">{{title}}</div>{{/if}}
+  {{#if tag}}<div class="hda-tag">{{tag}}</div>{{/if}}
+  {{#if total}}<div class="hda-total">{{total}}</div>{{/if}}
+  {{#each lines}}<div class="hda-txt">{{this}}</div>{{/each}}
+  {{#if html}}<div class="hda-txt hda-card-html">{{{html}}}</div>{{/if}}
+  {{#each changes}}<div class="hda-chg"><span>{{label}}</span><span><s>{{from}}</s> → <b>{{to}}</b></span></div>{{/each}}
+  <div class="hda-btns">{{#unless undone}}<button type="button" data-hda-action="undo">{{localize 'HDA.Undo'}}</button>{{/unless}}</div>
+</div>

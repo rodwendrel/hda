@@ -1,0 +1,145 @@
+{
+  "_id": "WTNSkD2OStZqxK2I",
+  "name": "Soldado da Guarda Rubra",
+  "type": "npc",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "hp": {
+      "value": 6,
+      "max": 6
+    },
+    "abilities": {
+      "STR": {
+        "value": 13,
+        "max": 13
+      },
+      "DEX": {
+        "value": 10,
+        "max": 10
+      },
+      "WIL": {
+        "value": 12,
+        "max": 12
+      }
+    },
+    "background": "",
+    "description": "<p>Com outro Guarda ao lado, ataque Aprimorado.</p>",
+    "notes": "",
+    "gold": 0,
+    "armor": 2,
+    "slots": {
+      "value": 0
+    },
+    "features": [],
+    "willAttack": "",
+    "stabilityAura": ""
+  },
+  "items": [
+    {
+      "name": "Lança",
+      "type": "weapon",
+      "img": "systems/herdeiros/tokens/weapons/spear.webp",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": true,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "d8",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "3x0t09TxQG0qHz4A"
+    },
+    {
+      "name": "Couraça natural",
+      "type": "armor",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": true,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "armor": 2,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "rucIY95bXiwT5dhK"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "prototypeToken": {
+    "name": "Soldado da Guarda Rubra",
+    "actorLink": false,
+    "disposition": -1,
+    "sight": {
+      "enabled": false
+    },
+    "texture": {
+      "src": "icons/svg/mystery-man.svg"
+    }
+  }
+}

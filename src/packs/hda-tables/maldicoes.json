@@ -1,0 +1,459 @@
+{
+  "_id": "jbXDtsba6dLoVj9w",
+  "name": "Maldições",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "",
+  "results": [
+    {
+      "_id": "KcW4gZQpNl2ax9Xx",
+      "type": "text",
+      "name": "Sussurros",
+      "description": "<strong>Sussurros:</strong> você ouve vozes por 1d6 dias. −1 na VON para testes.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        11,
+        12
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "kBn3COoyNADA0a0F",
+      "type": "text",
+      "name": "Sangue que sobe",
+      "description": "<strong>Sangue que sobe:</strong> seu nariz sangra <em>para cima</em> por 1d6 horas. Qualquer um vê.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        13,
+        14
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "x4YKi2mr1LyXIFwa",
+      "type": "text",
+      "name": "Eco",
+      "description": "<strong>Eco:</strong> a Manifestação se repete sozinha 1d6 rodadas depois, contra um alvo aleatório.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        15,
+        16
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "TK3UkpVJUHuxBduj",
+      "type": "text",
+      "name": "Sombra atrasada",
+      "description": "<strong>Sombra atrasada:</strong> sua sombra se move um instante depois de você até o próximo descanso longo.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        21,
+        22
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "Oxh3SVt8q4nK817G",
+      "type": "text",
+      "name": "Notado",
+      "description": "<strong>Notado:</strong> algo do outro lado da Estase reparou em você. O Guardião guarda isso.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        23,
+        24
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "Q8GTN31iXatCTVse",
+      "type": "text",
+      "name": "Esquecimento",
+      "description": "<strong>Esquecimento:</strong> você esquece o rosto de alguém que ama.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        25,
+        26
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "ddPuuiZsGu0yF7Oa",
+      "type": "text",
+      "name": "Febre fria",
+      "description": "<strong>Febre fria:</strong> perca 1d6 PG, que só voltam depois de uma noite perto do fogo.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        31,
+        32
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "PlxGAt9JRuFgxLSx",
+      "type": "text",
+      "name": "Voz alheia",
+      "description": "<strong>Voz alheia:</strong> por 1d6 horas você fala com a voz de alguém que morreu perto daqui.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        33,
+        34
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "xxllkyPiJein9HJL",
+      "type": "text",
+      "name": "Mãos trêmulas",
+      "description": "<strong>Mãos trêmulas:</strong> ataques Prejudicados e −1 na VON para conjurar até o próximo descanso longo.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        35,
+        36
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "VxVWO8zxTWEHf8lN",
+      "type": "text",
+      "name": "Olhos leitosos",
+      "description": "<strong>Olhos leitosos:</strong> sua visão fica turva por 1d6 dias.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        41,
+        42
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "W9uaKYh6mplUheGj",
+      "type": "text",
+      "name": "Fome que não passa",
+      "description": "<strong>Fome que não passa:</strong> coma o dobro por 1d6 dias ou perca 1 de Estabilidade por dia.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        43,
+        44
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "PNjxbonK6rIQHkrD",
+      "type": "text",
+      "name": "Surdez da mente",
+      "description": "<strong>Surdez da mente:</strong> você não consegue usar Ressonância por 1d6 dias.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        45,
+        46
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "YNeOZx6WUAJNnn6e",
+      "type": "text",
+      "name": "Rachadura",
+      "description": "<strong>Rachadura:</strong> perca 2d6 de Estabilidade (conta para Sintonia).",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        51,
+        52
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "OxdejskXOarXP0XP",
+      "type": "text",
+      "name": "Marca",
+      "description": "<strong>Marca:</strong> surge na sua pele um padrão geométrico permanente, a prova viva de que você é Ressonante.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        53,
+        54
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "pZkSDwHaYYaJTV1w",
+      "type": "text",
+      "name": "Visita",
+      "description": "<strong>Visita:</strong> a emoção mais forte da cena ganha forma como um Eco menor.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        55,
+        56
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "mzwxNrKfuXJO8iEH",
+      "type": "text",
+      "name": "Inversão",
+      "description": "<strong>Inversão:</strong> a Manifestação atinge você.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        61,
+        62
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "4wZiKCP16FyQpx66",
+      "type": "text",
+      "name": "O preço do outro",
+      "description": "<strong>O preço do outro:</strong> o aliado mais próximo perde a Estabilidade que você pagou.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        63,
+        64
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    },
+    {
+      "_id": "uHPBXmIMtrKXf1RS",
+      "type": "text",
+      "name": "Rasgo",
+      "description": "<strong>Rasgo:</strong> abre-se um pequeno rasgo na Estase onde você está. Algo pode atravessar quando o Guardião quiser.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        65,
+        66
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
+    }
+  ],
+  "formula": "1d6*10+1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

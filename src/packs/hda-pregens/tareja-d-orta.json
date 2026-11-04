@@ -1,0 +1,359 @@
+{
+  "_id": "XUPwRskDeRIB5qIS",
+  "name": "Tareja d’Orta",
+  "type": "character",
+  "img": "systems/herdeiros/assets/portraits/tareja-dorta.jpg",
+  "system": {
+    "hp": {
+      "value": 4,
+      "max": 4
+    },
+    "abilities": {
+      "STR": {
+        "value": 13,
+        "max": 13
+      },
+      "DEX": {
+        "value": 15,
+        "max": 15
+      },
+      "WIL": {
+        "value": 14,
+        "max": 14
+      }
+    },
+    "background": "Duelista",
+    "origin": "Caelia",
+    "biography": "<p><em>De Caelia. Aprendeu a lutar porque a vila dela trocava de dono a cada estação. A lâmina zumbe quando ela se concentra, e ela finge que não percebe.</em></p><p><strong>Sabe:</strong> lutar um contra um, ler o oponente.</p><p><strong>Gancho:</strong> deve um duelo de honra a alguém que ela nunca viu o rosto.</p>",
+    "notes": "",
+    "deprived": false,
+    "panicked": false,
+    "gold": 8,
+    "slots": null,
+    "containers": [],
+    "features": [],
+    "mind": {
+      "stability": {
+        "value": 24,
+        "max": 24
+      },
+      "attunement": 0,
+      "insanity": 0,
+      "awakened": true,
+      "resonating": false,
+      "marks": "",
+      "lost": false
+    }
+  },
+  "items": [
+    {
+      "name": "Rações",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "xGbWK3NoPwFrpgOR"
+    },
+    {
+      "name": "Tocha",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "l5i5pxkmnexWCryP"
+    },
+    {
+      "name": "Espada fina",
+      "type": "weapon",
+      "img": "systems/herdeiros/tokens/weapons/sword.webp",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": true,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "d8",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "9L1AlmX7XYxS77x2"
+    },
+    {
+      "name": "Adaga tirada de um morto",
+      "type": "weapon",
+      "img": "systems/herdeiros/tokens/weapons/dagger.webp",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": true,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "d6",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "5yornjtVmwx4IKyw"
+    },
+    {
+      "name": "Luvas",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "damageFormula": "",
+        "criticalDamage": "",
+        "blast": false,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "JdH50xoxyMxLTwak"
+    },
+    {
+      "name": "Jaquetão",
+      "type": "armor",
+      "img": "systems/herdeiros/tokens/armor/leather.webp",
+      "system": {
+        "description": "",
+        "weightless": false,
+        "equipped": true,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "armor": 1,
+        "uses": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "NCGic4mqsPiHZ5la"
+    },
+    {
+      "name": "Lâmina Cinética",
+      "type": "manifestation",
+      "img": "systems/herdeiros/tokens/weapons/sword.webp",
+      "system": {
+        "description": "<p>Você canaliza sua vontade numa arma que segura. Ela não brilha: vibra, zumbindo com uma energia invisível. Por 1d6 rodadas, a arma faz dano <strong>Aprimorado (d12)</strong> e <strong>ignora Armadura</strong>, como se o fio existisse parcialmente em outro lugar. Ela fere criaturas imunes a armas comuns.</p>",
+        "weightless": true,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "category": "subtle",
+        "costBonus": 0,
+        "domain": "common",
+        "hpCost": "",
+        "effectFormula": "",
+        "effectType": "none",
+        "healStabilityLoss": "",
+        "ignoresArmor": true,
+        "requiresTrueName": false,
+        "calmNoTest": true
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "U4EOkhzw6HuE25Fx"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "prototypeToken": {
+    "name": "Tareja d’Orta",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "texture": {
+      "src": "systems/herdeiros/assets/portraits/tareja-dorta.jpg"
+    }
+  }
+}

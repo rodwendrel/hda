@@ -1,0 +1,293 @@
+/* ==========================================================================
+   Herdeiros do Abismo · tema "Sombria"
+   Ponto de partida para o fork (ver a seção 14 da especificação).
+   Camadas, nesta ordem no arquivo:
+     1. tokens e fontes
+     2. fichas e diálogos do sistema (.hda)        — sempre ativos
+     3. cartões de chat do sistema (.hda-card)     — sempre ativos
+     4. interface do Foundry (body.hda-ui)         — só com a configuração "Mesa inteira"
+   Seletores do núcleo conferidos no Foundry 14 build 369. O núcleo não marca
+   .ooc (o sistema põe a classe) nem .dice-total.success (só em HTML próprio).
+   ========================================================================== */
+
+/* 1. TOKENS E FONTES ------------------------------------------------------ */
+
+@font-face { font-family: "IM Fell English SC"; src: url("../fonts/im-fell-english-sc-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "IM Fell English"; src: url("../fonts/im-fell-english-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "IM Fell English"; src: url("../fonts/im-fell-english-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Source Sans 3"; src: url("../fonts/source-sans-3-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Source Sans 3"; src: url("../fonts/source-sans-3-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Source Sans 3"; src: url("../fonts/source-sans-3-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+.hda, .hda-card, .hda-msg, .hda-dialog, body.hda-ui {
+  --hda-bg: #121110;          /* fundo da janela */
+  --hda-panel: #1a1816;       /* cartões, caixas elevadas */
+  --hda-head: #0b0a09;        /* barra de título, barra de abas da lateral */
+  --hda-field: #0f0e0d;       /* fundo de input */
+  --hda-ink: #EDE8E1;         /* texto principal */
+  --hda-muted: #A39C94;       /* rótulos, texto secundário */
+  --hda-rule: #6F6862;        /* bordas de caixa */
+  --hda-blank: #3A3532;       /* divisórias, trilha vazia */
+  --hda-accent: #B8441F;      /* ferrugem: mente, ações principais */
+  --hda-accent-text: #E07A4F; /* ferrugem legível sobre o fundo */
+  --hda-accent-wash: rgba(184, 68, 31, .12);
+  --hda-lz: #4A1E12;          /* losango cheio (Insanidade) */
+  --hda-ok: #9FB08A;          /* sucesso, discreto */
+
+  --hda-font-title: "IM Fell English SC", "IM Fell English", serif;
+  --hda-font-num: "IM Fell English", serif;
+  --hda-font-body: "Source Sans 3", "Signika", sans-serif;
+}
+
+/* utilitários comuns */
+.hda .hda-lab, .hda-card .hda-lab, .hda-dialog .hda-lab {
+  font: 700 10px/1.2 var(--hda-font-body); letter-spacing: .15em; text-transform: uppercase; color: var(--hda-muted);
+}
+.hda .hda-big { font-family: var(--hda-font-num); font-size: 28px; line-height: 1.1; }
+.hda .hda-big small { font-size: 17px; color: var(--hda-muted); }
+
+/* 2. FICHA E DIÁLOGOS ----------------------------------------------------- */
+
+.hda.sheet .window-content,
+.hda-dialog .window-content {
+  background: var(--hda-bg); background-image: none;
+  color: var(--hda-ink); font-family: var(--hda-font-body);
+  padding: 14px 18px 12px;
+}
+.hda.sheet .window-header,
+.hda-dialog .window-header {
+  background: var(--hda-head); border-bottom: 1px solid var(--hda-blank);
+  color: var(--hda-muted); font-family: var(--hda-font-title); font-size: 15px;
+}
+
+/* inputs: transparentes, só a linha de baixo, números na fonte serifada */
+.hda input[type="text"], .hda input[type="number"], .hda select, .hda-dialog input, .hda-dialog select {
+  background: transparent; border: none; border-bottom: 1px solid var(--hda-blank); border-radius: 0;
+  color: var(--hda-ink); font-family: var(--hda-font-body); box-shadow: none;
+}
+.hda input:focus, .hda-dialog input:focus, .hda select:focus { border-bottom-color: var(--hda-accent); outline: none; box-shadow: none; }
+.hda input[type="checkbox"], .hda-dialog input[type="checkbox"] { accent-color: var(--hda-accent); }
+.hda button, .hda-dialog button {
+  height: 28px; background: transparent; color: var(--hda-ink);
+  border: 1px solid var(--hda-rule); border-radius: 3px;
+  font: 600 12.5px var(--hda-font-body);
+}
+.hda button:hover:not(:disabled), .hda-dialog button:hover:not(:disabled) { border-color: var(--hda-accent-text); color: var(--hda-accent-text); background: var(--hda-accent-wash); }
+.hda button.hda-pri, .hda-dialog button.hda-pri, .hda-dialog button[data-action="ok"], .hda-dialog .form-footer button.default {
+  border-color: var(--hda-accent); color: var(--hda-accent-text); background: var(--hda-accent-wash); font-weight: 700;
+}
+.hda button:disabled { opacity: .4; }
+
+/* grade da ficha */
+.hda .hda-sheet { display: flex; flex-direction: column; gap: 10px; height: 100%; }
+.hda .hda-hd { display: flex; gap: 14px; }
+.hda .hda-hd .portrait { width: 96px; height: 96px; flex: none; object-fit: cover; border: 1px solid var(--hda-rule); }
+.hda .hda-who { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.hda .hda-who .name-input {
+  font-family: var(--hda-font-title); font-size: 30px; height: auto; line-height: 1.1;
+  border-bottom-color: var(--hda-rule); padding: 0 0 4px;
+}
+.hda .hda-badge { display: inline-flex; align-items: center; gap: 6px; font: 700 10.5px var(--hda-font-body); letter-spacing: .16em; text-transform: uppercase; color: var(--hda-accent-text); }
+.hda .hda-badge::before { content: ""; width: 8px; height: 8px; background: var(--hda-accent); transform: rotate(45deg); }
+.hda .hda-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+.hda .hda-row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.hda .hda-row4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.hda .hda-box { border: 1px solid var(--hda-rule); border-radius: 3px; padding: 5px 10px; min-width: 0; }
+.hda .hda-box .hda-pair { display: flex; align-items: baseline; gap: 4px; }
+.hda .hda-box .hda-pair input[type="number"] {
+  width: 2.2em; border: none; padding: 0; height: auto;
+  font-family: var(--hda-font-num); font-size: 28px; line-height: 1.1; text-align: left;
+}
+.hda .hda-box .hda-pair input.hda-max, .hda .hda-box .hda-pair span { font-size: 17px; color: var(--hda-muted); }
+.hda .hda-box.hda-wil { border-color: var(--hda-accent); }
+.hda a.hda-roll { cursor: pointer; font: 700 10px var(--hda-font-body); letter-spacing: .15em; text-transform: uppercase; color: var(--hda-muted); text-decoration: none; }
+.hda a.hda-roll::after { content: " · testar"; }
+.hda a.hda-roll:hover, .hda .hda-wil a.hda-roll { color: var(--hda-accent-text); }
+.hda .hda-chk { display: flex; align-items: center; gap: 7px; font-size: 13px; padding-top: 5px; }
+
+/* mente */
+.hda .hda-mind { display: grid; grid-template-columns: 1.7fr .8fr 1fr 1fr; gap: 8px; }
+.hda .hda-mind .hda-stab { border: 1.5px solid var(--hda-accent); }
+.hda .hda-mind .hda-stab .hda-lab { color: var(--hda-accent-text); }
+.hda .hda-track { display: flex; gap: 2px; margin-top: 5px; }
+.hda .hda-track span { flex: 1; height: 5px; background: var(--hda-accent); }
+.hda .hda-track span.off { background: var(--hda-blank); }
+.hda .hda-lz { display: flex; gap: 10px; padding: 9px 0 0 3px; }
+.hda .hda-lz a { width: 12px; height: 12px; transform: rotate(45deg); border: 1.4px solid var(--hda-ink); cursor: pointer; }
+.hda .hda-lz a.on { background: var(--hda-ink); }
+.hda .hda-lz a.last { border-color: var(--hda-accent); }
+.hda .hda-lz a.last.on { background: var(--hda-lz); }
+.hda .hda-alert { color: var(--hda-accent-text); font: 700 11px var(--hda-font-body); letter-spacing: .12em; text-transform: uppercase; }
+
+.hda .hda-acts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+
+/* abas */
+.hda nav.tabs { display: flex; gap: 16px; border-bottom: 1px solid var(--hda-rule); border-top: none; margin-top: 2px; }
+.hda nav.tabs .item { font-family: var(--hda-font-title); font-size: 16px; color: var(--hda-muted); padding-bottom: 4px; text-shadow: none; }
+.hda nav.tabs .item.active { color: var(--hda-ink); border-bottom: 2px solid var(--hda-accent); }
+.hda section.content { flex: 1; min-height: 0; overflow-y: auto; }
+
+/* lista de itens do upstream (parts/items-list.hbs), só reestilizada */
+.hda .cairn-items-list-header { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--hda-muted); padding: 4px 0; border: none; }
+.hda .cairn-items-list-header a { color: var(--hda-ink); font-weight: 600; }
+.hda .cairn-items-list-row { border-bottom: 1px solid var(--hda-blank); padding: 5px 2px; font-size: 14px; }
+.hda .cairn-item-title { color: var(--hda-ink); }
+.hda .cairn-item-tag { font-size: 11.5px; color: var(--hda-muted); background: none; border: none; padding: 0 4px; }
+.hda .cairn-item-controls a { color: var(--hda-muted); }
+.hda .cairn-item-controls a:hover, .hda .item-toggle-equipped.equipped { color: var(--hda-accent-text); }
+.hda .hda-slots { display: inline-flex; gap: 3px; align-items: center; }
+.hda .hda-slots i { width: 9px; height: 9px; border: 1px solid var(--hda-rule); }
+.hda .hda-slots i.f { background: var(--hda-ink); border-color: var(--hda-ink); }
+.hda .hda-slots i.x { background: var(--hda-accent); border-color: var(--hda-accent); }  /* Fadiga ou excesso */
+
+/* aba Ressonância */
+.hda .hda-man { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; align-items: center; border: 1px solid var(--hda-blank); border-radius: 3px; padding: 7px 10px; margin-top: 6px; }
+.hda .hda-man.hda-tome { border-style: dashed; }
+.hda .hda-man .hda-t { font-family: var(--hda-font-num); font-size: 17px; }
+.hda .hda-man button { grid-row: 1 / 3; grid-column: 2; }
+
+/* diálogos (DialogV2 com classes: ['hda-dialog']) */
+.hda-dialog .hda-ttl { font-family: var(--hda-font-num); font-size: 22px; line-height: 1.05; }
+.hda-dialog .hda-tag { font: 700 10.5px var(--hda-font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--hda-accent-text); }
+.hda-dialog .hda-sum { border-top: 1px solid var(--hda-blank); padding-top: 8px; font-size: 13px; color: var(--hda-muted); }
+.hda-dialog .hda-sum b { color: var(--hda-ink); }
+.hda-dialog .form-footer { border-top: 1px solid var(--hda-blank); padding-top: 10px; }
+
+/* 3. CARTÕES DE CHAT DO SISTEMA ------------------------------------------- */
+/* Todo conteúdo gerado pelo sistema começa com <div class="hda-card hda-card--TIPO">.
+   O hook renderChatMessageHTML acrescenta .hda-msg ao <li> da mensagem. */
+
+.hda-card { font-family: var(--hda-font-body); color: var(--hda-ink); display: flex; flex-direction: column; gap: 6px; }
+.hda-card .hda-ttl { font-family: var(--hda-font-num); font-size: 19px; line-height: 1.1; }
+.hda-card .hda-tag { font: 700 10px var(--hda-font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--hda-muted); }
+.hda-card .hda-tag.v { color: var(--hda-accent-text); }
+.hda-card .hda-txt { font-size: 12.5px; line-height: 1.35; color: var(--hda-muted); }
+.hda-card .hda-txt strong { color: var(--hda-ink); font-weight: 600; }
+.hda-card .hda-result { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 10px; border-top: 1px solid var(--hda-blank); padding-top: 6px; }
+.hda-card .hda-result .hda-fo { font-size: 11.5px; color: var(--hda-muted); }
+.hda-card .hda-result .hda-tot { grid-row: 1 / 3; grid-column: 2; min-width: 40px; text-align: center; font-family: var(--hda-font-num); font-size: 30px; line-height: 1; border: 1px solid var(--hda-rule); border-radius: 3px; padding: 3px 6px; }
+.hda-card .hda-result .hda-res { font: 700 12px var(--hda-font-body); letter-spacing: .1em; text-transform: uppercase; }
+.hda-card .hda-result.ok .hda-res { color: var(--hda-ok); }
+.hda-card .hda-result.ok .hda-tot { border-color: #5d6b50; }
+.hda-card .hda-result.bad .hda-res, .hda-card .hda-result.bad .hda-tot { color: var(--hda-accent-text); }
+.hda-card .hda-result.bad .hda-tot { border-color: var(--hda-accent); }
+.hda-card .hda-chg { display: flex; justify-content: space-between; font-size: 12.5px; border-bottom: 1px solid var(--hda-blank); padding: 3px 0; }
+.hda-card .hda-chg s { color: var(--hda-muted); }
+.hda-card .hda-btns { display: flex; gap: 6px; }
+.hda-card .hda-btns button { flex: 1; height: 26px; line-height: 24px; border: 1px solid var(--hda-rule); border-radius: 3px; background: transparent; color: var(--hda-ink); font: 600 12px var(--hda-font-body); }
+.hda-card .hda-btns button.hda-pri { border-color: var(--hda-accent); background: var(--hda-accent-wash); color: var(--hda-accent-text); font-weight: 700; }
+.hda-card .hda-btns button:disabled { opacity: .4; }
+.hda-card .hda-bar { display: grid; grid-template-columns: repeat(var(--hda-max, 24), 1fr); gap: 1.5px; }
+.hda-card .hda-bar span { height: 6px; background: var(--hda-accent); }
+.hda-card .hda-bar span.n { background: var(--hda-accent-text); }   /* perdido agora */
+.hda-card .hda-bar span.l { background: var(--hda-blank); }         /* já faltava */
+.hda-card .hda-d66 { display: inline-block; border: 1px solid var(--hda-accent); color: var(--hda-accent-text); font: 700 12px var(--hda-font-body); padding: 0 6px; border-radius: 2px; }
+.hda-card.hda-annulled { opacity: .55; }
+.hda-card.hda-annulled .hda-ttl { text-decoration: line-through; }
+
+/* a mensagem que contém um cartão: fundo e borda próprios, mesmo sem o tema de mesa */
+:is(.chat-log, .chat-popout, #chat-notifications) .message.hda-msg {
+  background: var(--hda-panel); border: 1px solid var(--hda-blank); border-radius: 3px; color: var(--hda-ink);
+}
+:is(.chat-log, .chat-popout, #chat-notifications) .message.hda-msg.hda-curse { border-color: var(--hda-accent); box-shadow: inset 3px 0 0 var(--hda-accent); }
+:is(.chat-log, .chat-popout, #chat-notifications) .message.hda-msg .message-header { color: var(--hda-muted); }
+:is(.chat-log, .chat-popout, #chat-notifications) .message.hda-msg .message-sender { font-family: var(--hda-font-title); font-size: 15px; color: var(--hda-ink); }
+
+/* 4. INTERFACE DO FOUNDRY (opcional: configuração hda-ui-theme = "table") -- */
+/* A classe body.hda-ui é posta pelo sistema no "ready". Use junto com o tema escuro do núcleo. */
+
+body.hda-ui {
+  --font-primary: var(--hda-font-body);
+  --color-text-primary: var(--hda-ink);
+  --color-text-secondary: var(--hda-muted);
+  --color-text-emphatic: #fff;
+  --color-fieldset-border: var(--hda-rule);
+  --color-hover-bg: var(--hda-accent-wash);
+  --color-level-success: var(--hda-ok);
+  --color-level-error: var(--hda-accent-text);
+}
+
+/* barra lateral */
+body.hda-ui #sidebar { background: var(--hda-bg); }
+body.hda-ui #sidebar-tabs { background: var(--hda-head); border-color: var(--hda-blank); }
+body.hda-ui #sidebar-tabs [aria-pressed="true"],
+body.hda-ui #sidebar-tabs .active { color: var(--hda-accent-text); box-shadow: inset 0 -2px 0 var(--hda-accent); }
+
+/* todas as mensagens */
+body.hda-ui :where(.chat-log, .chat-popout, #chat-notifications) .message {
+  background: var(--hda-panel); border: 1px solid var(--hda-blank); border-radius: 3px;
+  color: var(--hda-ink); font-family: var(--hda-font-body); font-size: 13.5px;
+}
+body.hda-ui :is(.chat-log, .chat-popout) .message .message-sender { font-family: var(--hda-font-title); font-size: 15px; color: var(--hda-ink); }
+body.hda-ui :is(.chat-log, .chat-popout) .message .message-metadata { font-size: 10px; color: var(--hda-muted); }
+/* fala de personagem (IC) em serifada; fora do jogo (OOC) sem caixa */
+body.hda-ui :is(.chat-log, .chat-popout) .message.ic .message-content { font-family: var(--hda-font-num); font-size: 15.5px; }
+body.hda-ui :is(.chat-log, .chat-popout) .message.ooc { background: transparent; border-color: transparent !important; border-left: 2px solid var(--hda-blank) !important; border-radius: 0; } /* o núcleo põe a cor do usuário inline */
+body.hda-ui :is(.chat-log, .chat-popout) .message.ooc .message-content { color: var(--hda-muted); }
+body.hda-ui :is(.chat-log, .chat-popout) .message.whisper { border-style: dashed; border-color: var(--hda-rule); }
+body.hda-ui :is(.chat-log, .chat-popout) .message.whisper .whisper-to { color: var(--hda-accent-text); font-weight: 600; }
+body.hda-ui :is(.chat-log, .chat-popout) .message.blind { border-style: dotted; }
+
+/* rolagens do núcleo e do upstream (dice-roll / dice-total.success|failure) */
+body.hda-ui .message .dice-roll .dice-formula,
+body.hda-ui .message .dice-roll .dice-total {
+  background: transparent; border: 1px solid var(--hda-rule); border-radius: 3px; box-shadow: none; color: var(--hda-ink);
+}
+body.hda-ui .message .dice-roll .dice-formula { font-size: 11.5px; color: var(--hda-muted); border-color: var(--hda-blank); }
+body.hda-ui .message .dice-roll .dice-total { font-family: var(--hda-font-num); font-size: 24px; font-weight: 400; }
+body.hda-ui .message .dice-total.success, body.hda-ui .message .dice-total.critical { color: var(--hda-ok); border-color: #5d6b50; }
+body.hda-ui .message .dice-total.failure, body.hda-ui .message .dice-total.fumble { color: var(--hda-accent-text); border-color: var(--hda-accent); }
+body.hda-ui .message .dice-tooltip .dice-rolls .roll { color: var(--hda-ink); }
+body.hda-ui .message button { background: transparent; border: 1px solid var(--hda-rule); color: var(--hda-ink); font-family: var(--hda-font-body); }
+body.hda-ui .message button:hover { border-color: var(--hda-accent-text); color: var(--hda-accent-text); }
+
+/* caixa de mensagem */
+body.hda-ui #chat-message { background: var(--hda-bg); border: 1px solid var(--hda-rule); border-radius: 3px; color: var(--hda-ink); font-family: var(--hda-font-body); }
+body.hda-ui #chat-message:focus { border-color: var(--hda-accent); box-shadow: none; }
+
+/* notificações (toasts) */
+body.hda-ui #notifications .notification { background: var(--hda-panel); color: var(--hda-ink); border: 1px solid var(--hda-blank); border-left: 3px solid var(--hda-accent); font-family: var(--hda-font-body); }
+
+/* janelas de outros documentos (diário, itens, tabelas): só cabeçalho e fundo */
+body.hda-ui .application .window-header { background: var(--hda-head); color: var(--hda-muted); font-family: var(--hda-font-title); border-bottom: 1px solid var(--hda-blank); }
+
+/* 5. ACRÉSCIMOS DO FORK --------------------------------------------------- */
+
+.hda.sheet .hda-sheet { font-family: var(--hda-font-body); }
+.hda .hda-who input.name-input { background: transparent; }
+.hda .hda-man { grid-template-columns: 1fr auto auto; }
+.hda .hda-man button { grid-row: 1 / 3; grid-column: 2; padding: 0 12px; }
+.hda .hda-man .cairn-item-controls { grid-row: 1 / 3; grid-column: 3; display: flex; gap: 8px; }
+.hda .hda-man .item-description { grid-column: 1 / -1; font-size: 13px; color: var(--hda-muted); padding-top: 4px; }
+.hda .hda-man a.hda-t { color: var(--hda-ink); cursor: pointer; }
+.hda .hda-tools { display: flex; flex-wrap: wrap; gap: 4px 10px; justify-content: flex-end; }
+.hda .hda-lost-link a { color: var(--hda-accent-text); font-size: 11px; background: none; border: none; padding: 0; }
+.hda .hda-marks-label { display: block; margin-top: 12px; }
+.hda .tab[data-tab="resonance"] prose-mirror { min-height: 90px; }
+
+.hda-dialog .hda-cast { display: flex; flex-direction: column; gap: 8px; }
+.hda-dialog .hda-cast label { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.hda-dialog .hda-cast .hda-counter input { width: 3em; text-align: center; }
+.hda-dialog .hda-cast select { width: 100%; }
+.hda-dialog textarea { width: 100%; background: var(--hda-field); color: var(--hda-ink); border: 1px solid var(--hda-blank); }
+.hda-dialog select { color: var(--hda-ink); background: var(--hda-field); }
+.hda-dialog select option { color: var(--hda-ink); background: var(--hda-panel); }
+
+.hda-card .hda-card-html p { margin: 0; }
+.hda-card .hda-total { font-family: var(--hda-font-num); font-size: 30px; line-height: 1; text-align: center; }
+
+/* ficha de Manifestação */
+.item-sheet-grid.manifestation { grid-template-rows: 46px auto 1fr; }
+.item-sheet-grid.manifestation .item-sheet-section-portrait { grid-row: 1 / 3; }
+.item-sheet-grid.manifestation .item-sheet-section-tabs { grid-row: 3; }
+.cairn.item .hda-man-grid { grid-column: 2 / 4; grid-row: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-size: 12px; }
+.cairn.item .hda-man-grid label { display: flex; flex-direction: column; gap: 1px; }
+.cairn.item .hda-man-grid label.hda-check { flex-direction: row; align-items: center; gap: 6px; }
+.cairn.item .hda-man-grid input[type="text"], .cairn.item .hda-man-grid input[type="number"], .cairn.item .hda-man-grid select { height: 24px; }
+.cairn.item .hda-tome-field { grid-column: 2 / 4; }
+
+/* PNJ: ataques à mente, no topo da aba Itens */
+.cairn.npc .hda-npc-mind { display: grid; grid-template-columns: auto 1fr auto 1fr; gap: 6px; align-items: center; padding: 4px 0; font-size: 13px; }
+.cairn.npc .hda-npc-mind a { cursor: pointer; font-weight: 700; }
+.cairn.npc .hda-npc-mind input { height: 24px; text-align: center; }

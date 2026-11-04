@@ -4,7 +4,10 @@ import { universalFields } from './templates.mjs';
 
 function defineSpellbookSchema() {
   const f = fields();
-  return { ...universalFields(f) };
+  return {
+    ...universalFields(f),
+    manifestationUuid: new f.StringField({ required: true, blank: true, initial: '' }), // HDA: o Tomo contém uma Manifestação
+  };
 }
 
 export class SpellbookData extends itemDataModel(defineSpellbookSchema) {}

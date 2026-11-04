@@ -1,0 +1,19 @@
+{{!-- Conjurar. O topo e a linha de resumo são mantidos por wireCastDialog (resonance.mjs). --}}
+<div class="hda-cast" data-wil="{{wil}}">
+  <div class="hda-ttl"></div>
+  <div class="hda-tag"></div>
+  <select name="manifestation" {{#if single}}hidden{{/if}}>
+    {{#each rows}}
+    <option value="{{uuid}}" data-name="{{name}}" data-category="{{categoryLabel}}{{#if viaTome}} · {{localize 'HDA.ViaTome'}}{{/if}}" data-cost="{{costFormula}}" data-true-name="{{requiresTrueName}}" {{#if selected}}selected{{/if}}>{{name}}</option>
+    {{/each}}
+  </select>
+  <label><input type="checkbox" name="calm" checked /> {{localize 'HDA.Calm'}}</label>
+  <label><input type="checkbox" name="scar" {{checked inScar}} /> {{localize 'HDA.InScar'}}</label>
+  <label class="hda-true-name" hidden><input type="checkbox" name="trueName" /> {{localize 'HDA.KnowsTrueName'}}</label>
+  <label class="hda-counter">{{localize 'HDA.Helpers'}} <input type="number" name="extraHelpers" min="0" value="0" /></label>
+  {{#each helpers}}
+  <label><input type="checkbox" name="helper" value="{{uuid}}" checked /> {{name}}</label>
+  {{/each}}
+  {{#if targets}}<div class="hda-lab">{{localize 'HDA.Target'}}: {{targets}}</div>{{/if}}
+  <div class="hda-sum"></div>
+</div>

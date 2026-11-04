@@ -1,0 +1,38 @@
+{{!-- Conjuração. { name, categoryLabel, costFormula, cost, viaTome, requiresTrueName, calm, inScar, scarRoll, helpers, helperCost,
+     test:{target,natural,success,critical}, outcome:'happens'|'failed'|'forced'|'gaveUp'|'curse', forceCost, annulled,
+     stability:{from,to}, attunementDelta, attunement, hpChanges, strSave, undone } --}}
+<div class="hda-card hda-card--cast {{#if annulled}}hda-annulled{{/if}} {{#if undone}}hda-annulled{{/if}}">
+  <div class="hda-ttl">{{name}}</div>
+  <div class="hda-tag v">{{categoryLabel}}{{#if viaTome}} · {{localize 'HDA.ViaTome'}}{{/if}}{{#if requiresTrueName}} · {{localize 'HDA.TrueName'}}{{/if}}</div>
+  {{#if test}}
+  <div class="hda-result {{#if test.success}}ok{{else}}bad{{/if}}">
+    <span class="hda-fo">{{localize 'HDA.WilTest'}} {{test.target}}{{#if helpers}} (+{{helpers}}){{/if}}</span>
+    <span class="hda-tot">{{test.natural}}</span>
+    <span class="hda-res">{{#if test.success}}{{localize 'CAIRN.Success'}}{{else}}{{localize 'CAIRN.Fail'}}{{/if}}</span>
+  </div>
+  {{else}}
+  <div class="hda-txt">{{localize 'HDA.CalmNoTest'}}</div>
+  {{/if}}
+  <div class="hda-chg"><span>{{localize 'HDA.Cost'}} ({{costFormula}}{{#if inScar}} · {{localize 'HDA.Scar'}} d6={{scarRoll}}{{/if}})</span><b>{{cost}}</b></div>
+  {{#if stability}}<div class="hda-chg"><span>{{localize 'HDA.Stability'}}</span><span><s>{{stability.from}}</s> → <b>{{stability.to}}</b></span></div>{{/if}}
+  {{#each hpChanges}}<div class="hda-chg"><span>{{label}}</span><span><s>{{from}}</s> → <b>{{to}}</b></span></div>{{/each}}
+  {{#if strSave}}<div class="hda-tag v">{{localize 'CAIRN.StrSave'}}</div>{{/if}}
+  {{#if attunementDelta}}<div class="hda-txt">{{localize 'HDA.AttunementChanged' delta=attunementDelta value=attunement}}</div>{{/if}}
+  {{#if helperCost}}<div class="hda-txt">{{localize 'HDA.HelpersPaid' cost=helperCost}}</div>{{/if}}
+  {{#if annulled}}<div class="hda-tag v">{{localize 'HDA.Annulled'}}</div>{{/if}}
+  {{#if undone}}<div class="hda-tag">{{localize 'HDA.Undone'}}</div>{{/if}}
+  {{#if (eq outcome 'failed')}}
+  <div class="hda-txt">{{localize 'HDA.CanForce' cost=forceCost}}</div>
+  <div class="hda-btns">
+    <button type="button" class="hda-pri" data-hda-action="force">{{localize 'HDA.Force'}} (−{{forceCost}})</button>
+    <button type="button" data-hda-action="giveUp">{{localize 'HDA.GiveUp'}}</button>
+  </div>
+  {{/if}}
+  {{#if (eq outcome 'forced')}}<div class="hda-tag v">{{localize 'HDA.Forced'}}</div>{{/if}}
+  {{#if (eq outcome 'gaveUp')}}<div class="hda-tag">{{localize 'HDA.GaveUp'}}</div>{{/if}}
+  {{#if (eq outcome 'curse')}}<div class="hda-tag v">{{localize 'HDA.CursedCast'}}</div>{{/if}}
+  <div class="hda-btns">
+    {{#if (or (eq outcome 'happens') (eq outcome 'forced'))}}{{#unless annulled}}<button type="button" data-hda-action="annul">{{localize 'HDA.Annul'}}</button>{{/unless}}{{/if}}
+    {{#unless undone}}<button type="button" data-hda-action="undo">{{localize 'HDA.Undo'}}</button>{{/unless}}
+  </div>
+</div>

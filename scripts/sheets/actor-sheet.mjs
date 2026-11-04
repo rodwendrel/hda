@@ -8,6 +8,12 @@
  */
 import { BaseActorSheet } from '@vttforge/core';
 import { regenerateActor } from '../character-generator.mjs';
+import { Damage } from '../damage.mjs'; // HDA
+import { postRoll } from '../hda/chat.mjs'; // HDA
+import { rollCurse } from '../hda/curses.mjs'; // HDA
+import * as mind from '../hda/mind.mjs'; // HDA
+import { castDialog, resonanceList, ruptureDialog } from '../hda/resonance.mjs'; // HDA
+import { insanityPips, nextInsanity, slotsView, stabilityTrack } from '../hda/rules.mjs'; // HDA
 import { settings, SYSTEM_ID } from '../settings.mjs';
 import { evaluateFormula, getInfoFromDropData, stripPar } from '../utils.mjs';
 
@@ -100,6 +106,7 @@ class CairnActorSheetBase extends BaseActorSheet() {
 
   /** @override */
   async onDropItem(item, event) {
+    if (item.type === 'manifestation') return this.#dropManifestation(item); // HDA
     if (this.actor.isEncumbered()) {
       ui.notifications.warn(game.i18n.localize('CAIRN.Notify.MaxSlotsOccupied'));
       return false;
@@ -119,6 +126,14 @@ class CairnActorSheetBase extends BaseActorSheet() {
       if (left > 0) await item.update({ 'system.quantity': left });
       else await originalActor.deleteEmbeddedDocuments('Item', [item.id]);
     }
+    return true;
+  }
+
+  /** HDA: aprender uma Manifestação não pede espaço, e ninguém a aprende duas vezes. */
+  async #dropManifestation(item) {
+    if (item.actor === this.actor) return false;
+    if (this.actor.items.some((it) => it.type === 'manifestation' && it.name === item.name)) return false;
+    await this.actor.createEmbeddedDocuments('Item', [item.toObject()]);
     return true;
   }
 
@@ -337,12 +352,7 @@ class CairnActorSheetBase extends BaseActorSheet() {
     const label = target.dataset.label
       ? `${game.i18n.localize('CAIRN.RollingDmgWith')} ${target.dataset.label} ${panicLabel}`
       : '';
-    const targets = Array.from(game.user.targets).map((t) => t.id);
-    const flavor = await renderTemplate(`systems/${SYSTEM_ID}/templates/chat/dmg-roll-card.hbs`, {
-      label,
-      targets: targets.length ? targets.join(';') : null,
-    });
-    await roll.toMessage({ speaker: ChatMessage.getSpeaker({ actor: this.actor }), flavor });
+    await Damage.postRoll(this.actor, roll, { label }); // HDA: cartão do tema
   }
 
   static async #onRollAbility(_event, target) {
@@ -350,14 +360,13 @@ class CairnActorSheetBase extends BaseActorSheet() {
     if (!formula) return;
     const roll = await evaluateFormula(formula, this.actor.getRollData());
     const label = target.dataset.label ? `${game.i18n.localize('CAIRN.Rolling')} ${target.dataset.label}` : '';
-    const rolled = roll.terms[0].results[0].result;
-    const result = game.i18n.localize(roll.total === 0 ? 'CAIRN.Fail' : 'CAIRN.Success');
-    const resultCls = roll.total === 0 ? 'failure' : 'success';
-    await roll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: label,
-      content: `<div class="dice-roll"><div class="dice-result"><div class="dice-formula">${roll.formula}</div><div class="dice-tooltip" style="display: none;"><section class="tooltip-part"><div class="dice"><header class="part-header flexrow"><span class="part-formula">${roll.formula}</span></header><ol class="dice-rolls"><li class="roll die d20">${rolled}</li></ol></div></section></div><h4 class="dice-total ${resultCls}">${result} (${rolled})</h4></div></div>`,
-    });
+    // HDA: cartão do tema, em vez do HTML montado em string.
+    await postRoll(roll, 'test', {
+      label,
+      target: foundry.utils.getProperty(this.actor.system, target.dataset.path ?? ''),
+      natural: roll.terms[0].results[0].result,
+      success: roll.total !== 0,
+    }, { actor: this.actor });
   }
 
   static async #onRest() {
@@ -378,10 +387,8 @@ class CairnActorSheetBase extends BaseActorSheet() {
 
   static async #onDieOfFate() {
     const roll = await evaluateFormula('1d6');
-    await roll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: game.i18n.localize('CAIRN.DieOfFate'),
-    });
+    const title = game.i18n.localize('CAIRN.DieOfFate');
+    await postRoll(roll, 'notice', { title, total: roll.total }, { actor: this.actor }); // HDA
   }
 
   static async #onSetEquipmentLimit(event) {
@@ -404,7 +411,7 @@ export class CharacterSheet extends CairnActorSheetBase {
   static DEFAULT_OPTIONS = foundry.utils.mergeObject(
     super.DEFAULT_OPTIONS,
     {
-      classes: ['character'],
+      classes: ['hda', 'character', 'themed', 'theme-dark'], // HDA: a ficha é sempre escura
       window: {
         controls: [
           {
@@ -415,7 +422,22 @@ export class CharacterSheet extends CairnActorSheetBase {
           },
         ],
       },
-      actions: { regenerate: CharacterSheet.#onRegenerate },
+      actions: {
+        regenerate: CharacterSheet.#onRegenerate,
+        // HDA
+        rollStability: CharacterSheet.#onRollStability,
+        loseStability: CharacterSheet.#onLoseStability,
+        recoverStability: CharacterSheet.#onRecoverStability,
+        resonate: CharacterSheet.#onResonate,
+        rollCurse: CharacterSheet.#onRollCurse,
+        setInsanity: CharacterSheet.#onSetInsanity,
+        cast: CharacterSheet.#onCast,
+        castItem: CharacterSheet.#onCastItem,
+        rupture: CharacterSheet.#onRupture,
+        awaken: CharacterSheet.#onAwaken,
+        coldNight: CharacterSheet.#onColdNight,
+        advance: CharacterSheet.#onAdvance,
+      },
     },
     { inplace: false },
   );
@@ -427,12 +449,91 @@ export class CharacterSheet extends CairnActorSheetBase {
       tabs: [
         { id: 'items', group: 'primary', label: 'CAIRN.Items' },
         { id: 'containers', group: 'primary', label: 'CAIRN.Containers' },
+        { id: 'resonance', group: 'primary', label: 'HDA.Resonance' }, // HDA
         { id: 'description', group: 'primary', label: 'CAIRN.Description' },
         { id: 'notes', group: 'primary', label: 'CAIRN.Notes' },
       ],
       initial: 'items',
     },
   };
+
+  /**
+   * HDA: o contexto do tema Sombria (seção 14.4).
+   * @override
+   */
+  async _prepareContext(options) {
+    const context = await super._prepareContext(options);
+    const { actor } = this;
+    const { mind: state, slotsUsed, slotsMax } = actor.system;
+    const fatigue = actor.items.filter((item) => item.system.isFatigue).length;
+    // A Manifestação tem aba própria e não ocupa espaço.
+    context.items = context.items.filter((item) => item.type !== 'manifestation');
+    context.mindView = {
+      track: stabilityTrack(state.stability.value, state.stability.max),
+      pips: insanityPips(state.insanity),
+    };
+    context.slotsView = slotsView(slotsUsed, slotsMax, fatigue);
+    context.resonanceList = await resonanceList(actor);
+    context.canCastAny = context.resonanceList.some((row) => row.canCast);
+    context.isGM = game.user.isGM;
+    context.canAwaken = game.user.isGM && !state.awakened && state.resonating;
+    context.useColdRule = settings.get('hda-cold-rule');
+    context.useAdvancement = settings.get('hda-optional-advancement');
+    context.surtosLink = await TextEditor.enrichHTML(
+      `@UUID[Compendium.${SYSTEM_ID}.hda-tables.RollTable.hdaSurtosFinais0]{${game.i18n.localize('HDA.FinalBreaks')}}`,
+    );
+    context.enrichedMarks = await TextEditor.enrichHTML(state.marks ?? '', { relativeTo: actor, secrets: actor.isOwner });
+    return context;
+  }
+
+  static #onRollStability() {
+    return mind.rollStability(this.actor);
+  }
+
+  static #onLoseStability() {
+    return mind.loseStabilityDialog([this.actor]);
+  }
+
+  static #onRecoverStability() {
+    return mind.recoverStability(this.actor);
+  }
+
+  static #onResonate() {
+    return mind.resonate(this.actor);
+  }
+
+  static #onRollCurse() {
+    return rollCurse(this.actor);
+  }
+
+  static #onSetInsanity(_event, target) {
+    const insanity = nextInsanity(this.actor.system.mind.insanity, Number(target.dataset.value));
+    return this.actor.update({ 'system.mind.insanity': insanity, 'system.mind.lost': insanity >= 3 });
+  }
+
+  static #onCast() {
+    return castDialog(this.actor);
+  }
+
+  static #onCastItem(_event, target) {
+    return castDialog(this.actor, target.dataset.uuid);
+  }
+
+  static #onRupture() {
+    return ruptureDialog(this.actor);
+  }
+
+  static #onAwaken() {
+    return mind.awaken(this.actor);
+  }
+
+  static #onColdNight() {
+    return mind.coldNight(this.actor);
+  }
+
+  static #onAdvance() {
+    return mind.advance(this.actor);
+  }
 
   static async #onRegenerate() {
     const confirmed = await DialogV2.confirm({
@@ -445,7 +546,30 @@ export class CharacterSheet extends CairnActorSheetBase {
 }
 
 export class NpcSheet extends CairnActorSheetBase {
-  static DEFAULT_OPTIONS = foundry.utils.mergeObject(super.DEFAULT_OPTIONS, { classes: ['npc'] }, { inplace: false });
+  static DEFAULT_OPTIONS = foundry.utils.mergeObject(
+    super.DEFAULT_OPTIONS,
+    {
+      classes: ['npc', 'themed', 'theme-light'], // HDA: o cairn.css força fundo branco
+      // HDA: os ataques à mente do PNJ.
+      actions: { rollWillAttack: NpcSheet.#onRollWillAttack, stabilityAura: NpcSheet.#onStabilityAura },
+    },
+    { inplace: false },
+  );
+
+  static async #onRollWillAttack() {
+    const { actor } = this;
+    if (!actor.system.willAttack) return;
+    const roll = await mind.rollSum(actor.system.willAttack, actor.getRollData());
+    await Damage.postRoll(actor, roll, { label: actor.name, ability: 'WIL' });
+  }
+
+  /** A perda ao ser visto recai nos personagens marcados como alvo. */
+  static #onStabilityAura() {
+    const { actor } = this;
+    const targets = Array.from(game.user.targets).map((token) => token.actor);
+    return mind.loseStabilityDialog(targets, { formula: actor.system.stabilityAura, source: actor.name });
+  }
+
   static PARTS = { sheet: { template: `systems/${SYSTEM_ID}/templates/actor/npc-sheet.hbs` } };
   static TABS = {
     primary: {
@@ -460,7 +584,7 @@ export class NpcSheet extends CairnActorSheetBase {
 }
 
 export class ContainerSheet extends CairnActorSheetBase {
-  static DEFAULT_OPTIONS = foundry.utils.mergeObject(super.DEFAULT_OPTIONS, { classes: ['container'] }, { inplace: false });
+  static DEFAULT_OPTIONS = foundry.utils.mergeObject(super.DEFAULT_OPTIONS, { classes: ['container', 'themed', 'theme-light'] }, { inplace: false }); // HDA: tema
   static PARTS = { sheet: { template: `systems/${SYSTEM_ID}/templates/actor/container-sheet.hbs` } };
   static TABS = {
     primary: {

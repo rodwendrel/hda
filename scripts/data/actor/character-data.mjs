@@ -1,6 +1,6 @@
 import { BaseTypeDataModel, fields } from '@vttforge/core';
 import { settings } from '../../settings.mjs';
-import { actorBaseFields, featureField } from './templates.mjs';
+import { actorBaseFields, featureField, mindFields } from './templates.mjs';
 import { prepareInventory } from './inventory.mjs';
 
 function defineCharacterSchema() {
@@ -8,6 +8,8 @@ function defineCharacterSchema() {
   return {
     ...actorBaseFields(f),
     background: new f.StringField({ required: true, blank: true, initial: '' }),
+    origin: new f.StringField({ required: true, blank: true, initial: '' }), // HDA: Origem do cenário
+    mind: mindFields(f), // HDA
     biography: new f.HTMLField({ required: true, blank: true, initial: '' }),
     notes: new f.HTMLField({ required: true, blank: true, initial: '' }),
     deprived: new f.BooleanField({ required: true, nullable: false, initial: false }),
@@ -45,5 +47,10 @@ export class CharacterData extends BaseTypeDataModel(defineCharacterSchema) {
     if (this.usePanic && this.panicked) this.hp.value = 0;
 
     this.characterEquipmentLimit = settings.get('character-inventory-limit');
+
+    // HDA: derivados da mente, nunca salvos.
+    this.mind.delirious = this.abilities.WIL.value <= 0;
+    this.mind.attunementFloor = this.mind.insanity;
+    this.mind.unset = this.mind.stability.max === 0;
   }
 }

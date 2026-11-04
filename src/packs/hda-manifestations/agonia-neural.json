@@ -1,0 +1,43 @@
+{
+  "_id": "H1xwCef8m3dcCUF1",
+  "name": "Agonia Neural",
+  "type": "manifestation",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>Você sobrecarrega os nervos de um alvo visível com dor pura. Não há ferida, mas ele grita e se contorce como se queimasse vivo: <strong>d8 de dano que ignora Armadura</strong>.</p>",
+    "weightless": true,
+    "equipped": false,
+    "bulky": false,
+    "cost": {
+      "value": 0
+    },
+    "quantity": 1,
+    "category": "manifest",
+    "costBonus": 2,
+    "domain": "common",
+    "hpCost": "",
+    "effectFormula": "d8",
+    "effectType": "damage",
+    "healStabilityLoss": "",
+    "ignoresArmor": true,
+    "requiresTrueName": false,
+    "calmNoTest": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

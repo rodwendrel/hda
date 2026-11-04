@@ -1,0 +1,43 @@
+{
+  "_id": "xX8x9KVaFpdp1HxQ",
+  "name": "Repulsão Limiar",
+  "type": "manifestation",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>Uma onda de repulsão pura contra uma entidade do Abismo. Se você conhece o <strong>nome verdadeiro</strong> dela, ganha +2 na VON. Com sucesso, a entidade é arremessada de volta através da Estase em 1d6 rodadas, deixando um vazio que cheira a ozônio.</p>",
+    "weightless": true,
+    "equipped": false,
+    "bulky": false,
+    "cost": {
+      "value": 0
+    },
+    "quantity": 1,
+    "category": "violent",
+    "costBonus": 3,
+    "domain": "common",
+    "hpCost": "",
+    "effectFormula": "",
+    "effectType": "none",
+    "healStabilityLoss": "",
+    "ignoresArmor": false,
+    "requiresTrueName": true,
+    "calmNoTest": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_id": "3KRH0NJydAvyKzMO",
+  "name": "Invocação Aberrante",
+  "type": "manifestation",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>Você rasga a Estase e puxa uma criatura para cá, entre cores invertidas, muco e ectoplasma. Você não tem nenhum controle sobre ela. Só a trouxe.</p>",
+    "weightless": true,
+    "equipped": false,
+    "bulky": false,
+    "cost": {
+      "value": 0
+    },
+    "quantity": 1,
+    "category": "violent",
+    "costBonus": 3,
+    "domain": "common",
+    "hpCost": "",
+    "effectFormula": "",
+    "effectType": "none",
+    "healStabilityLoss": "",
+    "ignoresArmor": false,
+    "requiresTrueName": false,
+    "calmNoTest": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

@@ -1,0 +1,8 @@
+{{!-- Perda ou recuperação de Estabilidade. { source, from, to, max, amount, resisted, attunementDelta, attunement, bar:[{cls}] } --}}
+<div class="hda-card hda-card--stability {{#if undone}}hda-annulled{{/if}}">
+  {{#if source}}<div class="hda-tag">{{source}}{{#if resisted}} · {{localize 'HDA.Resisted'}}{{/if}}</div>{{/if}}
+  <div class="hda-chg"><span>{{localize 'HDA.Stability'}}</span><span><s>{{from}}</s> → <b>{{to}}</b> / {{max}}</span></div>
+  <div class="hda-bar" style="--hda-max: {{max}}">{{#each bar}}<span class="{{cls}}"></span>{{/each}}</div>
+  {{#if attunementDelta}}<div class="hda-txt">{{{localize 'HDA.AttunementChanged' delta=attunementDelta value=attunement}}}</div>{{/if}}
+  <div class="hda-btns"><button type="button" data-hda-action="undo">{{localize 'HDA.Undo'}}</button></div>
+</div>

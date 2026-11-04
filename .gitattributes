@@ -1,0 +1,5 @@
+# HDA: LevelDB e binário; CRLF no arquivo CURRENT corrompe o pack no Windows.
+packs/** binary
+*.woff2 binary
+*.webp binary
+*.jpg binary

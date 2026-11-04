@@ -2,11 +2,14 @@ import { settings } from './settings.mjs';
 /**
  * @param {String} formula
  * @param {Object} [data]
+ * @param {Object} [options]
+ * @param {boolean} [options.sum]  HDA: a notação do Cairn lê `d6+d6` como "o maior
+ *   dos dois", mas custos e Estabilidade somam de verdade (`2d6+6`, `VON + 1d6 + 6`).
  * @return {Promise<Roll>}
  */
-export const evaluateFormula = async (formula, data) => {
-  let f = formula;
-  const cairnDice = settings.get('use-cairn-dice-notation');
+export const evaluateFormula = async (formula, data, { sum = false } = {}) => {
+  let f = String(formula);
+  const cairnDice = !sum && settings.get('use-cairn-dice-notation');
   if (cairnDice && f.includes("+")) {
     f = "{" + f.replaceAll("+", ",") + "}kh";
   }

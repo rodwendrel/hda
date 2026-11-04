@@ -20,11 +20,16 @@ import { ArmorData } from './data/item/armor-data.mjs';
 import { ItemData } from './data/item/item-data.mjs';
 import { ObjectData } from './data/item/object-data.mjs';
 import { SpellbookData } from './data/item/spellbook-data.mjs';
+import { ManifestationData } from './data/item/manifestation-data.mjs'; // HDA
 import { WeaponData } from './data/item/weapon-data.mjs';
 import { CairnActor } from './documents/actor.mjs';
 import { CairnItem } from './documents/item.mjs';
 import { createCairnMacro, rollItemMacro } from './macros.mjs';
-import { registerSettings, settings, SYSTEM_ID } from './settings.mjs';
+import { api } from './hda/api.mjs'; // HDA
+import { bindCard } from './hda/chat.mjs'; // HDA
+import { persistMvpMigrations, watchMvpImports } from './hda/migration.mjs'; // HDA
+import { listenRelay } from './hda/socket.mjs'; // HDA
+import { applyUiTheme, registerSettings, settings, SYSTEM_ID } from './settings.mjs';
 import { CharacterSheet, ContainerSheet, NpcSheet } from './sheets/actor-sheet.mjs';
 import { CairnItemSheet } from './sheets/item-sheet.mjs';
 
@@ -37,6 +42,7 @@ registerSystem({
     armor: ArmorData,
     spellbook: SpellbookData,
     object: ObjectData,
+    manifestation: ManifestationData, // HDA
   },
   actorDocumentClass: CairnActor,
   itemDocumentClass: CairnItem,
@@ -55,6 +61,7 @@ registerSystem({
     CONFIG.Combat.documentClass = CairnCombat;
     CONFIG.Cairn = Cairn;
     game.cairn = { CairnActor, CairnItem, config: Cairn, characterGenerator, rollItemMacro };
+    game.herdeiros = api; // HDA
   },
 
   onAfterInit: () => {
@@ -65,6 +72,7 @@ registerSystem({
       `systems/${SYSTEM_ID}/templates/parts/container-list.hbs`,
       `systems/${SYSTEM_ID}/templates/parts/feature-list.hbs`,
       `systems/${SYSTEM_ID}/templates/parts/editor.hbs`,
+      `systems/${SYSTEM_ID}/templates/parts/manifestation-list.hbs`, // HDA
     ]);
   },
 
@@ -73,6 +81,10 @@ registerSystem({
       createCairnMacro(data, slot);
       return false;
     });
+    listenRelay(); // HDA
+    applyUiTheme(); // HDA
+    watchMvpImports(); // HDA
+    persistMvpMigrations(); // HDA
   },
 });
 
@@ -102,6 +114,7 @@ Hooks.on('renderActorDirectory', (app, html) => {
 });
 
 Hooks.on('renderChatMessageHTML', (message, html, data) => {
+  bindCard(message, html); // HDA
   const token = canvas?.scene?.tokens?.get(message.speaker?.token);
   const mayRoll = token !== undefined && (token.actor.testUserPermission(game.user, 'OWNER') || game.user.isGM);
   for (const btn of html.querySelectorAll('.roll-str-save')) {

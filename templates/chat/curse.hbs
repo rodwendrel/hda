@@ -1,0 +1,10 @@
+{{!-- Maldição (d66). A <li> recebe também .hda-curse. { roll, text, source, otherPrice, cost, canRecord } --}}
+<div class="hda-card hda-card--curse">
+  <div class="hda-ttl">{{localize 'HDA.Curse'}} <span class="hda-d66">d66 · {{roll}}</span></div>
+  {{#if source}}<div class="hda-tag">{{source}}</div>{{/if}}
+  <div class="hda-txt">{{{text}}}</div>
+  <div class="hda-btns">
+    {{#if otherPrice}}<button type="button" class="hda-pri" data-hda-action="otherPrice">{{localize 'HDA.ApplyToAlly'}} (−{{cost}})</button>{{/if}}
+    {{#if canRecord}}<button type="button" data-hda-action="recordMark">{{localize 'HDA.RecordInMarks'}}</button>{{/if}}
+  </div>
+</div>

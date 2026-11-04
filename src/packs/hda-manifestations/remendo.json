@@ -1,0 +1,43 @@
+{
+  "_id": "g6ETNOczSCZPMGvm",
+  "name": "Remendo",
+  "type": "manifestation",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>Você remonta o corpo do alvo à força: ossos voltam ao lugar, a carne se costura e os nervos se religam. O alvo recupera <strong>1d6 + 3 PG</strong>, mas a dor é excruciante: ele perde <strong>1d6 de Estabilidade</strong> (conta para a Sintonia).</p>",
+    "weightless": true,
+    "equipped": false,
+    "bulky": false,
+    "cost": {
+      "value": 0
+    },
+    "quantity": 1,
+    "category": "manifest",
+    "costBonus": 1,
+    "domain": "visceral",
+    "hpCost": "",
+    "effectFormula": "1d6+3",
+    "effectType": "heal",
+    "healStabilityLoss": "1d6",
+    "ignoresArmor": false,
+    "requiresTrueName": false,
+    "calmNoTest": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

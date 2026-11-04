@@ -15,6 +15,7 @@ export function prepareInventory(system, actor) {
 
 export function calcSlotsUsed(system, actor) {
   let total = actor.items.reduce((memo, item) => {
+    if (item.type === 'manifestation') return memo; // HDA: Manifestação não ocupa espaço
     const quantity = item.system.quantity ?? 1;
     if (item.system.bulky) return memo + 2 * quantity;
     if (item.system.weightless) return memo;

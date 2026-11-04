@@ -1,89 +1,136 @@
-{{!-- No <form>: the sheet element already is one. --}}
-<div class="charater-sheet-grid">
+{{!-- HDA: substitui templates/actor/character-sheet.hbs do upstream. Visual "Sombria".
+     Classes da aplicação: ['cairn', 'hda', 'sheet', 'actor', 'character', 'themed', 'theme-dark'].
+     Contexto extra montado em _prepareContext (ver seção 14.4):
+       mindView.track   -> [{ off: bool }]  um item por ponto de Estabilidade máxima
+       mindView.pips    -> [{ on: bool, last: bool, value: n }]  3 losangos
+       slotsView        -> [{ cls: 'f' | 'x' | '' }]  um por espaço (slotsMax)
+       resonanceList    -> manifestações + tomos equipados (ver parts/manifestation-list.hbs)
+--}}
+<div class="hda-sheet">
+
+  <header class="hda-hd">
     <img class="portrait" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
-    <div class="character-sheet-section-name">
-        <input class="name-input" type="text" name="name" value="{{actor.name}}" placeholder="{{ localize 'CAIRN.Name' }}" />
-        <input class="background-input" type="text" name="system.background" value="{{system.background}}" placeholder="{{ localize 'CAIRN.Background' }}" />
-        <div class="resource-counter hp-counter">
-            <label for="system.hp.value">{{ localize 'CAIRN.HitProtection' }}</label>
-            <div class="resource-input-wrapper">
-                <input type="number" name="system.hp.value" id="system.hp.value" value="{{system.hp.value}}" />
-                <span> / </span>
-                <input type="number" name="system.hp.max" value="{{system.hp.max}}" />
-            </div>
-        </div>
-        <div class="resource-counter deprived-counter middle-counter {{#if system.maybeTooMuchGold}}overburdened-gold{{/if}}" {{#if system.maybeTooMuchGold}}title="{{localize 'CAIRN.OverburdenByGold'}}"{{/if}}>
-            <label for="system.gold">{{ localize 'CAIRN.Gold' }}</label>
-            <div class="resource-input-wrapper">
-                <input type="number" name="system.gold" id="system.gold" value="{{system.gold}}" />
-            </div>
-        </div>
+    <div class="hda-who">
+      <div style="display:flex;align-items:baseline;gap:12px">
+        <input class="name-input" type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'CAIRN.Name'}}" />
+        {{#if system.mind.awakened}}<span class="hda-badge">{{localize 'HDA.Awakened'}}</span>{{/if}}
+      </div>
+      <div class="hda-fields">
+        <label><span class="hda-lab">{{localize 'CAIRN.Background'}}</span>
+          <input type="text" name="system.background" value="{{system.background}}" /></label>
+        <label><span class="hda-lab">{{localize 'HDA.Origin'}}</span>
+          <input type="text" name="system.origin" value="{{system.origin}}" /></label>
+      </div>
     </div>
-    <div class="character-sheet-section-buttons">
-        <button type="button" class="strict-size-button" data-action="rest" {{#if system.deprived}}disabled{{/if}}>{{ localize 'CAIRN.Rest' }}</button>
-        <button type="button" class="strict-size-button" data-action="restoreAbilities" {{#if system.deprived}}disabled{{/if}}>{{ localize 'CAIRN.RestoreAbilities' }}</button>
-        <button type="button" class="strict-size-button" data-action="dieOfFate">{{ localize 'CAIRN.DieOfFate' }}</button>
+  </header>
+
+  {{!-- Atributos: o rótulo é o botão de teste --}}
+  <div class="hda-row3">
+    {{#each system.abilities as |ability key|}}
+    <div class="hda-box {{#if (eq key 'WIL')}}hda-wil{{/if}}">
+      <a class="hda-roll" data-action="rollAbility" data-roll="d20cs<=@abilities.{{key}}.value" data-path="abilities.{{key}}.value" data-label="{{{localize 'CAIRN.Save' key=(localize key)}}}">{{localize key}}</a>
+      <div class="hda-pair">
+        <input type="number" name="system.abilities.{{key}}.value" value="{{ability.value}}" />
+        <span>/</span>
+        <input class="hda-max" type="number" name="system.abilities.{{key}}.max" value="{{ability.max}}" />
+      </div>
     </div>
-    <div class="character-sheet-section-abilities">
-        {{#each system.abilities as |ability key|}}
-        <div class="resource-counter {{key}}-counter">
-            <a class="resource-roll" data-action="rollAbility" data-roll="d20cs<=@abilities.{{key}}.value" data-label="{{{ localize 'CAIRN.Save' key=key}}}">{{ localize key }}</a>
-            <div class="resource-input-wrapper">
-                <input type="number" name="system.abilities.{{key}}.value" value="{{ability.value}}" />
-                <span> / </span>
-                <input type="number" name="system.abilities.{{key}}.max" value="{{ability.max}}" />
-            </div>
-        </div>
-        {{/each}}
+    {{/each}}
+  </div>
+
+  <div class="hda-row4">
+    <div class="hda-box">
+      <span class="hda-lab">{{localize 'CAIRN.HitProtection'}}</span>
+      <div class="hda-pair">
+        <input type="number" name="system.hp.value" value="{{system.hp.value}}" />
+        <span>/</span>
+        <input class="hda-max" type="number" name="system.hp.max" value="{{system.hp.max}}" />
+      </div>
     </div>
-    <div class="character-sheet-section-others">
-        <div class="resource-counter long-counter">
-            <label>{{ localize 'CAIRN.Armor' }}</label>
-            <div class="resource-input-wrapper"><span>{{system.armor}}</span></div>
-        </div>
-        <div class="resource-counter long-counter deprived-counter">
-            <label for="system.deprived">{{ localize 'CAIRN.Deprived' }}</label>
-            <div class="resource-input-wrapper">
-                <input type="checkbox" {{checked system.deprived}} name="system.deprived" id="system.deprived" />
-            </div>
-        </div>
-        {{#if system.usePanic}}
-        <div class="resource-counter long-counter deprived-counter">
-            <label for="system.panicked">{{ localize 'CAIRN.Panicked' }}</label>
-            <div class="resource-input-wrapper">
-                <input type="checkbox" {{checked system.panicked}} name="system.panicked" id="system.panicked" />
-            </div>
-        </div>
-        {{/if}}
+    <div class="hda-box"><span class="hda-lab">{{localize 'CAIRN.Armor'}}</span><div class="hda-big">{{system.armor}}</div></div>
+    <div class="hda-box {{#if system.maybeTooMuchGold}}hda-wil{{/if}}">
+      <span class="hda-lab">{{localize 'CAIRN.Gold'}}</span>
+      <div class="hda-pair"><input type="number" name="system.gold" value="{{system.gold}}" /></div>
     </div>
-    <div class="character-sheet-section-tabs">
-        <nav class="tabs" data-group="primary">
-            <a class="item {{tabs.items.cssClass}}" data-action="vttforgeTab" data-group="primary" data-tab="items">
-                {{#if system.characterEquipmentLimit}}<i class="fas fa-gears" style="opacity:0.5" data-action="setEquipmentLimit" title="Double click to change limit"></i>{{/if}}
-                {{ localize 'CAIRN.Items' }} ({{system.slotsUsed}} / {{system.slotsMax}})
-            </a>
-            <a class="item {{tabs.containers.cssClass}}" data-action="vttforgeTab" data-group="primary" data-tab="containers">{{ localize 'CAIRN.Containers' }} ({{system.containers.length}})</a>
-            <a class="item {{tabs.description.cssClass}}" data-action="vttforgeTab" data-group="primary" data-tab="description">{{ localize 'CAIRN.Description' }}</a>
-            <a class="item {{tabs.notes.cssClass}}" data-action="vttforgeTab" data-group="primary" data-tab="notes">{{ localize 'CAIRN.Notes' }}</a>
-        </nav>
-        <section class="content">
-            <div class="tab {{tabs.items.cssClass}}" data-group="primary" data-tab="items">
-                {{> "systems/cairn/templates/parts/items-list.hbs" withFatigue=1}}
-            </div>
-            <div class="tab {{tabs.containers.cssClass}}" data-group="primary" data-tab="containers">
-                {{> "systems/cairn/templates/parts/container-list.hbs"}}
-            </div>
-            <div class="tab {{tabs.description.cssClass}}" data-group="primary" data-tab="description">
-                <div class="description">
-                    {{#if system.showFeatures}}
-                    <div class="features">{{> "systems/cairn/templates/parts/feature-list.hbs"}}</div>
-                    {{/if}}
-                    {{> "systems/cairn/templates/parts/editor.hbs" name="system.biography" value=system.biography enriched=enrichedBiography editable=isEditable}}
-                </div>
-            </div>
-            <div class="tab {{tabs.notes.cssClass}}" data-group="primary" data-tab="notes">
-                {{> "systems/cairn/templates/parts/editor.hbs" name="system.notes" value=system.notes enriched=enrichedNotes editable=isEditable}}
-            </div>
-        </section>
+    <div class="hda-box">
+      <span class="hda-lab">{{localize 'CAIRN.Deprived'}}</span>
+      <label class="hda-chk"><input type="checkbox" name="system.deprived" {{checked system.deprived}} /> {{#if system.deprived}}{{localize 'HDA.Yes'}}{{else}}{{localize 'HDA.No'}}{{/if}}</label>
+      {{#if system.usePanic}}
+      <label class="hda-chk"><input type="checkbox" name="system.panicked" {{checked system.panicked}} /> {{localize 'CAIRN.Panicked'}}</label>
+      {{/if}}
     </div>
+  </div>
+
+  {{!-- Mente --}}
+  <div class="hda-mind">
+    <div class="hda-box hda-stab">
+      <span class="hda-lab">{{localize 'HDA.Stability'}}</span>
+      {{#if system.mind.unset}}
+        <button type="button" class="hda-pri" data-action="rollStability">{{localize 'HDA.RollStability'}}</button>
+      {{else}}
+        <div class="hda-pair">
+          <input type="number" name="system.mind.stability.value" value="{{system.mind.stability.value}}" />
+          <span>/</span>
+          <input class="hda-max" type="number" name="system.mind.stability.max" value="{{system.mind.stability.max}}" />
+        </div>
+        <div class="hda-track">{{#each mindView.track}}<span class="{{#if off}}off{{/if}}"></span>{{/each}}</div>
+      {{/if}}
+    </div>
+    <div class="hda-box">
+      <span class="hda-lab">{{localize 'HDA.Attunement'}}</span>
+      <div class="hda-pair"><input type="number" name="system.mind.attunement" value="{{system.mind.attunement}}" /></div>
+    </div>
+    <div class="hda-box">
+      <span class="hda-lab">{{localize 'HDA.Insanity'}}</span>
+      <div class="hda-lz">{{#each mindView.pips}}<a class="{{#if on}}on{{/if}} {{#if last}}last{{/if}}" data-action="setInsanity" data-value="{{value}}"></a>{{/each}}</div>
+      {{#if system.mind.lost}}<div class="hda-alert">{{localize 'HDA.Lost'}}</div><div class="hda-lost-link">{{{surtosLink}}}</div>{{/if}}
+    </div>
+    <div class="hda-box">
+      <span class="hda-lab">{{localize 'HDA.State'}}</span>
+      <label class="hda-chk"><input type="checkbox" name="system.mind.awakened" {{checked system.mind.awakened}} /> {{localize 'HDA.Awakened'}}</label>
+      <label class="hda-chk" style="padding-top:3px"><input type="checkbox" name="system.mind.resonating" {{checked system.mind.resonating}} /> {{localize 'HDA.Resonating'}}</label>
+      {{#if system.mind.delirious}}<div class="hda-alert">{{localize 'HDA.Delirious'}}</div>{{/if}}
+    </div>
+  </div>
+
+  <div class="hda-acts">
+    <button type="button" class="hda-pri" data-action="cast" {{#unless canCastAny}}disabled data-tooltip="{{localize 'HDA.CastHint'}}"{{/unless}}>{{localize 'HDA.Cast'}}</button>
+    <button type="button" data-action="loseStability">{{localize 'HDA.LoseStability'}}</button>
+    <button type="button" data-action="resonate">{{localize 'HDA.Resonate'}}</button>
+    <button type="button" data-action="rest" {{#if system.deprived}}disabled{{/if}}>{{localize 'CAIRN.Rest'}}</button>
+    <button type="button" data-action="restoreAbilities" {{#if system.deprived}}disabled{{/if}}>{{localize 'CAIRN.RestoreAbilities'}}</button>
+    <button type="button" data-action="dieOfFate">{{localize 'CAIRN.DieOfFate'}}</button>
+  </div>
+  {{!-- "Semana de descanso", "Maldição" e "Ruptura" ficam no topo da aba Ressonância. --}}
+
+  <nav class="tabs" data-group="primary">
+    <a class="item {{tabs.items.cssClass}}" data-action="vttforgeTab" data-group="primary" data-tab="items">{{localize 'CAIRN.Items'}} {{system.slotsUsed}}/{{system.slotsMax}}</a>
+    <a class="item {{tabs.containers.cssClass}}" data-action="vttforgeTab" data-group="primary" data-tab="containers">{{localize 'CAIRN.Containers'}} ({{system.containers.length}})</a>
+    <a class="item {{tabs.resonance.cssClass}}" data-action="vttforgeTab" data-group="primary" data-tab="resonance">{{localize 'HDA.Resonance'}}</a>
+    <a class="item {{tabs.description.cssClass}}" data-action="vttforgeTab" data-group="primary" data-tab="description">{{localize 'CAIRN.Description'}}</a>
+    <a class="item {{tabs.notes.cssClass}}" data-action="vttforgeTab" data-group="primary" data-tab="notes">{{localize 'CAIRN.Notes'}}</a>
+  </nav>
+  <section class="content">
+    <div class="tab {{tabs.items.cssClass}}" data-group="primary" data-tab="items">
+      <div class="cairn-items-list-header">
+        <span class="hda-slots" title="{{localize 'HDA.Slots'}}">{{#each slotsView}}<i class="{{cls}}"></i>{{/each}}</span>
+      </div>
+      {{> "systems/herdeiros/templates/parts/items-list.hbs" withFatigue=1}}
+    </div>
+    <div class="tab {{tabs.containers.cssClass}}" data-group="primary" data-tab="containers">
+      {{> "systems/herdeiros/templates/parts/container-list.hbs"}}
+    </div>
+    <div class="tab {{tabs.resonance.cssClass}}" data-group="primary" data-tab="resonance">
+      {{> "systems/herdeiros/templates/parts/manifestation-list.hbs"}}
+    </div>
+    <div class="tab {{tabs.description.cssClass}}" data-group="primary" data-tab="description">
+      <div class="description">
+        {{#if system.showFeatures}}<div class="features">{{> "systems/herdeiros/templates/parts/feature-list.hbs"}}</div>{{/if}}
+        {{> "systems/herdeiros/templates/parts/editor.hbs" name="system.biography" value=system.biography enriched=enrichedBiography editable=isEditable}}
+      </div>
+    </div>
+    <div class="tab {{tabs.notes.cssClass}}" data-group="primary" data-tab="notes">
+      {{> "systems/herdeiros/templates/parts/editor.hbs" name="system.notes" value=system.notes enriched=enrichedNotes editable=isEditable}}
+    </div>
+  </section>
 </div>

@@ -1,0 +1,43 @@
+{
+  "_id": "sicXaOuTZixqtMoN",
+  "name": "Lâmina Cinética",
+  "type": "manifestation",
+  "img": "systems/herdeiros/tokens/weapons/sword.webp",
+  "system": {
+    "description": "<p>Você canaliza sua vontade numa arma que segura. Ela não brilha: vibra, zumbindo com uma energia invisível. Por 1d6 rodadas, a arma faz dano <strong>Aprimorado (d12)</strong> e <strong>ignora Armadura</strong>, como se o fio existisse parcialmente em outro lugar. Ela fere criaturas imunes a armas comuns.</p>",
+    "weightless": true,
+    "equipped": false,
+    "bulky": false,
+    "cost": {
+      "value": 0
+    },
+    "quantity": 1,
+    "category": "subtle",
+    "costBonus": 0,
+    "domain": "common",
+    "hpCost": "",
+    "effectFormula": "",
+    "effectType": "none",
+    "healStabilityLoss": "",
+    "ignoresArmor": true,
+    "requiresTrueName": false,
+    "calmNoTest": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

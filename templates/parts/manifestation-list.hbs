@@ -1,0 +1,28 @@
+{{!-- HDA: aba Ressonância. resonanceList = [{ id, uuid, name, categoryLabel, costFormula, viaTome, canCast, castHint }]
+     As linhas usam .cairn-items-list-row para reaproveitar itemToggle, itemEdit e itemDelete. --}}
+<div class="cairn-items-list-header">
+  <span>{{localize 'HDA.Manifestations'}}</span>
+  <span class="hda-tools">
+    <a data-action="recoverStability">{{localize 'HDA.WeekOfRest'}}</a>
+    <a data-action="rollCurse">{{localize 'HDA.Curse'}}</a>
+    {{#if isGM}}<a data-action="rupture">{{localize 'HDA.Rupture'}}</a>{{/if}}
+    {{#if canAwaken}}<a data-action="awaken">{{localize 'HDA.Awaken'}}</a>{{/if}}
+    {{#if useColdRule}}<a data-action="coldNight">{{localize 'HDA.ColdNight'}}</a>{{/if}}
+    {{#if useAdvancement}}<a data-action="advance">{{localize 'HDA.Advancement'}}</a>{{/if}}
+  </span>
+</div>
+{{#each resonanceList as |m|}}
+<div class="hda-man cairn-items-list-row {{#if m.viaTome}}hda-tome{{/if}}" data-item-id="{{m.id}}" draggable="true">
+  <a class="hda-t" data-action="itemToggle">{{m.name}}</a>
+  <button type="button" class="hda-pri" data-action="castItem" data-uuid="{{m.uuid}}" {{#unless m.canCast}}disabled data-tooltip="{{m.castHint}}"{{/unless}}>{{localize 'HDA.Cast'}}</button>
+  <div class="cairn-item-controls">
+    <a class="item-control item-edit" data-action="itemEdit" title="{{localize 'CAIRN.EditItem'}}"><i class="fas fa-edit"></i></a>
+    <a class="item-control item-delete" data-action="itemDelete" title="{{localize 'CAIRN.DeleteItem'}}"><i class="fas fa-trash"></i></a>
+  </div>
+  <span class="hda-lab">{{m.categoryLabel}} · {{m.costFormula}}{{#if m.viaTome}} · {{localize 'HDA.ViaTome'}}{{/if}}</span>
+</div>
+{{else}}
+<p class="hda-lab" style="padding:8px 0">{{localize 'HDA.NoManifestations'}}</p>
+{{/each}}
+<label class="hda-lab hda-marks-label">{{localize 'HDA.Marks'}}</label>
+{{> "systems/herdeiros/templates/parts/editor.hbs" name="system.mind.marks" value=system.mind.marks enriched=enrichedMarks editable=isEditable}}

@@ -4,6 +4,7 @@ import {
   drawTableText, findCompendiumItem,
 } from './compendium.mjs'
 import { Cairn } from './config.mjs';
+import { rollHeir, rollHeirName } from './hda/generator.mjs'; // HDA
 import { evaluateFormula, formatString } from './utils.mjs'
 
 /**
@@ -135,11 +136,12 @@ export const rollStartingGear = async (items) => rollItems(items);
 export const findStartingItems = async (items) => {
   const result = [];
   for (const compendiumItem of items) {
-    const [compendium, table, quantity = 1] = compendiumInfoFromString(compendiumItem);
+    const [compendium, table, quantity = 1, name] = compendiumInfoFromString(compendiumItem);
 
     const item = foundry.utils.duplicate(await findCompendiumItem(compendium, table));
 
     item.system.quantity = parseInt(quantity, 10);
+    if (name) item.name = name; // HDA: o nome em pt-BR
 
     result.push(item);
   }
@@ -157,20 +159,21 @@ export const generateCharacter = async () => {
   const abilities = await rollAbilities(characterGenerator.ability);
   const hp = await rollHitProtection(characterGenerator.hitProtection);
   const gold = await rollGold(characterGenerator.gold);
-  const name = await rollName(characterGenerator.name);
-  const biography = await rollBiography(characterGenerator.biography);
-  const background = await rollBackground(characterGenerator.background)
+  // HDA: Antecedente, Origem, Estabilidade e despertar vêm do cenário.
+  const name = (await rollHeirName()) ?? (await rollName(characterGenerator.name));
+  const heir = await rollHeir(characterGenerator, abilities);
   const startingItems = await findStartingItems(characterGenerator.startingItems);
-  const startingGear = await rollStartingGear(characterGenerator.startingGear);
 
   return {
     name,
     hp,
-    gold,
+    gold: gold + heir.silver,
     abilities,
-    background,
-    items: [...startingItems, ...startingGear],
-    biography,
+    background: heir.background,
+    origin: heir.origin,
+    mind: heir.mind,
+    items: [...startingItems, ...heir.items],
+    biography: heir.biography,
   };
 };
 
@@ -191,6 +194,8 @@ const characterToActorData = (characterData) => ({
       value: characterData.hp,
     },
     background: characterData.background,
+    origin: characterData.origin, // HDA
+    mind: characterData.mind, // HDA
     biography: characterData.biography,
     gold: characterData.gold,
   },

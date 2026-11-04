@@ -4,4 +4,4 @@
 dist
 node_modules
 node_modules/
-packs/
+packs/hda-*

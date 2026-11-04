@@ -8,40 +8,26 @@ Cairn.characterGenerator = {
   name: {
     text: "{name} {surname}",
     items: {
-      name: "cairn.character-creation-tables-srd;Names",
-      surname: "cairn.character-traits;Surnames"
+      name: "herdeiros.character-creation-tables-srd;Names",
+      surname: "herdeiros.character-traits;Surnames"
     }
   },
-  background: "cairn.character-traits;Background",
+  // HDA: gerador do cenário (seção 6.6). Antecedente e Origem trazem texto e itens.
+  background: "herdeiros.hda-backgrounds;Antecedentes",
+  origin: "herdeiros.hda-tables;Origens",
+  stability: "@WIL + 1d6 + 6",
+  awakeningDie: "1d6",
   startingItems: [
-    "cairn.expeditionary-gear;Rations;1",
-    "cairn.expeditionary-gear;Torch;1"
-  ],
-  startingGear: [
-    "cairn.character-creation-tables-srd;Starting Gear - Armor",
-    "cairn.character-creation-tables-srd;Starting Gear - Helmet & Shields",
-    "cairn.character-creation-tables-srd;Starting Gear - Weapons",
-    "cairn.character-creation-tables-srd;Starting Gear - Expeditionary Gear",
-    "cairn.character-creation-tables-srd;Starting Gear - Tools",
-    "cairn.character-creation-tables-srd;Starting Gear - Trinkets",
-    "cairn.character-creation-tables-srd;Starting Gear - Bonus Item"
-  ],
-  biography: {
-    text: "I have a <strong>{physique}</strong> physique, <strong>{skin}</strong> skin, <strong>{hair}</strong> hair, and a <strong>{face}</strong> face. I speak in a <strong>{speech}</strong> manner and wear <strong>{clothing}</strong> clothing. I am <strong>{vice}</strong> yet <strong>{virtue}</strong>, and I am generally regarded as <strong>{reputation}</strong>. I have had the misfortune of being <strong>{misfortune}</strong>. I am <strong>{age}</strong> years old.",
-    age: "2d20 + 10",
-    items: {
-      physique: "cairn.character-traits;Physique",
-      skin: "cairn.character-traits;Skin",
-      hair: "cairn.character-traits;Hair",
-      face: "cairn.character-traits;Face",
-      speech: "cairn.character-traits;Speech",
-      clothing: "cairn.character-traits;Clothing",
-      vice: "cairn.character-traits;Vice",
-      virtue: "cairn.character-traits;Virtue",
-      misfortune: "cairn.character-traits;Misfortunes",
-      reputation: "cairn.character-traits;Reputation"
-    }
-  }
+    "herdeiros.expeditionary-gear;Rations;1;Rações",
+    "herdeiros.expeditionary-gear;Torch;1;Tocha"
+  ]
 };
 
-
+/** HDA: a tabela de Exposição (A.3), atalhos do diálogo de perda. */
+Cairn.exposures = [
+  { label: "HDA.Exposure.brutal", formula: "1" },
+  { label: "HDA.Exposure.glimpse", formula: "1d3" },
+  { label: "HDA.Exposure.minor", formula: "1d6" },
+  { label: "HDA.Exposure.truth", formula: "2d6" },
+  { label: "HDA.Exposure.powerful", formula: "2d6+6" }
+];

@@ -1,0 +1,43 @@
+{
+  "_id": "VELdOcns9DCRafUT",
+  "name": "Enxerto Visceral",
+  "type": "manifestation",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>Você convence a carne de dois seres a se aceitarem. Com as mãos, arranca uma parte de um corpo (um olho, uma mão) e a enxerta no outro. É horrivelmente doloroso, a carne se une com cicatrizes queloides, e a parte enxertada continua ligada ao dono original.</p>",
+    "weightless": true,
+    "equipped": false,
+    "bulky": false,
+    "cost": {
+      "value": 0
+    },
+    "quantity": 1,
+    "category": "violent",
+    "costBonus": 2,
+    "domain": "visceral",
+    "hpCost": "",
+    "effectFormula": "",
+    "effectType": "none",
+    "healStabilityLoss": "",
+    "ignoresArmor": false,
+    "requiresTrueName": false,
+    "calmNoTest": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

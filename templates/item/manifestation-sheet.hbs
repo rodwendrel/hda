@@ -1,0 +1,59 @@
+{{!-- HDA: Manifestação. Sem aba de Dano Crítico. --}}
+<div class="item-sheet-grid manifestation">
+    <div class="item-sheet-section-portrait">
+        <img class="portrait" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+    </div>
+    <div class="item-sheet-section-name">
+        <input class="name-input" type="text" name="name" value="{{item.name}}" placeholder="{{ localize 'CAIRN.Name' }}" />
+    </div>
+    <div class="hda-man-grid">
+        <label>{{localize 'HDA.CategoryLabel'}}
+            <select name="system.category">
+                <option value="subtle" {{#if (eq system.category 'subtle')}}selected{{/if}}>{{localize 'HDA.Category.subtle'}}</option>
+                <option value="manifest" {{#if (eq system.category 'manifest')}}selected{{/if}}>{{localize 'HDA.Category.manifest'}}</option>
+                <option value="violent" {{#if (eq system.category 'violent')}}selected{{/if}}>{{localize 'HDA.Category.violent'}}</option>
+            </select>
+        </label>
+        <label>{{localize 'HDA.CostBonus'}} ({{system.costFormula}})
+            <input type="number" name="system.costBonus" min="0" max="3" value="{{system.costBonus}}" />
+        </label>
+        <label>{{localize 'HDA.DomainLabel'}}
+            <select name="system.domain">
+                <option value="common" {{#if (eq system.domain 'common')}}selected{{/if}}>{{localize 'HDA.Domain.common'}}</option>
+                <option value="visceral" {{#if (eq system.domain 'visceral')}}selected{{/if}}>{{localize 'HDA.Domain.visceral'}}</option>
+            </select>
+        </label>
+        <label>{{localize 'HDA.HpCost'}}
+            <input type="text" name="system.hpCost" value="{{system.hpCost}}" />
+        </label>
+        <label>{{localize 'HDA.EffectType'}}
+            <select name="system.effectType">
+                <option value="none" {{#if (eq system.effectType 'none')}}selected{{/if}}>{{localize 'HDA.Effect.none'}}</option>
+                <option value="damage" {{#if (eq system.effectType 'damage')}}selected{{/if}}>{{localize 'HDA.Effect.damage'}}</option>
+                <option value="heal" {{#if (eq system.effectType 'heal')}}selected{{/if}}>{{localize 'HDA.Effect.heal'}}</option>
+                <option value="stabilityLoss" {{#if (eq system.effectType 'stabilityLoss')}}selected{{/if}}>{{localize 'HDA.Effect.stabilityLoss'}}</option>
+            </select>
+        </label>
+        <label>{{localize 'HDA.EffectFormula'}}
+            <input type="text" name="system.effectFormula" value="{{system.effectFormula}}" />
+        </label>
+        <label>{{localize 'HDA.HealStabilityLoss'}}
+            <input type="text" name="system.healStabilityLoss" value="{{system.healStabilityLoss}}" />
+        </label>
+        <div>
+            <label class="hda-check"><input type="checkbox" name="system.ignoresArmor" {{checked system.ignoresArmor}} /> {{localize 'HDA.IgnoresArmor'}}</label>
+            <label class="hda-check"><input type="checkbox" name="system.requiresTrueName" {{checked system.requiresTrueName}} /> {{localize 'HDA.TrueName'}}</label>
+            <label class="hda-check"><input type="checkbox" name="system.calmNoTest" {{checked system.calmNoTest}} /> {{localize 'HDA.CalmNoTestField'}}</label>
+        </div>
+    </div>
+    <div class="item-sheet-section-tabs">
+        <nav class="tabs" data-group="primary">
+            <a class="item {{tabs.description.cssClass}}" data-action="vttforgeTab" data-group="primary" data-tab="description">{{ localize 'CAIRN.Description' }}</a>
+        </nav>
+        <section class="content">
+            <div class="tab {{tabs.description.cssClass}}" data-group="primary" data-tab="description">
+                {{> "systems/herdeiros/templates/parts/editor.hbs" name="system.description" value=system.description enriched=enrichedDescription editable=isEditable}}
+            </div>
+        </section>
+    </div>
+</div>
