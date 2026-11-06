@@ -67,12 +67,12 @@
 }
 .hda input:focus, .hda-dialog input:focus, .hda select:focus { border-bottom-color: var(--hda-accent); outline: none; box-shadow: none; }
 .hda input[type="checkbox"], .hda-dialog input[type="checkbox"] { accent-color: var(--hda-accent); }
-.hda button, .hda-dialog button {
+.hda button:not(.header-control), .hda-dialog button:not(.header-control) {
   height: 28px; background: transparent; color: var(--hda-ink);
   border: 1px solid var(--hda-rule); border-radius: 3px;
   font: 600 12.5px var(--hda-font-body);
 }
-.hda button:hover:not(:disabled), .hda-dialog button:hover:not(:disabled) { border-color: var(--hda-accent-text); color: var(--hda-accent-text); background: var(--hda-accent-wash); }
+.hda button:hover:not(:disabled, .header-control), .hda-dialog button:hover:not(:disabled, .header-control) { border-color: var(--hda-accent-text); color: var(--hda-accent-text); background: var(--hda-accent-wash); }
 .hda button.hda-pri, .hda-dialog button.hda-pri, .hda-dialog button[data-action="ok"], .hda-dialog .form-footer button.default {
   border-color: var(--hda-accent); color: var(--hda-accent-text); background: var(--hda-accent-wash); font-weight: 700;
 }
@@ -282,8 +282,8 @@ body.hda-ui .application .window-header { background: var(--hda-head); color: va
 .item-sheet-grid.manifestation .item-sheet-section-portrait { grid-row: 1 / 3; }
 .item-sheet-grid.manifestation .item-sheet-section-tabs { grid-row: 3; }
 .cairn.item .hda-man-grid { grid-column: 2 / 4; grid-row: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-size: 12px; }
-.cairn.item .hda-man-grid label { display: flex; flex-direction: column; gap: 1px; }
-.cairn.item .hda-man-grid label.hda-check { flex-direction: row; align-items: center; gap: 6px; }
+.cairn.item .hda-man-grid label { display: flex; flex-direction: column; gap: 1px; color: var(--hda-muted); font: 700 10.5px var(--hda-font-body); letter-spacing: .1em; text-transform: uppercase; }
+.cairn.item .hda-man-grid label.hda-check { flex-direction: row; align-items: center; gap: 6px; color: var(--hda-ink); font: 400 13px var(--hda-font-body); letter-spacing: 0; text-transform: none; }
 .cairn.item .hda-man-grid input[type="text"], .cairn.item .hda-man-grid input[type="number"], .cairn.item .hda-man-grid select { height: 24px; }
 .cairn.item .hda-tome-field { grid-column: 2 / 4; }
 
@@ -291,3 +291,48 @@ body.hda-ui .application .window-header { background: var(--hda-head); color: va
 .cairn.npc .hda-npc-mind { display: grid; grid-template-columns: auto 1fr auto 1fr; gap: 6px; align-items: center; padding: 4px 0; font-size: 13px; }
 .cairn.npc .hda-npc-mind a { cursor: pointer; font-weight: 700; }
 .cairn.npc .hda-npc-mind input { height: 24px; text-align: center; }
+
+/* 6. FICHAS HERDADAS DO CAIRN --------------------------------------------- */
+/* PNJ, recipiente e itens usam os templates do upstream. A ficha de personagem
+   tem template próprio e fica de fora. O cairn.css usa !important nestes campos. */
+
+.hda select option { color: var(--hda-ink); background: var(--hda-panel); }
+.hda .cairn-items-list-row:hover { background: var(--hda-accent-wash); }
+.hda .cairn-feature-title { color: var(--hda-ink); }
+.hda .cairn-items-list-header h3 { margin: 0; border: none; font: 600 12px var(--hda-font-body); color: var(--hda-muted); }
+.hda .item-toggle-equipped { color: var(--hda-muted); }
+
+.hda.cairn:not(.character) {
+  .portrait { border: 1px solid var(--hda-rule); border-radius: 0; background: var(--hda-panel); }
+
+  .name-input {
+    background: transparent !important; border: none !important; border-bottom: 1px solid var(--hda-rule) !important; border-radius: 0;
+    color: var(--hda-ink) !important; font-family: var(--hda-font-title) !important; font-size: 26px !important;
+    font-variant: normal; font-weight: 400; padding: 0 0 4px !important;
+  }
+  .background-input { color: var(--hda-muted); font-family: var(--hda-font-num) !important; font-size: 15px !important; font-style: italic; font-variant: normal; }
+
+  .resource-counter { background: transparent; border: 1px solid var(--hda-rule); border-radius: 3px; overflow: hidden; }
+  .resource-counter.overburdened-gold { border-color: var(--hda-accent); }
+  .resource-counter a, .resource-counter label {
+    background: transparent; color: var(--hda-muted); padding-left: 10px; text-align: left;
+    font: 700 10.5px/34px var(--hda-font-body); letter-spacing: .1em; text-transform: uppercase;
+  }
+  .resource-counter a.resource-roll { color: var(--hda-ink); cursor: pointer; }
+  .resource-counter a.resource-roll:hover { color: var(--hda-accent-text); }
+  .resource-input-wrapper input:not([type="checkbox"]) { color: var(--hda-ink); font-family: var(--hda-font-num); font-size: 18px; }
+  .resource-input-wrapper span { color: var(--hda-muted); }
+
+  .tabs { gap: 16px; }
+  .tabs a { flex-grow: 0; border-top: none; border-bottom: 2px solid transparent; font-family: var(--hda-font-title); font-size: 16px; font-weight: 400; line-height: 30px; }
+  .tabs a.active { border-bottom-color: var(--hda-accent); }
+
+  .hda-npc-mind a:hover { color: var(--hda-accent-text); }
+
+  /* Tomo: o campo da Manifestação ganha linha própria, acima das abas */
+  .spellbook.item-sheet-grid { grid-template-rows: 46px 36px 36px auto 1fr; }
+  .spellbook.item-sheet-grid .item-sheet-section-portrait { grid-row: 1 / 5; }
+  .spellbook.item-sheet-grid .item-sheet-section-tabs { grid-row: 5; }
+  .hda-tome-field { grid-row: 4; margin: 0; }
+  .hda-tome-field label { color: var(--hda-muted); font: 700 10.5px var(--hda-font-body); letter-spacing: .1em; text-transform: uppercase; }
+}

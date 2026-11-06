@@ -549,7 +549,7 @@ export class NpcSheet extends CairnActorSheetBase {
   static DEFAULT_OPTIONS = foundry.utils.mergeObject(
     super.DEFAULT_OPTIONS,
     {
-      classes: ['npc', 'themed', 'theme-light'], // HDA: o cairn.css força fundo branco
+      classes: ['hda', 'npc', 'themed', 'theme-dark'], // HDA: tema Sombria
       // HDA: os ataques à mente do PNJ.
       actions: { rollWillAttack: NpcSheet.#onRollWillAttack, stabilityAura: NpcSheet.#onStabilityAura },
     },
@@ -584,7 +584,7 @@ export class NpcSheet extends CairnActorSheetBase {
 }
 
 export class ContainerSheet extends CairnActorSheetBase {
-  static DEFAULT_OPTIONS = foundry.utils.mergeObject(super.DEFAULT_OPTIONS, { classes: ['container', 'themed', 'theme-light'] }, { inplace: false }); // HDA: tema
+  static DEFAULT_OPTIONS = foundry.utils.mergeObject(super.DEFAULT_OPTIONS, { classes: ['hda', 'container', 'themed', 'theme-dark'] }, { inplace: false }); // HDA: tema Sombria
   static PARTS = { sheet: { template: `systems/${SYSTEM_ID}/templates/actor/container-sheet.hbs` } };
   static TABS = {
     primary: {
