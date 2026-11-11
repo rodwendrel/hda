@@ -15,8 +15,6 @@ Cairn.characterGenerator = {
   // HDA: gerador do cenário (seção 6.6). Antecedente e Origem trazem texto e itens.
   background: "herdeiros.hda-backgrounds;Antecedentes",
   origin: "herdeiros.hda-tables;Origens",
-  stability: "@WIL + 1d6 + 6",
-  awakeningDie: "1d6",
   startingItems: [
     "herdeiros.expeditionary-gear;Rations;1;Rações",
     "herdeiros.expeditionary-gear;Torch;1;Tocha"

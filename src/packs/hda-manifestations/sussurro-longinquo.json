@@ -4,7 +4,7 @@
   "type": "manifestation",
   "img": "icons/svg/aura.svg",
   "system": {
-    "description": "<p>Um canal psíquico com uma mente que você conhece, a até 3d6 km. Não é uma conversa limpa: são pensamentos, imagens e sentimentos trocados, sempre com o ruído dos sussurros do Abismo ao fundo.</p>",
+    "description": "<p>Um canal psíquico com uma mente que você conhece. Não é uma conversa limpa: são pensamentos, imagens e sentimentos trocados, sempre com o ruído dos sussurros do Abismo ao fundo.</p><ul><li><strong>Contida (d4):</strong> uma palavra ou uma imagem para alguém que você vê.</li><li><strong>Plena (d6):</strong> uma troca curta com alguém a até [dado] léguas (1 légua ≈ 5 km).</li><li><strong>Desmedida (d8):</strong> qualquer distância, se você tiver algo da pessoa (cabelo, sangue, uma carta). A conversa dura [dado] minutos, e alguma coisa sempre escuta.</li></ul>",
     "weightless": true,
     "equipped": false,
     "bulky": false,
@@ -15,10 +15,22 @@
     "category": "manifest",
     "costBonus": 1,
     "domain": "common",
-    "hpCost": "",
-    "effectFormula": "",
+    "dice": {
+      "contained": "d4",
+      "full": "d6",
+      "unbound": "d8"
+    },
+    "hpCost": {
+      "contained": 0,
+      "full": 0,
+      "unbound": 0
+    },
     "effectType": "none",
-    "healStabilityLoss": "",
+    "effectText": {
+      "contained": "uma palavra ou uma imagem para alguém que você vê.",
+      "full": "uma troca curta com alguém a até [dado] léguas (1 légua ≈ 5 km).",
+      "unbound": "qualquer distância, se você tiver algo da pessoa (cabelo, sangue, uma carta). A conversa dura [dado] minutos, e alguma coisa sempre escuta."
+    },
     "ignoresArmor": false,
     "requiresTrueName": false,
     "calmNoTest": true

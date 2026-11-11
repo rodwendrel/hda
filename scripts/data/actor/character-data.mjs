@@ -10,6 +10,8 @@ function defineCharacterSchema() {
     background: new f.StringField({ required: true, blank: true, initial: '' }),
     origin: new f.StringField({ required: true, blank: true, initial: '' }), // HDA: Origem do cenário
     mind: mindFields(f), // HDA
+    // HDA: Carta de Integridade. Só texto no jogo; o Guardião decide o que acontece num censo.
+    integrityCard: new f.StringField({ required: true, choices: ['genuine', 'forged', 'none'], initial: 'genuine' }),
     biography: new f.HTMLField({ required: true, blank: true, initial: '' }),
     notes: new f.HTMLField({ required: true, blank: true, initial: '' }),
     deprived: new f.BooleanField({ required: true, nullable: false, initial: false }),

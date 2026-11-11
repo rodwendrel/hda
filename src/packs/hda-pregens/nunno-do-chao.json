@@ -24,7 +24,7 @@
     },
     "background": "Coveiro",
     "origin": "Caelia",
-    "biography": "<p><em>De Caelia. Enterrou soldados dos dois lados, e camponeses que não eram de lado nenhum. Conhece os mortos melhor do que os vivos.</em></p><p><strong>Sabe:</strong> cuidar dos mortos, saber quando não estão mortos; sabe onde há abrigo.</p><p><strong>Gancho:</strong> as Raízes Umbrais nasceram primeiro no cemitério que ele cuida. Ele sabe por quê, e não contou a ninguém.</p>",
+    "biography": "<p><em>De Caelia. Enterrou soldados dos dois lados, e camponeses que não eram de lado nenhum. Conhece os mortos melhor do que os vivos, e a pá dele fere o que já deveria ter parado de se mexer.</em></p><p><strong>Sabe:</strong> cuidar dos mortos, saber quando não estão mortos; sabe onde há abrigo.</p><p><strong>Gancho:</strong> as Raízes Umbrais nasceram primeiro no cemitério que ele cuida. Ele sabe por quê, e não contou a ninguém.</p>",
     "notes": "",
     "deprived": false,
     "panicked": false,
@@ -39,11 +39,12 @@
       },
       "attunement": 0,
       "insanity": 0,
-      "awakened": false,
+      "awakened": true,
       "resonating": false,
       "marks": "",
       "lost": false
-    }
+    },
+    "integrityCard": "none"
   },
   "items": [
     {
@@ -285,6 +286,65 @@
         "duplicateSource": null
       },
       "_id": "zxSKFBXViuGizsxG"
+    },
+    {
+      "_id": "lWify4IMzCvY6cdv",
+      "name": "Lâmina Cinética",
+      "type": "manifestation",
+      "img": "systems/herdeiros/tokens/weapons/sword.webp",
+      "system": {
+        "description": "<p>Você canaliza a vontade numa arma que segura. Ela não brilha: vibra, zumbindo com uma energia invisível, como se o fio existisse em parte em outro lugar.</p><ul><li><strong>Contida (d4):</strong> o próximo golpe ignora a Armadura.</li><li><strong>Plena (d6):</strong> por [dado] rodadas, a arma ignora a Armadura e fere quem é imune a armas comuns.</li><li><strong>Desmedida (d8):</strong> como a Plena, por [dado] rodadas, e o <strong>primeiro golpe</strong> é <strong>Aprimorado</strong> (d12).</li></ul>",
+        "weightless": true,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "category": "subtle",
+        "costBonus": 0,
+        "domain": "common",
+        "dice": {
+          "contained": "d4",
+          "full": "d6",
+          "unbound": "d8"
+        },
+        "hpCost": {
+          "contained": 0,
+          "full": 0,
+          "unbound": 0
+        },
+        "effectType": "none",
+        "effectText": {
+          "contained": "o próximo golpe ignora a Armadura.",
+          "full": "por [dado] rodadas, a arma ignora a Armadura e fere quem é imune a armas comuns.",
+          "unbound": "como a Plena, por [dado] rodadas, e o <strong>primeiro golpe</strong> é <strong>Aprimorado</strong> (d12)."
+        },
+        "ignoresArmor": false,
+        "requiresTrueName": false,
+        "calmNoTest": true
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "herdeiros": {
+          "blade": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
     }
   ],
   "effects": [],

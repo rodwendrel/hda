@@ -4,7 +4,7 @@
   "type": "manifestation",
   "img": "icons/svg/aura.svg",
   "system": {
-    "description": "<p>Você reescreve um dos sentidos do alvo: aliados viram monstros, o chão vira areia movediça, insetos rastejam sob a pele, ou a visão some numa estática colorida.</p>",
+    "description": "<p>Você reescreve um sentido do alvo: aliados viram monstros, o chão vira areia movediça, insetos rastejam sob a pele, a visão some numa estática colorida.</p><ul><li><strong>Contida (d4):</strong> um engano de um instante: uma voz do lado errado, um rosto trocado.</li><li><strong>Plena (d6):</strong> um sentido de um alvo, por [dado] rodadas.</li><li><strong>Desmedida (d8):</strong> um sentido de todos que você vê, por [dado] rodadas.</li></ul>",
     "weightless": true,
     "equipped": false,
     "bulky": false,
@@ -15,10 +15,22 @@
     "category": "manifest",
     "costBonus": 1,
     "domain": "common",
-    "hpCost": "",
-    "effectFormula": "",
+    "dice": {
+      "contained": "d4",
+      "full": "d6",
+      "unbound": "d8"
+    },
+    "hpCost": {
+      "contained": 0,
+      "full": 0,
+      "unbound": 0
+    },
     "effectType": "none",
-    "healStabilityLoss": "",
+    "effectText": {
+      "contained": "um engano de um instante: uma voz do lado errado, um rosto trocado.",
+      "full": "um sentido de um alvo, por [dado] rodadas.",
+      "unbound": "um sentido de todos que você vê, por [dado] rodadas."
+    },
     "ignoresArmor": false,
     "requiresTrueName": false,
     "calmNoTest": true

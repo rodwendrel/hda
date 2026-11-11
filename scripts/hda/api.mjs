@@ -2,8 +2,9 @@
 import { SYSTEM_ID } from '../settings.mjs';
 import { rollCurse } from './curses.mjs';
 import {
-  advance, awaken, coldNight, endScene, loseStability, loseStabilityDialog, recoverStability, resonate, rollStability,
+  advance, awaken, coldNight, endScene, loseStability, loseStabilityDialog, recoverStability, resonate,
 } from './mind.mjs';
+import { rollStability } from './generator.mjs';
 import { cast, castDialog, rupture } from './resonance.mjs';
 
 /** A perda em vários tokens selecionados. */

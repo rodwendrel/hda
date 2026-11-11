@@ -1,0 +1,55 @@
+{
+  "_id": "F4ULi9eGu8lKDeGT",
+  "name": "Desmontar",
+  "type": "manifestation",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>Você separa partes do próprio corpo sem dor nem sangue, e continua a controlá-las. A carne obedece a quem a convence.</p><ul><li><strong>Contida (d4):</strong> um dedo ou um olho, por um instante.</li><li><strong>Plena (d6):</strong> uma mão ou um olho, por [dado] minutos, a até [dado] × 10 metros.</li><li><strong>Desmedida (d8):</strong> qualquer parte, por [dado] horas. Se ferirem a parte, você sente; se a destruírem, ela não volta.</li></ul>",
+    "weightless": true,
+    "equipped": false,
+    "bulky": false,
+    "cost": {
+      "value": 0
+    },
+    "quantity": 1,
+    "category": "manifest",
+    "costBonus": 2,
+    "domain": "visceral",
+    "dice": {
+      "contained": "d4",
+      "full": "d6",
+      "unbound": "d8"
+    },
+    "hpCost": {
+      "contained": 0,
+      "full": 0,
+      "unbound": 0
+    },
+    "effectType": "none",
+    "effectText": {
+      "contained": "um dedo ou um olho, por um instante.",
+      "full": "uma mão ou um olho, por [dado] minutos, a até [dado] × 10 metros.",
+      "unbound": "qualquer parte, por [dado] horas. Se ferirem a parte, você sente; se a destruírem, ela não volta."
+    },
+    "ignoresArmor": false,
+    "requiresTrueName": false,
+    "calmNoTest": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

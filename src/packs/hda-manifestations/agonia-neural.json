@@ -4,7 +4,7 @@
   "type": "manifestation",
   "img": "icons/svg/aura.svg",
   "system": {
-    "description": "<p>Você sobrecarrega os nervos de um alvo visível com dor pura. Não há ferida, mas ele grita e se contorce como se queimasse vivo: <strong>d8 de dano que ignora Armadura</strong>.</p>",
+    "description": "<p>Você sobrecarrega os nervos de um alvo visível com dor pura. Não há ferida, mas ele grita e se contorce como se queimasse vivo. <strong>Ignora a Armadura.</strong></p><ul><li><strong>Contida (d4):</strong> [dado] de dano.</li><li><strong>Plena (d8):</strong> [dado] de dano.</li><li><strong>Desmedida (d12):</strong> [dado] de dano.</li></ul>",
     "weightless": true,
     "equipped": false,
     "bulky": false,
@@ -15,10 +15,22 @@
     "category": "manifest",
     "costBonus": 2,
     "domain": "common",
-    "hpCost": "",
-    "effectFormula": "d8",
+    "dice": {
+      "contained": "d4",
+      "full": "d8",
+      "unbound": "d12"
+    },
+    "hpCost": {
+      "contained": 0,
+      "full": 0,
+      "unbound": 0
+    },
     "effectType": "damage",
-    "healStabilityLoss": "",
+    "effectText": {
+      "contained": "[dado] de dano.",
+      "full": "[dado] de dano.",
+      "unbound": "[dado] de dano."
+    },
     "ignoresArmor": true,
     "requiresTrueName": false,
     "calmNoTest": true

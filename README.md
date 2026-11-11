@@ -5,9 +5,10 @@ Sistema para Foundry VTT 14 com as **Regras B** de *Herdeiros do Abismo*: fantas
 É um fork do sistema [Cairn](https://github.com/yochaigal/Cairn-FoundryVTT). Tudo o que o Cairn faz continua aqui; o fork acrescenta:
 
 - **a mente:** Estabilidade, Sintonia, Insanidade, transbordo para a VON, Delirante e Perdido;
-- **a Ressonância:** Manifestações pagas em Estabilidade, com calma ou sob pressão, Forçar, Maldições, Cicatriz, ajudantes, Anular, Ressoar, Ruptura e Tomos;
-- **dano de VON** e dano que ignora Armadura;
-- **conteúdo:** 17 Manifestações, Maldições (d66), Exposição, Surtos finais, Antecedentes, Origens, criaturas e 8 personagens prontos;
+- **a Ressonância:** Manifestações em três intensidades (Contida, Plena, Desmedida), com um dado só para o efeito e o custo; com calma ou sob pressão, Forçar ou deixar escapar (com complicação), Maldições, Cicatriz, ajudantes, Anular, Ressoar, Ruptura e Tomos;
+- **o despertar** decidido pelo mesmo d6 da Estabilidade, e a Carta de Integridade;
+- **dano de DES e de VON** direto no atributo, e dano que ignora Armadura;
+- **conteúdo:** 19 Manifestações, Maldições (d66), Exposição, Surtos finais, Antecedentes, Origens, criaturas e 8 personagens prontos;
 - **gerador de personagem** do cenário;
 - **tema visual Sombria** em fichas, diálogos e cartões de chat.
 

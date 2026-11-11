@@ -4,7 +4,7 @@
   "type": "manifestation",
   "img": "icons/svg/aura.svg",
   "system": {
-    "description": "<p>Você remonta o corpo do alvo à força: ossos voltam ao lugar, a carne se costura e os nervos se religam. O alvo recupera <strong>1d6 + 3 PG</strong>, mas a dor é excruciante: ele perde <strong>1d6 de Estabilidade</strong> (conta para a Sintonia).</p>",
+    "description": "<p>Você remonta o corpo do alvo à força: ossos voltam ao lugar, a carne se costura e os nervos se religam. Cura os <strong>atributos físicos</strong> (FOR e DES), que no Cairn só voltam com uma semana de descanso. A dor é excruciante: <strong>quem é curado perde [dado] de Estabilidade</strong> (conta para a Sintonia dele).</p><ul><li><strong>Contida (d4):</strong> PG cheios, e um ferido grave para de morrer.</li><li><strong>Plena (d6):</strong> PG cheios e [dado] pontos de FOR e DES de volta, divididos como quiser. Desfaz a paralisia de uma Estase Corporal se a DES passar da metade.</li><li><strong>Desmedida (d8):</strong> como a Plena, e um osso quebrado ou um membro recém-perdido volta ao lugar.</li></ul>",
     "weightless": true,
     "equipped": false,
     "bulky": false,
@@ -15,10 +15,22 @@
     "category": "manifest",
     "costBonus": 1,
     "domain": "visceral",
-    "hpCost": "",
-    "effectFormula": "1d6+3",
+    "dice": {
+      "contained": "d4",
+      "full": "d6",
+      "unbound": "d8"
+    },
+    "hpCost": {
+      "contained": 0,
+      "full": 0,
+      "unbound": 0
+    },
     "effectType": "heal",
-    "healStabilityLoss": "1d6",
+    "effectText": {
+      "contained": "PG cheios, e um ferido grave para de morrer.",
+      "full": "PG cheios e [dado] pontos de FOR e DES de volta, divididos como quiser. Desfaz a paralisia de uma Estase Corporal se a DES passar da metade.",
+      "unbound": "como a Plena, e um osso quebrado ou um membro recém-perdido volta ao lugar."
+    },
     "ignoresArmor": false,
     "requiresTrueName": false,
     "calmNoTest": true

@@ -5,6 +5,7 @@
  */
 import { BaseItemSheet } from '@vttforge/core';
 import { SYSTEM_ID } from '../settings.mjs';
+import { INTENSITIES } from '../hda/rules.mjs'; // HDA
 
 const TextEditor = foundry.applications.ux.TextEditor.implementation;
 
@@ -29,6 +30,7 @@ export class CairnItemSheet extends BaseItemSheet() {
       tabs: [
         { id: 'description', group: 'primary', label: 'CAIRN.Description' },
         { id: 'crit-dmg', group: 'primary', label: 'CAIRN.CriticalDamage' },
+        { id: 'intensities', group: 'primary', label: 'HDA.Intensities' }, // HDA: Manifestação
       ],
       initial: 'description',
     },
@@ -55,6 +57,12 @@ export class CairnItemSheet extends BaseItemSheet() {
     const enrich = (text) => TextEditor.enrichHTML(text ?? '', { relativeTo: item, secrets: item.isOwner });
     context.enrichedDescription = await enrich(item.system.description);
     context.enrichedCriticalDamage = await enrich(item.system.criticalDamage);
+    if (item.type === 'manifestation') { // HDA
+      context.intensities = INTENSITIES;
+      context.effectTypes = Object.fromEntries(
+        ['none', 'damage', 'dexDamage', 'wilDamage', 'heal', 'stabilityLoss'].map((type) => [type, `HDA.Effect.${type}`]),
+      );
+    }
     return context;
   }
 

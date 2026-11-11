@@ -4,7 +4,7 @@
   "type": "manifestation",
   "img": "icons/svg/aura.svg",
   "system": {
-    "description": "<p>Você \"congela\" o sistema motor do alvo, num rigor mortis temporário. Só os olhos se movem, cheios de pânico, por até 1d6 minutos ou até ele sofrer dano.</p>",
+    "description": "<p>Você \"congela\" o sistema motor do alvo, num rigor mortis temporário. Só os olhos se movem, cheios de pânico. <strong>[dado] de dano de DES.</strong> Se a DES cair à metade ou menos:</p><ul><li><strong>Contida (d4):</strong> um membro trava por uma rodada; o alvo larga o que segura ou não consegue correr.</li><li><strong>Plena (d6):</strong> o alvo fica paralisado por [dado] minutos ou até sofrer dano.</li><li><strong>Desmedida (d8):</strong> [dado] minutos, e o dano não quebra o efeito.</li></ul>",
     "weightless": true,
     "equipped": false,
     "bulky": false,
@@ -15,10 +15,22 @@
     "category": "manifest",
     "costBonus": 2,
     "domain": "common",
-    "hpCost": "",
-    "effectFormula": "",
-    "effectType": "none",
-    "healStabilityLoss": "",
+    "dice": {
+      "contained": "d4",
+      "full": "d6",
+      "unbound": "d8"
+    },
+    "hpCost": {
+      "contained": 0,
+      "full": 0,
+      "unbound": 0
+    },
+    "effectType": "dexDamage",
+    "effectText": {
+      "contained": "um membro trava por uma rodada; o alvo larga o que segura ou não consegue correr.",
+      "full": "o alvo fica paralisado por [dado] minutos ou até sofrer dano.",
+      "unbound": "[dado] minutos, e o dano não quebra o efeito."
+    },
     "ignoresArmor": false,
     "requiresTrueName": false,
     "calmNoTest": true

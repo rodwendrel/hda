@@ -24,7 +24,7 @@
     },
     "background": "Duelista",
     "origin": "Caelia",
-    "biography": "<p><em>De Caelia. Aprendeu a lutar porque a vila dela trocava de dono a cada estação. A lâmina zumbe quando ela se concentra, e ela finge que não percebe.</em></p><p><strong>Sabe:</strong> lutar um contra um, ler o oponente.</p><p><strong>Gancho:</strong> deve um duelo de honra a alguém que ela nunca viu o rosto.</p>",
+    "biography": "<p><em>De Caelia. Aprendeu a lutar porque a vila dela trocava de dono a cada estação. Ninguém nunca a viu errar o primeiro golpe, e ninguém que ela enfrentou de verdade viu o segundo.</em></p><p><strong>Sabe:</strong> lutar um contra um, ler o oponente.</p><p><strong>Gancho:</strong> deve um duelo de honra a alguém que ela nunca viu o rosto.</p>",
     "notes": "",
     "deprived": false,
     "panicked": false,
@@ -39,11 +39,12 @@
       },
       "attunement": 0,
       "insanity": 0,
-      "awakened": true,
+      "awakened": false,
       "resonating": false,
       "marks": "",
       "lost": false
-    }
+    },
+    "integrityCard": "genuine"
   },
   "items": [
     {
@@ -283,49 +284,6 @@
         "duplicateSource": null
       },
       "_id": "NCGic4mqsPiHZ5la"
-    },
-    {
-      "name": "Lâmina Cinética",
-      "type": "manifestation",
-      "img": "systems/herdeiros/tokens/weapons/sword.webp",
-      "system": {
-        "description": "<p>Você canaliza sua vontade numa arma que segura. Ela não brilha: vibra, zumbindo com uma energia invisível. Por 1d6 rodadas, a arma faz dano <strong>Aprimorado (d12)</strong> e <strong>ignora Armadura</strong>, como se o fio existisse parcialmente em outro lugar. Ela fere criaturas imunes a armas comuns.</p>",
-        "weightless": true,
-        "equipped": false,
-        "bulky": false,
-        "cost": {
-          "value": 0
-        },
-        "quantity": 1,
-        "category": "subtle",
-        "costBonus": 0,
-        "domain": "common",
-        "hpCost": "",
-        "effectFormula": "",
-        "effectType": "none",
-        "healStabilityLoss": "",
-        "ignoresArmor": true,
-        "requiresTrueName": false,
-        "calmNoTest": true
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 0,
-      "ownership": {
-        "default": 0
-      },
-      "flags": {},
-      "_stats": {
-        "coreVersion": "14.369",
-        "systemId": "herdeiros",
-        "systemVersion": "0.1.0",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "_id": "U4EOkhzw6HuE25Fx"
     }
   ],
   "effects": [],

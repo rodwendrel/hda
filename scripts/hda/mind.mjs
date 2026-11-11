@@ -151,16 +151,6 @@ export async function recoverStability(actor, formula = '1d3', source = t('HDA.W
   return gain;
 }
 
-export async function rollStability(actor) {
-  const roll = await rollSum('@abilities.WIL.max + 1d6 + 6', actor.getRollData());
-  await actor.update({ 'system.mind.stability.value': roll.total, 'system.mind.stability.max': roll.total });
-  await postNotice({
-    title: t('HDA.Stability'),
-    lines: [t('HDA.StabilityRolled', { formula: `${actor.system.abilities.WIL.max} + 1d6 + 6`, total: roll.total })],
-  }, { actor, rolls: [roll] });
-  return roll.total;
-}
-
 /** Ressoar (seção 6.5): perde 6, ganha +1 de Sintonia. Não gera a Sintonia da perda. */
 export async function resonate(actor, { confirm = true } = {}) {
   if (confirm) {
@@ -188,6 +178,8 @@ export async function resonate(actor, { confirm = true } = {}) {
 export async function endScene() {
   const characters = game.actors.filter((a) => a.type === 'character' && a.system.mind.resonating);
   for (const actor of characters) await actor.update({ 'system.mind.resonating': false });
+  // A Lâmina Cinética conjurada fora de combate dura até o fim da cena.
+  for (const actor of game.actors.filter((a) => a.getFlag(SYSTEM_ID, 'blade'))) await actor.unsetFlag(SYSTEM_ID, 'blade');
   ui.notifications.info(t('HDA.Notify.SceneEnded'));
 }
 

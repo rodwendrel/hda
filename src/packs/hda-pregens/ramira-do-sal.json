@@ -43,7 +43,8 @@
       "resonating": false,
       "marks": "",
       "lost": false
-    }
+    },
+    "integrityCard": "forged"
   },
   "items": [
     {
@@ -287,11 +288,12 @@
       "_id": "nF6Q4xlr2e1CxGQI"
     },
     {
+      "_id": "3QfRdQok10crGEVu",
       "name": "Vácuo",
       "type": "manifestation",
       "img": "icons/svg/aura.svg",
       "system": {
-        "description": "<p>Você impõe sua vontade sobre o ar ao redor do alvo, que fica incapaz de emitir qualquer som por 1d6 minutos. Para ele, é como se o mundo tivesse sido desligado.</p>",
+        "description": "<p>Você impõe sua vontade sobre o ar ao redor do alvo. Para ele, é como se o mundo tivesse sido desligado.</p><ul><li><strong>Contida (d4):</strong> um único som não acontece: um grito, uma porta, um tiro.</li><li><strong>Plena (d6):</strong> o alvo não emite som nenhum por [dado] minutos.</li><li><strong>Desmedida (d8):</strong> um cômodo inteiro fica em silêncio por [dado] minutos.</li></ul>",
         "weightless": true,
         "equipped": false,
         "bulky": false,
@@ -302,10 +304,22 @@
         "category": "subtle",
         "costBonus": 0,
         "domain": "common",
-        "hpCost": "",
-        "effectFormula": "",
+        "dice": {
+          "contained": "d4",
+          "full": "d6",
+          "unbound": "d8"
+        },
+        "hpCost": {
+          "contained": 0,
+          "full": 0,
+          "unbound": 0
+        },
         "effectType": "none",
-        "healStabilityLoss": "",
+        "effectText": {
+          "contained": "um único som não acontece: um grito, uma porta, um tiro.",
+          "full": "o alvo não emite som nenhum por [dado] minutos.",
+          "unbound": "um cômodo inteiro fica em silêncio por [dado] minutos."
+        },
         "ignoresArmor": false,
         "requiresTrueName": false,
         "calmNoTest": true
@@ -326,8 +340,7 @@
         "lastModifiedBy": null,
         "compendiumSource": null,
         "duplicateSource": null
-      },
-      "_id": "SCIXG4Cx5vQheJb1"
+      }
     }
   ],
   "effects": [],

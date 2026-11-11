@@ -1,12 +1,21 @@
-{{!-- Conjurar. O topo e a linha de resumo são mantidos por wireCastDialog (resonance.mjs). --}}
+{{!-- Conjurar. O topo, os botões de intensidade e a linha de resumo são mantidos por wireCastDialog (resonance.mjs). --}}
 <div class="hda-cast" data-wil="{{wil}}">
   <div class="hda-ttl"></div>
   <div class="hda-tag"></div>
   <select name="manifestation" {{#if single}}hidden{{/if}}>
     {{#each rows}}
-    <option value="{{uuid}}" data-name="{{name}}" data-category="{{categoryLabel}}{{#if viaTome}} · {{localize 'HDA.ViaTome'}}{{/if}}" data-cost="{{costFormula}}" data-true-name="{{requiresTrueName}}" {{#if selected}}selected{{/if}}>{{name}}</option>
+    <option value="{{uuid}}" data-name="{{name}}" data-category="{{categoryLabel}}{{#if viaTome}} · {{localize 'HDA.ViaTome'}}{{/if}}"
+      data-true-name="{{requiresTrueName}}" data-violent="{{violent}}" data-bonus="{{costBonus}}" data-violent-cost="{{violentCost}}"
+      data-contained="{{containedLabel}}" data-full="{{fullLabel}}" data-unbound="{{unboundLabel}}"
+      data-contained-die="{{dice.contained}}" data-full-die="{{dice.full}}" data-unbound-die="{{dice.unbound}}"
+      {{#if selected}}selected{{/if}}>{{name}}</option>
     {{/each}}
   </select>
+  <div class="hda-intensity" role="radiogroup">
+    <label><input type="radio" name="intensity" value="contained" /> <span data-level="contained"></span></label>
+    <label><input type="radio" name="intensity" value="full" checked /> <span data-level="full"></span></label>
+    <label><input type="radio" name="intensity" value="unbound" /> <span data-level="unbound"></span></label>
+  </div>
   <label><input type="checkbox" name="calm" checked /> {{localize 'HDA.Calm'}}</label>
   <label><input type="checkbox" name="scar" {{checked inScar}} /> {{localize 'HDA.InScar'}}</label>
   <label class="hda-true-name" hidden><input type="checkbox" name="trueName" /> {{localize 'HDA.KnowsTrueName'}}</label>

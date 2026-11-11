@@ -2,7 +2,7 @@
   "_id": "TNfBLnxv4XSQbgFP",
   "name": "Antecedentes",
   "img": "icons/svg/d20-grey.svg",
-  "description": "",
+  "description": "<p>◆: desperta com 5 ou 6 no d6 da Estabilidade (os outros, só com 6).</p>",
   "results": [
     {
       "_id": "GebXiNvyFwhoJCVA",
@@ -18,7 +18,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Gazuas",
@@ -140,7 +139,8 @@
               },
               "_id": "DH1Bu3ITU5Zc7DXk"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -168,7 +168,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Arco longo",
@@ -290,7 +289,8 @@
               },
               "_id": "O1gox2wQnJGfUjfB"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -318,7 +318,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Besta",
@@ -440,7 +439,8 @@
               },
               "_id": "s1L7zQVxG6hCFGRe"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -468,7 +468,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Espada",
@@ -588,7 +587,8 @@
               },
               "_id": "T5y37xRZWVHkjnfh"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -616,7 +616,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Lança",
@@ -696,7 +695,8 @@
               },
               "_id": "0k5ZRaz1UogcTwSC"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -724,7 +724,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Serra e bisturis",
@@ -846,7 +845,8 @@
               },
               "_id": "gZkbHAw9e6mni1cg"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -874,7 +874,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Pá",
@@ -996,7 +995,8 @@
               },
               "_id": "QypZDIIJKqrykYY2"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -1024,7 +1024,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Arco",
@@ -1146,7 +1145,8 @@
               },
               "_id": "ND88ZeuBtplAsf7m"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -1174,7 +1174,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Tinta e pena",
@@ -1296,7 +1295,8 @@
               },
               "_id": "q8N0C4u0OPnjkjR0"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -1324,7 +1324,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Espada",
@@ -1444,7 +1443,8 @@
               },
               "_id": "xX7NfAomOU9ut1en"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -1472,7 +1472,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Machado",
@@ -1594,7 +1593,8 @@
               },
               "_id": "zv9e7MlzUfCMuhxT"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -1622,7 +1622,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Cajado",
@@ -1744,7 +1743,8 @@
               },
               "_id": "PCIui5xtEjDxSGdg"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -1772,7 +1772,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Pá",
@@ -1894,7 +1893,8 @@
               },
               "_id": "SxdGbM5z3UNn7Vol"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -1922,7 +1922,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": false,
           "items": [
             {
               "name": "Martelo",
@@ -2042,7 +2041,8 @@
               },
               "_id": "Q7nmjPUyY0ytpC8u"
             }
-          ]
+          ],
+          "awakensOn5": false
         }
       },
       "_stats": {
@@ -2070,7 +2070,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": true,
           "items": [
             {
               "name": "Faca",
@@ -2192,7 +2191,8 @@
               },
               "_id": "seGHxamJvJKxZTu0"
             }
-          ]
+          ],
+          "awakensOn5": true
         }
       },
       "_stats": {
@@ -2220,7 +2220,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": true,
           "items": [
             {
               "name": "Cartas ou ossos de adivinhação",
@@ -2302,7 +2301,8 @@
               },
               "_id": "aFkiKDHK2jG4GqjU"
             }
-          ]
+          ],
+          "awakensOn5": true
         }
       },
       "_stats": {
@@ -2330,7 +2330,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": true,
           "items": [
             {
               "name": "Bálsamo",
@@ -2452,7 +2451,8 @@
               },
               "_id": "2S8TExhg4cY4nKX5"
             }
-          ]
+          ],
+          "awakensOn5": true
         }
       },
       "_stats": {
@@ -2480,7 +2480,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": true,
           "items": [
             {
               "name": "Espada fina",
@@ -2602,7 +2601,8 @@
               },
               "_id": "wmzRHXTpFAE0QO0x"
             }
-          ]
+          ],
+          "awakensOn5": true
         }
       },
       "_stats": {
@@ -2630,7 +2630,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": true,
           "items": [
             {
               "name": "Cobertor",
@@ -2752,7 +2751,8 @@
               },
               "_id": "EVkRqMPizkCPVCoP"
             }
-          ]
+          ],
+          "awakensOn5": true
         }
       },
       "_stats": {
@@ -2780,7 +2780,6 @@
       "drawn": false,
       "flags": {
         "herdeiros": {
-          "awakened": true,
           "items": [
             {
               "name": "Tomo de anotações",
@@ -2862,7 +2861,8 @@
               },
               "_id": "vRxk2QfmOuxRF2Lj"
             }
-          ]
+          ],
+          "awakensOn5": true
         }
       },
       "_stats": {

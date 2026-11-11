@@ -4,7 +4,7 @@
   "type": "manifestation",
   "img": "icons/svg/aura.svg",
   "system": {
-    "description": "<p>Uma onda de repulsão pura contra uma entidade do Abismo. Se você conhece o <strong>nome verdadeiro</strong> dela, ganha +2 na VON. Com sucesso, a entidade é arremessada de volta através da Estase em 1d6 rodadas, deixando um vazio que cheira a ozônio.</p>",
+    "description": "<p>Uma onda de repulsão pura contra uma entidade do Abismo. Com o <strong>nome verdadeiro</strong> dela, o teste de VON ganha <strong>+2</strong>. Com sucesso, a entidade é arremessada de volta através da Estase em 1d6 rodadas, deixando um vazio que cheira a ozônio. Destruir o corpo não a bane; só a Repulsão faz isso.</p>",
     "weightless": true,
     "equipped": false,
     "bulky": false,
@@ -15,10 +15,22 @@
     "category": "violent",
     "costBonus": 3,
     "domain": "common",
-    "hpCost": "",
-    "effectFormula": "",
+    "dice": {
+      "contained": "d4",
+      "full": "d6",
+      "unbound": "d8"
+    },
+    "hpCost": {
+      "contained": 0,
+      "full": 0,
+      "unbound": 0
+    },
     "effectType": "none",
-    "healStabilityLoss": "",
+    "effectText": {
+      "contained": "",
+      "full": "",
+      "unbound": ""
+    },
     "ignoresArmor": false,
     "requiresTrueName": true,
     "calmNoTest": true

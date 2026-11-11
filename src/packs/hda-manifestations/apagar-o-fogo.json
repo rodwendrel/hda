@@ -1,0 +1,62 @@
+{
+  "_id": "6U2xefxdVL4l7mNk",
+  "name": "Apagar o Fogo",
+  "type": "manifestation",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>Um frio que não é deste mundo se abre ao redor de quem conjura. Toda fonte de calor por perto se apaga: chamas, brasas, tudo o que estiver queimando. Serve menos para ser útil do que para lembrar a todos o que o frio é capaz de tirar.</p><ul><li><strong>Contida (d4):</strong> o ar em volta esfria de repente, o hálito de todos vira névoa, e as chamas a um passo de você se apagam.</li><li><strong>Plena (d6):</strong> por [dado] minutos, um frio anormal num raio de [dado] × 3 metros ao seu redor. Toda fonte de calor ali se apaga e não acende enquanto durar. Quem fica dentro sem proteção ganha 1 Fadiga.</li><li><strong>Desmedida (d8):</strong> o raio vai a [dado] × 10 metros e o frio fica no lugar por [dado] horas, mesmo depois que você sai. Plantas ali morrem. Quem vê sente um frio que não sai mais dos ossos: <em>Estabilidade 1d3</em>.</li></ul>",
+    "weightless": true,
+    "equipped": false,
+    "bulky": false,
+    "cost": {
+      "value": 0
+    },
+    "quantity": 1,
+    "category": "manifest",
+    "costBonus": 1,
+    "domain": "common",
+    "dice": {
+      "contained": "d4",
+      "full": "d6",
+      "unbound": "d8"
+    },
+    "hpCost": {
+      "contained": 0,
+      "full": 0,
+      "unbound": 0
+    },
+    "effectType": "none",
+    "effectText": {
+      "contained": "o ar em volta esfria de repente, o hálito de todos vira névoa, e as chamas a um passo de você se apagam.",
+      "full": "por [dado] minutos, um frio anormal num raio de [dado] × 3 metros ao seu redor. Toda fonte de calor ali se apaga e não acende enquanto durar. Quem fica dentro sem proteção ganha 1 Fadiga.",
+      "unbound": "o raio vai a [dado] × 10 metros e o frio fica no lugar por [dado] horas, mesmo depois que você sai. Plantas ali morrem. Quem vê sente um frio que não sai mais dos ossos: <em>Estabilidade 1d3</em>."
+    },
+    "ignoresArmor": false,
+    "requiresTrueName": false,
+    "calmNoTest": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "herdeiros": {
+      "cardActions": {
+        "full": "fatigueSelected",
+        "unbound": "stabilitySelected"
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "herdeiros",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

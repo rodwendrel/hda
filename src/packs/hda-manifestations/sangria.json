@@ -4,7 +4,7 @@
   "type": "manifestation",
   "img": "icons/svg/aura.svg",
   "system": {
-    "description": "<p>Você abre a própria pele e arremessa o sangue em projéteis duros como vidro, à distância: <strong>2d6 de dano</strong>. O sangue é seu, e por isso o custo também sai dos PG: <strong>mais 1d3 PG</strong>.</p>",
+    "description": "<p>Você abre a própria pele e arremessa o sangue em projéteis duros como vidro, à distância. O sangue é seu: além da Estabilidade, você perde PG (se faltar, sai da FOR).</p><ul><li><strong>Contida (d4):</strong> [dado] de dano; você perde 1 PG.</li><li><strong>Plena (d10):</strong> [dado] de dano; você perde 2 PG.</li><li><strong>Desmedida (d12):</strong> [dado] de dano em todos os alvos à sua frente; você perde 3 PG.</li></ul>",
     "weightless": true,
     "equipped": false,
     "bulky": false,
@@ -15,10 +15,22 @@
     "category": "manifest",
     "costBonus": 2,
     "domain": "visceral",
-    "hpCost": "1d3",
-    "effectFormula": "2d6",
+    "dice": {
+      "contained": "d4",
+      "full": "d10",
+      "unbound": "d12"
+    },
+    "hpCost": {
+      "contained": 1,
+      "full": 2,
+      "unbound": 3
+    },
     "effectType": "damage",
-    "healStabilityLoss": "",
+    "effectText": {
+      "contained": "[dado] de dano; você perde 1 PG.",
+      "full": "[dado] de dano; você perde 2 PG.",
+      "unbound": "[dado] de dano em todos os alvos à sua frente; você perde 3 PG."
+    },
     "ignoresArmor": false,
     "requiresTrueName": false,
     "calmNoTest": true

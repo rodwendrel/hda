@@ -4,7 +4,7 @@
   "type": "manifestation",
   "img": "systems/herdeiros/tokens/weapons/sword.webp",
   "system": {
-    "description": "<p>Você canaliza sua vontade numa arma que segura. Ela não brilha: vibra, zumbindo com uma energia invisível. Por 1d6 rodadas, a arma faz dano <strong>Aprimorado (d12)</strong> e <strong>ignora Armadura</strong>, como se o fio existisse parcialmente em outro lugar. Ela fere criaturas imunes a armas comuns.</p>",
+    "description": "<p>Você canaliza a vontade numa arma que segura. Ela não brilha: vibra, zumbindo com uma energia invisível, como se o fio existisse em parte em outro lugar.</p><ul><li><strong>Contida (d4):</strong> o próximo golpe ignora a Armadura.</li><li><strong>Plena (d6):</strong> por [dado] rodadas, a arma ignora a Armadura e fere quem é imune a armas comuns.</li><li><strong>Desmedida (d8):</strong> como a Plena, por [dado] rodadas, e o <strong>primeiro golpe</strong> é <strong>Aprimorado</strong> (d12).</li></ul>",
     "weightless": true,
     "equipped": false,
     "bulky": false,
@@ -15,11 +15,23 @@
     "category": "subtle",
     "costBonus": 0,
     "domain": "common",
-    "hpCost": "",
-    "effectFormula": "",
+    "dice": {
+      "contained": "d4",
+      "full": "d6",
+      "unbound": "d8"
+    },
+    "hpCost": {
+      "contained": 0,
+      "full": 0,
+      "unbound": 0
+    },
     "effectType": "none",
-    "healStabilityLoss": "",
-    "ignoresArmor": true,
+    "effectText": {
+      "contained": "o próximo golpe ignora a Armadura.",
+      "full": "por [dado] rodadas, a arma ignora a Armadura e fere quem é imune a armas comuns.",
+      "unbound": "como a Plena, por [dado] rodadas, e o <strong>primeiro golpe</strong> é <strong>Aprimorado</strong> (d12)."
+    },
+    "ignoresArmor": false,
     "requiresTrueName": false,
     "calmNoTest": true
   },
@@ -29,7 +41,11 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "herdeiros": {
+      "blade": true
+    }
+  },
   "_stats": {
     "coreVersion": "14.369",
     "systemId": "herdeiros",

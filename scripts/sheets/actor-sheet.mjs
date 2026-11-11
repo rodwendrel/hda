@@ -12,7 +12,8 @@ import { Damage } from '../damage.mjs'; // HDA
 import { postRoll } from '../hda/chat.mjs'; // HDA
 import { rollCurse } from '../hda/curses.mjs'; // HDA
 import * as mind from '../hda/mind.mjs'; // HDA
-import { castDialog, resonanceList, ruptureDialog } from '../hda/resonance.mjs'; // HDA
+import { castDialog, resonanceList, ruptureDialog, useBlade } from '../hda/resonance.mjs'; // HDA
+import { rollStability } from '../hda/generator.mjs'; // HDA
 import { insanityPips, nextInsanity, slotsView, stabilityTrack } from '../hda/rules.mjs'; // HDA
 import { settings, SYSTEM_ID } from '../settings.mjs';
 import { evaluateFormula, getInfoFromDropData, stripPar } from '../utils.mjs';
@@ -348,11 +349,14 @@ class CairnActorSheetBase extends BaseActorSheet() {
       formula = '1d4';
       panicLabel = `(${game.i18n.localize('CAIRN.RollingWithPanic')})`;
     }
+    // HDA: Lâmina Cinética. A arma ignora a Armadura; a Desmedida aprimora o primeiro golpe (d12).
+    const blade = target.dataset.label ? await useBlade(this.actor) : null;
+    if (blade?.enhanced) formula = 'd12';
     const roll = await evaluateFormula(formula, this.actor.getRollData());
     const label = target.dataset.label
       ? `${game.i18n.localize('CAIRN.RollingDmgWith')} ${target.dataset.label} ${panicLabel}`
       : '';
-    await Damage.postRoll(this.actor, roll, { label }); // HDA: cartão do tema
+    await Damage.postRoll(this.actor, roll, { label, ignoreArmor: Boolean(blade) }); // HDA: cartão do tema
   }
 
   static async #onRollAbility(_event, target) {
@@ -476,6 +480,7 @@ export class CharacterSheet extends CairnActorSheetBase {
     context.resonanceList = await resonanceList(actor);
     context.canCastAny = context.resonanceList.some((row) => row.canCast);
     context.isGM = game.user.isGM;
+    context.integrityCards = { genuine: 'HDA.CardGenuine', forged: 'HDA.CardForged', none: 'HDA.CardNone' };
     context.canAwaken = game.user.isGM && !state.awakened && state.resonating;
     context.useColdRule = settings.get('hda-cold-rule');
     context.useAdvancement = settings.get('hda-optional-advancement');
@@ -487,7 +492,7 @@ export class CharacterSheet extends CairnActorSheetBase {
   }
 
   static #onRollStability() {
-    return mind.rollStability(this.actor);
+    return rollStability(this.actor);
   }
 
   static #onLoseStability() {

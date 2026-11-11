@@ -4,7 +4,7 @@
   "type": "manifestation",
   "img": "icons/svg/aura.svg",
   "system": {
-    "description": "<p>Uma onda de cansaço psíquico derruba o alvo. Ele não adormece em paz: os olhos reviram, a respiração pesa e ele desaba, atormentado por pesadelos silenciosos, por até 1d6 minutos ou até sofrer dano.</p>",
+    "description": "<p>Uma onda de cansaço psíquico derruba o alvo. Ele não adormece em paz: os olhos reviram, a respiração pesa e ele desaba, atormentado por pesadelos silenciosos. <strong>[dado] de dano de VON.</strong> Se a VON cair à metade ou menos:</p><ul><li><strong>Contida (d4):</strong> o alvo cambaleia e perde a próxima ação.</li><li><strong>Plena (d6):</strong> o alvo desaba por [dado] minutos ou até sofrer dano.</li><li><strong>Desmedida (d8):</strong> o alvo dorme por [dado] horas e só acorda com dano.</li></ul>",
     "weightless": true,
     "equipped": false,
     "bulky": false,
@@ -15,10 +15,22 @@
     "category": "subtle",
     "costBonus": 0,
     "domain": "common",
-    "hpCost": "",
-    "effectFormula": "",
-    "effectType": "none",
-    "healStabilityLoss": "",
+    "dice": {
+      "contained": "d4",
+      "full": "d6",
+      "unbound": "d8"
+    },
+    "hpCost": {
+      "contained": 0,
+      "full": 0,
+      "unbound": 0
+    },
+    "effectType": "wilDamage",
+    "effectText": {
+      "contained": "o alvo cambaleia e perde a próxima ação.",
+      "full": "o alvo desaba por [dado] minutos ou até sofrer dano.",
+      "unbound": "o alvo dorme por [dado] horas e só acorda com dano."
+    },
     "ignoresArmor": false,
     "requiresTrueName": false,
     "calmNoTest": true

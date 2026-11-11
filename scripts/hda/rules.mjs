@@ -80,11 +80,82 @@ export function scarCost(cost, d6, extra = 0) {
   return extra;
 }
 
-export function manifestationCost(category, bonus = 0) {
-  if (category === 'subtle') return '1d6';
-  const dice = category === 'violent' ? '2d6' : '1d6';
-  return bonus > 0 ? `${dice}+${bonus}` : dice;
+/* ---- Manifestações (seção 4.3) ---------------------------------------- */
+
+export const INTENSITIES = ['contained', 'full', 'unbound'];
+export const VIOLENT_DICE = '2d6';
+
+/**
+ * O custo em Estabilidade. `rolled` é o dado da intensidade (o mesmo do
+ * efeito) ou, nas Violentas, o 2d6. A Contida não paga o extra.
+ */
+export function castCost({ category, costBonus = 0 }, intensity, rolled) {
+  if (category === 'violent' || intensity !== 'contained') return rolled + costBonus;
+  return rolled;
 }
+
+/** "d4", "d8 + 2", "2d6 + 3": o custo como o diálogo e a ficha mostram. */
+export function costLabel({ category, costBonus = 0, dice }, intensity) {
+  if (category === 'violent' || !intensity) return costBonus ? `${VIOLENT_DICE} + ${costBonus}` : VIOLENT_DICE;
+  const die = dice?.[intensity] ?? '';
+  return intensity === 'contained' || !costBonus ? die : `${die} + ${costBonus}`;
+}
+
+/** Troca `[dado]` pelo resultado nos textos das intensidades. */
+export function fillDice(text, value) {
+  return String(text ?? '').replace(/\[dado\]/gi, `<b>${value}</b>`);
+}
+
+/** O dado da Desmedida, a partir do da Plena: d6 → d8, d8 e d10 → d12 (a nota pula o d10). */
+const DIE_UP = { d4: 'd6', d6: 'd8', d8: 'd12', d10: 'd12', d12: 'd12' };
+export const dieUp = (die) => DIE_UP[String(die).replace(/^1/, '')] ?? die;
+
+/**
+ * Item do formato antigo: `effectFormula` vira o dado da Plena, a Desmedida
+ * sobe um passo, e o `hpCost` em texto vira 1 / 2 / 3. Recebe o `system`.
+ */
+export function migrateManifestation(system) {
+  if (!system || typeof system !== 'object') return system;
+  if ('effectFormula' in system && !system.dice) {
+    const full = String(system.effectFormula || 'd6').replace(/^1d/, 'd');
+    system.dice = { contained: 'd4', full: /^d\d+$/.test(full) ? full : 'd6', unbound: dieUp(/^d\d+$/.test(full) ? full : 'd6') };
+  }
+  if (typeof system.hpCost === 'string') {
+    const n = Number.parseInt(system.hpCost, 10);
+    system.hpCost = Number.isFinite(n) && n > 0 ? { contained: Math.max(0, n - 1), full: n, unbound: n + 1 } : { contained: 0, full: 0, unbound: 0 };
+  }
+  delete system.effectFormula;
+  delete system.healStabilityLoss;
+  return system;
+}
+
+/** Complicações ao deixar escapar (A.4a), pelo d6. */
+export const COMPLICATIONS = ['wrongTarget', 'half', 'rebound', 'noise', 'echo', 'mark'];
+export const complicationFor = (d6) => COMPLICATIONS[Math.min(Math.max(d6, 1), 6) - 1];
+
+/**
+ * Dano direto em DES ou VON (seção 6.3a), sem PG nem Armadura. O efeito da
+ * Manifestação acontece se o atributo ficar na metade do máximo ou abaixo.
+ */
+export function attributeDamage(value, max, amount) {
+  const after = Math.max(0, value - Math.max(0, Math.floor(amount)));
+  return { before: value, after, triggered: after <= Math.floor(max / 2), zero: after === 0 };
+}
+
+/** Remendo: os pontos voltam para FOR e DES, sem passar do máximo de cada. */
+export function healSplit({ str, dex }, points, toStr) {
+  const strGain = Math.min(Math.max(0, toStr), points, str.max - str.value);
+  const dexGain = Math.min(points - strGain, dex.max - dex.value);
+  return { str: str.value + strGain, dex: dex.value + Math.max(0, dexGain) };
+}
+
+/* ---- Estabilidade e despertar (seção 6.6) ------------------------------ */
+
+/** Um d6 só: a Estabilidade é VON + d + 6. */
+export const stabilityFromDie = (wil, d6) => wil + d6 + 6;
+
+/** Desperta com 6, ou com 5 ou 6 se o Antecedente tem ◆. */
+export const awakensWith = (d6, awakensOn5 = false) => d6 === 6 || (awakensOn5 && d6 >= 5);
 
 /** A trilha da Mente: um traço por ponto, ou por 2 pontos acima de 40. */
 export function stabilityTrack(value, max) {

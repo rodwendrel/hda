@@ -24,7 +24,7 @@
     },
     "background": "Cirurgião de Campo",
     "origin": "Império de Alberus",
-    "biography": "<p><em>Do Império de Alberus. Costurou mais soldados do que consegue lembrar. Tem uma Carta de Integridade verdadeira e um medo enorme de perdê-la.</em></p><p><strong>Sabe:</strong> tratar ferimentos, amputar, ervas; sabe ler.</p><p><strong>Gancho:</strong> no último censo, o instrumento de teste tremeu perto dele, e o inspetor deixou passar. Por quê?</p>",
+    "biography": "<p><em>Do Império de Alberus. Costurou mais soldados do que consegue lembrar. Nos feridos que ele opera, a dor some antes de o láudano fazer efeito, e ele jura que é técnica. Tem uma Carta de Integridade verdadeira e um medo enorme de perdê-la.</em></p><p><strong>Sabe:</strong> tratar ferimentos, amputar, ervas; sabe ler.</p><p><strong>Gancho:</strong> no último censo, o instrumento de teste tremeu perto dele, e o inspetor deixou passar. Por quê?</p>",
     "notes": "",
     "deprived": false,
     "panicked": false,
@@ -39,11 +39,12 @@
       },
       "attunement": 0,
       "insanity": 0,
-      "awakened": false,
+      "awakened": true,
       "resonating": false,
       "marks": "",
       "lost": false
-    }
+    },
+    "integrityCard": "genuine"
   },
   "items": [
     {
@@ -285,6 +286,61 @@
         "duplicateSource": null
       },
       "_id": "lp32gP2NmRKE4lux"
+    },
+    {
+      "_id": "sg6qv1hMl0HXjC0G",
+      "name": "Torpor Mental",
+      "type": "manifestation",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p>Uma onda de cansaço psíquico derruba o alvo. Ele não adormece em paz: os olhos reviram, a respiração pesa e ele desaba, atormentado por pesadelos silenciosos. <strong>[dado] de dano de VON.</strong> Se a VON cair à metade ou menos:</p><ul><li><strong>Contida (d4):</strong> o alvo cambaleia e perde a próxima ação.</li><li><strong>Plena (d6):</strong> o alvo desaba por [dado] minutos ou até sofrer dano.</li><li><strong>Desmedida (d8):</strong> o alvo dorme por [dado] horas e só acorda com dano.</li></ul>",
+        "weightless": true,
+        "equipped": false,
+        "bulky": false,
+        "cost": {
+          "value": 0
+        },
+        "quantity": 1,
+        "category": "subtle",
+        "costBonus": 0,
+        "domain": "common",
+        "dice": {
+          "contained": "d4",
+          "full": "d6",
+          "unbound": "d8"
+        },
+        "hpCost": {
+          "contained": 0,
+          "full": 0,
+          "unbound": 0
+        },
+        "effectType": "wilDamage",
+        "effectText": {
+          "contained": "o alvo cambaleia e perde a próxima ação.",
+          "full": "o alvo desaba por [dado] minutos ou até sofrer dano.",
+          "unbound": "o alvo dorme por [dado] horas e só acorda com dano."
+        },
+        "ignoresArmor": false,
+        "requiresTrueName": false,
+        "calmNoTest": true
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "herdeiros",
+        "systemVersion": "0.1.0",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      }
     }
   ],
   "effects": [],

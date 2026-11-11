@@ -4,7 +4,7 @@
   "type": "manifestation",
   "img": "icons/svg/aura.svg",
   "system": {
-    "description": "<p>Você projeta no alvo uma emoção crua e avassaladora (pânico, fúria, desespero, êxtase). Por alguns instantes, ela passa por cima do raciocínio, e ele age de acordo.</p>",
+    "description": "<p>Você projeta no alvo uma emoção crua e avassaladora (pânico, fúria, desespero, êxtase), que passa por cima do raciocínio.</p><ul><li><strong>Contida (d4):</strong> um lampejo; o próximo ataque do alvo é <strong>Prejudicado</strong>.</li><li><strong>Plena (d6):</strong> o alvo age de acordo com a emoção por [dado] rodadas. Pânico num líder obriga o grupo dele a testar Moral.</li><li><strong>Desmedida (d8):</strong> todos que você vê, por [dado] rodadas.</li></ul>",
     "weightless": true,
     "equipped": false,
     "bulky": false,
@@ -15,10 +15,22 @@
     "category": "manifest",
     "costBonus": 1,
     "domain": "common",
-    "hpCost": "",
-    "effectFormula": "",
+    "dice": {
+      "contained": "d4",
+      "full": "d6",
+      "unbound": "d8"
+    },
+    "hpCost": {
+      "contained": 0,
+      "full": 0,
+      "unbound": 0
+    },
     "effectType": "none",
-    "healStabilityLoss": "",
+    "effectText": {
+      "contained": "um lampejo; o próximo ataque do alvo é <strong>Prejudicado</strong>.",
+      "full": "o alvo age de acordo com a emoção por [dado] rodadas. Pânico num líder obriga o grupo dele a testar Moral.",
+      "unbound": "todos que você vê, por [dado] rodadas."
+    },
     "ignoresArmor": false,
     "requiresTrueName": false,
     "calmNoTest": true

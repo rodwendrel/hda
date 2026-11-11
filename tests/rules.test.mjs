@@ -2,8 +2,9 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import {
-  breaksStability, computeLoss, computeRecovery, forceCost, halve, insanityPips, manifestationCost, migrateMvpFlags,
-  nextInsanity, resolveTest, scarCost, slotsView, stabilityBar, stabilityTrack,
+  attributeDamage, awakensWith, breaksStability, castCost, complicationFor, computeLoss, computeRecovery, costLabel,
+  dieUp, fillDice, forceCost, halve, healSplit, insanityPips, migrateManifestation, migrateMvpFlags, nextInsanity,
+  resolveTest, scarCost, slotsView, stabilityBar, stabilityFromDie, stabilityTrack,
 } from '../scripts/hda/rules.mjs';
 
 const state = (over = {}) => ({
@@ -104,10 +105,78 @@ test('ajudantes pagam metade, para baixo', () => {
   assert.equal(halve(7), 3);
 });
 
-test('custos por categoria', () => {
-  assert.equal(manifestationCost('subtle', 3), '1d6');
-  assert.equal(manifestationCost('manifest', 2), '1d6+2');
-  assert.equal(manifestationCost('violent', 3), '2d6+3');
+const agonia = { category: 'manifest', costBonus: 2, dice: { contained: 'd4', full: 'd8', unbound: 'd12' } };
+const sangria = { category: 'manifest', costBonus: 2, dice: { contained: 'd4', full: 'd10', unbound: 'd12' } };
+const remendo = { category: 'manifest', costBonus: 1, dice: { contained: 'd4', full: 'd6', unbound: 'd8' } };
+
+test('critério 8a: Agonia Contida paga só o dado', () => {
+  assert.equal(castCost(agonia, 'contained', 3), 3);
+});
+
+test('critério 8b: Agonia Desmedida paga o dado e o extra, e chega à Sintonia', () => {
+  const cost = castCost(agonia, 'unbound', 9);
+  assert.equal(cost, 11);
+  assert.equal(computeLoss(state({ stability: { value: 20, max: 22 } }), cost).attunementDelta, 1);
+});
+
+test('critério 8c: Violenta é 2d6 + extra, sem intensidade', () => {
+  const violent = { category: 'violent', costBonus: 3 };
+  assert.equal(castCost(violent, 'contained', 7), 10);
+  assert.equal(costLabel(violent, 'full'), '2d6 + 3');
+});
+
+test('critério 14 e 14a: Sangria Plena 6 custa 8; Remendo Pleno 4 custa 5', () => {
+  assert.equal(castCost(sangria, 'full', 6), 8);
+  assert.equal(castCost(remendo, 'full', 4), 5);
+});
+
+test('rótulos de custo por intensidade', () => {
+  assert.equal(costLabel(agonia, 'contained'), 'd4');
+  assert.equal(costLabel(agonia, 'full'), 'd8 + 2');
+  assert.equal(costLabel({ category: 'subtle', costBonus: 0, dice: { full: 'd6' } }, 'full'), 'd6');
+});
+
+test('[dado] vira o resultado', () => {
+  assert.equal(fillDice('por [dado] minutos, raio [dado] × 3 m', 5), 'por <b>5</b> minutos, raio <b>5</b> × 3 m');
+});
+
+test('critério 15a: Estase em DES 10, dano 5 dispara; dano 4 não', () => {
+  assert.deepEqual(attributeDamage(10, 10, 5), { before: 10, after: 5, triggered: true, zero: false });
+  assert.equal(attributeDamage(10, 10, 4).triggered, false);
+});
+
+test('critério 16: dano de VON 4 em VON 3 zera', () => {
+  assert.equal(attributeDamage(3, 12, 4).zero, true);
+});
+
+test('Remendo divide os pontos sem passar do máximo', () => {
+  const stats = { str: { value: 8, max: 10 }, dex: { value: 5, max: 12 } };
+  assert.deepEqual(healSplit(stats, 4, 3), { str: 10, dex: 7 });
+  assert.deepEqual(healSplit(stats, 4, 0), { str: 8, dex: 9 });
+});
+
+test('complicações pelo d6', () => {
+  assert.equal(complicationFor(1), 'wrongTarget');
+  assert.equal(complicationFor(2), 'half');
+  assert.equal(complicationFor(6), 'mark');
+});
+
+test('critérios 1, 15c e 15d: um d6 dá a Estabilidade e o despertar', () => {
+  assert.equal(stabilityFromDie(12, 4), 22);
+  assert.equal(awakensWith(4), false);
+  assert.equal(stabilityFromDie(12, 6), 24);
+  assert.equal(awakensWith(6), true);
+  assert.equal(awakensWith(5, true), true);
+  assert.equal(awakensWith(5, false), false);
+});
+
+test('migração de Manifestação antiga', () => {
+  const old = { effectFormula: 'd8', hpCost: '2', healStabilityLoss: '1d6' };
+  migrateManifestation(old);
+  assert.deepEqual(old.dice, { contained: 'd4', full: 'd8', unbound: 'd12' });
+  assert.deepEqual(old.hpCost, { contained: 1, full: 2, unbound: 3 });
+  assert.equal('effectFormula' in old, false);
+  assert.equal(dieUp('d10'), 'd12');
 });
 
 test('trilha agrupa acima de 40', () => {

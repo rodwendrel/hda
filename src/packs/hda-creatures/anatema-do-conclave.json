@@ -23,7 +23,7 @@
       }
     },
     "background": "",
-    "description": "<p>Só age sob comando. <strong>Agonia Neural:</strong> alvo testa VON ou perde 1d6+3 de Estabilidade. Ao sofrer dano, testa VON; se falhar, todos a 5 m perdem 1d3.</p>",
+    "description": "<p>Só age sob comando.</p><p><strong>Agonia do Anátema:</strong> d6 de dano de VON num alvo visível. Se a VON cair à metade ou menos, o alvo perde a próxima ação.</p><p>Ao sofrer dano, testa VON; se falhar, todos a 5 m perdem 1d3 de Estabilidade.</p>",
     "notes": "",
     "gold": 0,
     "armor": 0,
@@ -31,7 +31,7 @@
       "value": 0
     },
     "features": [],
-    "willAttack": "",
+    "willAttack": "d6",
     "stabilityAura": ""
   },
   "items": [],

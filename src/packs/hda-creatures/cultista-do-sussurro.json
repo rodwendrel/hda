@@ -23,7 +23,7 @@
       }
     },
     "background": "",
-    "description": "<p><strong>Toque da Dúvida:</strong> o alvo testa VON ou perde 1d3 de Estabilidade.</p>",
+    "description": "<p><strong>Toque da Dúvida</strong> (sussurro): d4 de dano de VON. Se a VON do alvo cair à metade ou menos, ele hesita e perde a próxima ação.</p>",
     "notes": "",
     "gold": 0,
     "armor": 0,
@@ -31,7 +31,7 @@
       "value": 0
     },
     "features": [],
-    "willAttack": "",
+    "willAttack": "d4",
     "stabilityAura": ""
   },
   "items": [

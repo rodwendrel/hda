@@ -15,10 +15,22 @@
     "category": "violent",
     "costBonus": 2,
     "domain": "visceral",
-    "hpCost": "",
-    "effectFormula": "",
+    "dice": {
+      "contained": "d4",
+      "full": "d6",
+      "unbound": "d8"
+    },
+    "hpCost": {
+      "contained": 0,
+      "full": 0,
+      "unbound": 0
+    },
     "effectType": "none",
-    "healStabilityLoss": "",
+    "effectText": {
+      "contained": "",
+      "full": "",
+      "unbound": ""
+    },
     "ignoresArmor": false,
     "requiresTrueName": false,
     "calmNoTest": true

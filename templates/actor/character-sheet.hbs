@@ -20,6 +20,10 @@
           <input type="text" name="system.background" value="{{system.background}}" /></label>
         <label><span class="hda-lab">{{localize 'HDA.Origin'}}</span>
           <input type="text" name="system.origin" value="{{system.origin}}" /></label>
+        <label><span class="hda-lab">{{localize 'HDA.IntegrityCard'}}</span>
+          <select name="system.integrityCard">
+            {{selectOptions integrityCards selected=system.integrityCard localize=true}}
+          </select></label>
       </div>
     </div>
   </header>

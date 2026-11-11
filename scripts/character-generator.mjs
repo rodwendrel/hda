@@ -171,6 +171,7 @@ export const generateCharacter = async () => {
     abilities,
     background: heir.background,
     origin: heir.origin,
+    integrityCard: heir.integrityCard, // HDA
     mind: heir.mind,
     items: [...startingItems, ...heir.items],
     biography: heir.biography,
@@ -195,6 +196,7 @@ const characterToActorData = (characterData) => ({
     },
     background: characterData.background,
     origin: characterData.origin, // HDA
+    integrityCard: characterData.integrityCard, // HDA
     mind: characterData.mind, // HDA
     biography: characterData.biography,
     gold: characterData.gold,
