@@ -1,7 +1,7 @@
 /** Maldições (d66). O texto vem da RollTable; a automação, da faixa do resultado. */
 import { findCompendiumItem } from '../compendium.mjs';
 import { SYSTEM_ID } from '../settings.mjs';
-import { cardFlags, ownsCard, postCard, postNotice, registerCardAction, updateCard } from './chat.mjs';
+import { cardFlags, htmlToText, ownsCard, postCard, postNotice, registerCardAction, updateCard } from './chat.mjs';
 import { loseStability, payOn, rollSum } from './mind.mjs';
 import { CURSE_AUTOMATION } from './rules.mjs';
 
@@ -86,7 +86,7 @@ registerCardAction('recordMark', {
   run: async (message) => {
     const flags = cardFlags(message);
     const actor = await fromUuid(flags.actor);
-    const preset = flags.card === 'curse' ? flags.data.text.replace(/<[^>]+>/g, '') : '';
+    const preset = flags.card === 'curse' ? htmlToText(flags.data.text) : '';
     const text = await DialogV2.prompt({
       classes: ['hda-dialog'],
       window: { title: t('HDA.RecordInMarks') },

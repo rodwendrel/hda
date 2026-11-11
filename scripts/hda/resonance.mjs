@@ -6,7 +6,7 @@
  */
 import { Damage } from '../damage.mjs';
 import { settings, SYSTEM_ID } from '../settings.mjs';
-import { cardFlags, ownsCard, postCard, postNotice, registerCardAction, updateCard } from './chat.mjs';
+import { cardFlags, htmlToText, ownsCard, postCard, postNotice, registerCardAction, updateCard } from './chat.mjs';
 import { rollCurse } from './curses.mjs';
 import {
   applyStabilityLoss, loseOn, payOn, postBreakCard, postLossCards, rollSum, snapshot, testWil, warnUnset,
@@ -207,7 +207,7 @@ async function applyEffect(actor, item, { intensity, effect, targets }) {
     if (effectType === 'dexDamage' || effectType === 'wilDamage') {
       const key = effectType === 'dexDamage' ? 'DEX' : 'WIL';
       // O aviso escapa HTML nas linhas: vai o texto puro.
-      const plain = text.replace(/<[^>]+>/g, '');
+      const plain = htmlToText(text);
       await relay('attributeDamage', { uuid: target.uuid, key, amount: effect, text: plain, source: item.name }, target.isOwner);
     } else if (effectType === 'heal') {
       const points = intensity === 'contained' ? 0 : effect;

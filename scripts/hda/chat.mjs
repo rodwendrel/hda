@@ -12,6 +12,14 @@ export const renderCard = (type, data) => renderTemplate(`systems/${SYSTEM_ID}/t
 
 export const cardFlags = (message) => message.flags?.[SYSTEM_ID];
 
+/**
+ * O texto de um trecho HTML, sem as tags. O `DOMParser` não executa scripts nem
+ * atributos de evento, e não deixa sobrar tag partida como um regex deixaria.
+ */
+export function htmlToText(html) {
+  return new DOMParser().parseFromString(String(html ?? ''), 'text/html').body.textContent ?? '';
+}
+
 function speakerOf({ actor, token }) {
   return ChatMessage.getSpeaker(token ? { token } : { actor });
 }
